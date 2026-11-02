@@ -23,6 +23,7 @@
   - `perf`: CDP `Performance.getMetrics`(TaskDuration・ScriptDuration・Layout・RecalcStyle ほか)、Long Task、UserScript の同期実行時間
   - `idle`: 読み込み後に放置した間の CPU 時間
   - `profile`: CPU プロファイル(100µs 間隔)をスクリプトごと、CP Toolkit は機能ごとに集計(ソースマップで `src/features/*` へ対応付け)
+  - `memory`: GC を2回かけた後のヒープ(`JSHeapUsedSize`)と DOM カウンタ。サンプリングヒーププロファイラ(1KB 間隔)で、生き残ったメモリを確保したスクリプトごと(CP Toolkit は機能ごと)に集計
   - `trace`: DOM API を包んで、要素ごとに「誰が・何を・何回」したかを記録(`harness/page/dom-trace.js`)。負荷が大きいので時間の計測とは別の回
 - **集計**: `harness/analyze.mjs` → `results/summary.json`。中央値・四分位範囲、Mann-Whitney U 検定、Cliff の δ。
 

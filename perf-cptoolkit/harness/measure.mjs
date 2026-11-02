@@ -5,6 +5,7 @@
 //   perf    … 読み込み時のコスト。CDP の Performance.getMetrics とページ内の記録
 //   idle    … 読み込み後に放置したときのコスト
 //   profile … CPU プロファイルからスクリプトごとの時間を出す
+//   memory  … GC 後に残るヒープと、サンプリングヒーププロファイラによるスクリプトごとの生存メモリ
 //   trace   … DOM API を包み、要素ごとの重複アクセスを数える
 import {appendFileSync, mkdirSync} from "node:fs";
 import {dirname} from "node:path";
@@ -33,7 +34,7 @@ const N = Number(args.n);
 const throttle = Number(args.throttle);
 const pageKeys = args.pages.split(",");
 const condKeys = args.conds.split(",");
-const conditions = loadConditions({analysisBuild: mode === "trace" || mode === "profile"});
+const conditions = loadConditions({analysisBuild: mode === "trace" || mode === "profile" || mode === "memory"});
 const SETTLE = throttle > 1 ? 6000 : 3000;
 const out = args.out ?? `results/${mode}-x${throttle}.jsonl`;
 mkdirSync(dirname(out), {recursive: true});
@@ -97,6 +98,41 @@ function aggregateProfile(profile) {
 	return {byScript, toolkitStacks};
 }
 
+/** サンプリングヒーププロファイル(GC 後の生存オブジェクト)を、確保したスクリプトごとに集計する */
+function aggregateHeap(profile, scriptUrls) {
+	const urlOf = (cf) => cf.url || scriptUrls.get(cf.scriptId) || "";
+	const byScript = {};
+	const toolkitStacks = {};
+	const walk = (node, ancestors) => {
+		const url = urlOf(node.callFrame);
+		const m = /^userscript:\/\/([^/]+)\//.exec(url);
+		const chain = [...ancestors, node];
+		if (node.selfSize > 0) {
+			let bucket = null;
+			for (let i = chain.length - 1; i >= 0; i--) {
+				const u = urlOf(chain[i].callFrame);
+				const um = /^userscript:\/\/([^/]+)\//.exec(u);
+				if (um) {
+					bucket = `us:${um[1]}`;
+					break;
+				}
+				if (u && !m) break; // ページ自身のスクリプトが確保したもの
+			}
+			bucket ??= url ? "page" : (node.callFrame.functionName || "(native)");
+			byScript[bucket] = (byScript[bucket] || 0) + node.selfSize;
+			if (bucket === "us:CpToolkit") {
+				const frames = chain.filter((n) => urlOf(n.callFrame).startsWith("userscript://CpToolkit/main"))
+					.reverse().slice(0, 25).map((n) => `${n.callFrame.lineNumber + 1}:${n.callFrame.columnNumber + 1}`);
+				const key = frames.join(" < ");
+				toolkitStacks[key] = (toolkitStacks[key] || 0) + node.selfSize;
+			}
+		}
+		for (const c of node.children ?? []) walk(c, chain);
+	};
+	walk(profile.head, []);
+	return {heapByScript: byScript, heapToolkitStacks: toolkitStacks};
+}
+
 async function runOnce(condKey, pageKey, iteration) {
 	const url = PAGES[pageKey];
 	const condition = conditions[condKey];
@@ -115,12 +151,20 @@ async function runOnce(condKey, pageKey, iteration) {
 	await page.addInitScript(LONGTASK_JS);
 	await page.addInitScript(script);
 	const cdp = await context.newCDPSession(page);
+	const scriptUrls = new Map();
 	await cdp.send("Performance.enable");
 	if (throttle > 1) await cdp.send("Emulation.setCPUThrottlingRate", {rate: throttle});
 	if (mode === "profile") {
 		await cdp.send("Profiler.enable");
 		await cdp.send("Profiler.setSamplingInterval", {interval: 100});
 		await cdp.send("Profiler.start");
+	}
+	if (mode === "memory") {
+		// 自前の eval で読み込んだスクリプトは、ヒーププロファイルに URL が載らないので scriptId から引く
+		cdp.on("Debugger.scriptParsed", (e) => scriptUrls.set(e.scriptId, e.url));
+		await cdp.send("Debugger.enable");
+		await cdp.send("HeapProfiler.enable");
+		await cdp.send("HeapProfiler.startSampling", {samplingInterval: 1024});
 	}
 	const t0 = Date.now();
 	await page.goto(url, {waitUntil: "load", timeout: 120000});
@@ -131,6 +175,16 @@ async function runOnce(condKey, pageKey, iteration) {
 	if (mode === "profile") {
 		const {profile} = await cdp.send("Profiler.stop");
 		Object.assign(row, aggregateProfile(profile));
+	}
+	if (mode === "memory") {
+		// GC を2回かけ、回収されずに残るものだけを数える
+		await cdp.send("HeapProfiler.collectGarbage");
+		await cdp.send("HeapProfiler.collectGarbage");
+		row.afterGc = await metricsOf(cdp);
+		row.domCounters = await cdp.send("Memory.getDOMCounters");
+		const {profile} = await cdp.send("HeapProfiler.getSamplingProfile");
+		await cdp.send("HeapProfiler.stopSampling");
+		Object.assign(row, aggregateHeap(profile, scriptUrls));
 	}
 	if (mode === "idle") {
 		await page.waitForTimeout(Number(args.idle));

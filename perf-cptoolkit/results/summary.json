@@ -1,11 +1,12 @@
 {
- "generatedAt": "2026-11-02T12:17:07.345Z",
+ "generatedAt": "2026-11-02T12:19:55.612Z",
  "counts": {
   "perfX1": 0,
   "perfX4": 0,
   "idle": 0,
-  "profile": 23,
+  "profile": 72,
   "trace": 108,
+  "memory": 3,
   "failed": 0
  },
  "scriptsPerPage": {
@@ -354,7 +355,7 @@
      "median": 0,
      "q1": 0,
      "q3": 0,
-     "n": 1
+     "n": 2
     },
     "perScript": {},
     "perFeature": {}
@@ -364,83 +365,87 @@
      "median": 0,
      "q1": 0,
      "q3": 0,
-     "n": 1
+     "n": 2
     },
     "perScript": {},
     "perFeature": {}
    },
    "C_own": {
     "userscriptMs": {
-     "median": 8.485,
-     "q1": 8.485,
-     "q3": 8.485,
-     "n": 1
+     "median": 7.084,
+     "q1": 6.3835,
+     "q3": 7.7844999999999995,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 8.485
+     "CpToolkit": 7.084
     },
     "perFeature": {
-     "(core:domain)": 5.966,
-     "(unknown)": 1.932,
-     "(core:adapters)": 0.378,
-     "(core:app)": 0.209
+     "(core:domain)": 3.071,
+     "(core:app)": 2.4405,
+     "(unknown)": 1.0525,
+     "(core:adapters)": 0.189,
+     "settings-panel": 0.1535,
+     "(core:application)": 0.089,
+     "(lib)": 0.0885
     }
    },
    "B_all": {
     "userscriptMs": {
-     "median": 2.033,
-     "q1": 2.033,
-     "q3": 2.033,
-     "n": 1
+     "median": 2.6660000000000004,
+     "q1": 2.3495,
+     "q3": 2.9825000000000004,
+     "n": 2
     },
     "perScript": {
-     "ContestDescriptionLink": 1.671,
-     "ResultNotifier": 0.362
+     "ResultNotifier": 1.5415,
+     "ContestDescriptionLink": 1.0365000000000002,
+     "EasyAccordion": 0.088
     },
     "perFeature": {}
    },
    "C_eq": {
     "userscriptMs": {
-     "median": 7.516999999999999,
-     "q1": 7.516999999999999,
-     "q3": 7.516999999999999,
-     "n": 1
+     "median": 9.219,
+     "q1": 8.367999999999999,
+     "q3": 10.07,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 7.516999999999999
+     "CpToolkit": 9.219
     },
     "perFeature": {
-     "(core:domain)": 1.587,
-     "(core:application)": 1.504,
-     "(core:app)": 1.39,
-     "settings-panel": 0.873,
-     "(unknown)": 0.6950000000000001,
-     "result-notifier": 0.4,
-     "(core:adapters)": 0.364,
-     "top-links": 0.361,
-     "latest-contests": 0.177,
-     "(lib)": 0.166
+     "(core:domain)": 1.7054999999999998,
+     "(core:application)": 1.45,
+     "(core:app)": 1.402,
+     "(core:adapters)": 1.2690000000000001,
+     "settings-panel": 1.069,
+     "(unknown)": 1.064,
+     "top-links": 0.45,
+     "result-notifier": 0.381,
+     "latest-contests": 0.272,
+     "(lib)": 0.1565
     }
    },
    "C_default": {
     "userscriptMs": {
-     "median": 9.805,
-     "q1": 9.805,
-     "q3": 9.805,
-     "n": 1
+     "median": 6.2395,
+     "q1": 4.4567499999999995,
+     "q3": 8.02225,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 9.805
+     "CpToolkit": 6.2395
     },
     "perFeature": {
-     "(core:app)": 3.4859999999999998,
-     "(core:adapters)": 1.517,
-     "(lib)": 1.458,
-     "latest-contests": 1.133,
-     "(unknown)": 0.6619999999999999,
-     "(core:domain)": 0.57,
-     "top-links": 0.5209999999999999,
-     "(core:application)": 0.458
+     "(core:app)": 2.5345,
+     "(core:domain)": 0.8305,
+     "(core:adapters)": 0.7585,
+     "(lib)": 0.729,
+     "latest-contests": 0.5665,
+     "(unknown)": 0.33099999999999996,
+     "top-links": 0.26049999999999995,
+     "(core:application)": 0.229
     }
    }
   },
@@ -450,107 +455,110 @@
      "median": 0,
      "q1": 0,
      "q3": 0,
-     "n": 1
+     "n": 2
     },
     "perScript": {},
     "perFeature": {}
    },
    "B_own": {
     "userscriptMs": {
-     "median": 1.661,
-     "q1": 1.661,
-     "q3": 1.661,
-     "n": 1
+     "median": 2.2699999999999996,
+     "q1": 1.9655,
+     "q3": 2.5744999999999996,
+     "n": 2
     },
     "perScript": {
-     "JavaCodeSubmitter": 1.661
+     "JavaCodeSubmitter": 1.573,
+     "AtCoderWidenContainer": 0.5145,
+     "AtCoderCustomDefaultSubmissions": 0.1825
     },
     "perFeature": {}
    },
    "C_own": {
     "userscriptMs": {
-     "median": 5.599999999999999,
-     "q1": 5.599999999999999,
-     "q3": 5.599999999999999,
-     "n": 1
+     "median": 6.2764999999999995,
+     "q1": 5.938249999999999,
+     "q3": 6.61475,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 5.599999999999999
+     "CpToolkit": 6.2764999999999995
     },
     "perFeature": {
-     "(core:app)": 1.4620000000000002,
-     "(core:domain)": 1.14,
-     "(unknown)": 0.867,
-     "(core:adapters)": 0.648,
-     "settings-panel": 0.546,
-     "(core:application)": 0.504,
-     "(lib)": 0.263,
-     "wide-layout": 0.17
+     "(core:app)": 1.2525000000000002,
+     "(core:domain)": 1.1795,
+     "(unknown)": 1.097,
+     "(core:application)": 1.0870000000000002,
+     "settings-panel": 0.726,
+     "(core:adapters)": 0.718,
+     "(lib)": 0.1315,
+     "wide-layout": 0.085
     }
    },
    "B_all": {
     "userscriptMs": {
-     "median": 5.314,
-     "q1": 5.314,
-     "q3": 5.314,
-     "n": 1
+     "median": 5.3865,
+     "q1": 5.35025,
+     "q3": 5.422750000000001,
+     "n": 2
     },
     "perScript": {
-     "VirtualTimer": 2.559,
-     "JavaCodeSubmitter": 1.385,
-     "AtCoderWidenContainer": 0.667,
-     "AtCoderCustomDefaultSubmissions": 0.376,
-     "EasyAccordion": 0.327
+     "VirtualTimer": 2.5525,
+     "JavaCodeSubmitter": 1.528,
+     "AtCoderWidenContainer": 0.5535,
+     "AtCoderCustomDefaultSubmissions": 0.3395,
+     "EasyAccordion": 0.2555,
+     "ResultNotifier": 0.1575
     },
     "perFeature": {}
    },
    "C_eq": {
     "userscriptMs": {
-     "median": 12.969999999999999,
-     "q1": 12.969999999999999,
-     "q3": 12.969999999999999,
-     "n": 1
+     "median": 13.424,
+     "q1": 13.197,
+     "q3": 13.650999999999998,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 12.969999999999999
+     "CpToolkit": 13.424
     },
     "perFeature": {
-     "(core:application)": 5.362,
-     "(core:adapters)": 3.047,
-     "(unknown)": 1.808,
-     "(core:domain)": 0.7210000000000001,
-     "(core:app)": 0.5720000000000001,
-     "latest-contests": 0.35,
-     "(lib)": 0.285,
-     "hover-menu": 0.282,
-     "(core:shared)": 0.202,
-     "settings-panel": 0.173,
-     "result-notifier": 0.168
+     "(core:adapters)": 4.3645000000000005,
+     "(core:application)": 3.2680000000000002,
+     "(unknown)": 2.902,
+     "(core:domain)": 0.798,
+     "(core:app)": 0.5865,
+     "settings-panel": 0.48799999999999993,
+     "latest-contests": 0.3615,
+     "hover-menu": 0.22849999999999998,
+     "result-notifier": 0.1835,
+     "(lib)": 0.1425,
+     "(core:shared)": 0.101
     }
    },
    "C_default": {
     "userscriptMs": {
-     "median": 11.349000000000002,
-     "q1": 11.349000000000002,
-     "q3": 11.349000000000002,
-     "n": 1
+     "median": 9.228000000000002,
+     "q1": 8.1675,
+     "q3": 10.2885,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 11.349000000000002
+     "CpToolkit": 9.228000000000002
     },
     "perFeature": {
-     "(core:adapters)": 4.093,
-     "(core:domain)": 1.77,
-     "(core:app)": 1.706,
-     "(unknown)": 1.059,
-     "(core:application)": 0.907,
-     "latest-contests": 0.4,
-     "result-notifier": 0.347,
-     "settings-panel": 0.33599999999999997,
-     "(lib)": 0.2,
-     "(core:shared)": 0.179,
-     "hover-menu": 0.178,
-     "wide-layout": 0.174
+     "(core:adapters)": 2.6334999999999997,
+     "(core:domain)": 1.8920000000000001,
+     "(core:app)": 1.5415,
+     "(unknown)": 0.816,
+     "(core:application)": 0.662,
+     "settings-panel": 0.5680000000000001,
+     "latest-contests": 0.397,
+     "result-notifier": 0.263,
+     "(lib)": 0.1895,
+     "(core:shared)": 0.0895,
+     "hover-menu": 0.089,
+     "wide-layout": 0.087
     }
    }
   },
@@ -560,117 +568,122 @@
      "median": 0,
      "q1": 0,
      "q3": 0,
-     "n": 1
+     "n": 2
     },
     "perScript": {},
     "perFeature": {}
    },
    "B_own": {
     "userscriptMs": {
-     "median": 9.789000000000001,
-     "q1": 9.789000000000001,
-     "q3": 9.789000000000001,
-     "n": 1
+     "median": 9.015500000000001,
+     "q1": 8.62875,
+     "q3": 9.402250000000002,
+     "n": 2
     },
     "perScript": {
-     "AtCoderListingTasks": 6.465,
-     "JavaCodeSubmitter": 2.2300000000000004,
-     "AtCoderCustomDefaultSubmissions": 0.7310000000000001,
-     "AtCoderWidenContainer": 0.363
+     "AtCoderListingTasks": 6.1055,
+     "JavaCodeSubmitter": 2.0385,
+     "AtCoderWidenContainer": 0.506,
+     "AtCoderCustomDefaultSubmissions": 0.36550000000000005
     },
     "perFeature": {}
    },
    "C_own": {
     "userscriptMs": {
-     "median": 16.44,
-     "q1": 16.44,
-     "q3": 16.44,
-     "n": 1
+     "median": 15.2,
+     "q1": 14.58,
+     "q3": 15.82,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 16.44
+     "CpToolkit": 15.2
     },
     "perFeature": {
-     "task-dropdown": 6.423,
-     "(core:domain)": 5.994000000000001,
-     "(core:adapters)": 1.1560000000000001,
-     "(unknown)": 1.065,
-     "(core:application)": 0.9129999999999999,
-     "(core:app)": 0.7190000000000001,
-     "(lib)": 0.17
+     "task-dropdown": 5.4305,
+     "(core:domain)": 3.7585000000000006,
+     "(core:app)": 2.5655,
+     "(core:adapters)": 1.3995,
+     "(unknown)": 1.0255,
+     "(core:application)": 0.643,
+     "java-submit": 0.199,
+     "settings-panel": 0.0935,
+     "(lib)": 0.085
     }
    },
    "B_all": {
     "userscriptMs": {
-     "median": 9.5,
-     "q1": 9.5,
-     "q3": 9.5,
-     "n": 1
+     "median": 11.116499999999998,
+     "q1": 10.30825,
+     "q3": 11.924749999999998,
+     "n": 2
     },
     "perScript": {
-     "AtCoderListingTasks": 3.251,
-     "VirtualTimer": 2.732,
-     "JavaCodeSubmitter": 1.345,
-     "AtCoderCustomDefaultSubmissions": 0.9159999999999999,
-     "AtCoderWidenContainer": 0.592,
-     "ResultNotifier": 0.45699999999999996,
-     "GoogleCalender": 0.207
+     "AtCoderListingTasks": 5.3149999999999995,
+     "VirtualTimer": 2.4995000000000003,
+     "JavaCodeSubmitter": 1.407,
+     "AtCoderCustomDefaultSubmissions": 0.6425,
+     "EasyAccordion": 0.56,
+     "AtCoderWidenContainer": 0.296,
+     "ResultNotifier": 0.293,
+     "GoogleCalender": 0.1035
     },
     "perFeature": {}
    },
    "C_eq": {
     "userscriptMs": {
-     "median": 15.741999999999999,
-     "q1": 15.741999999999999,
-     "q3": 15.741999999999999,
-     "n": 1
+     "median": 14.599499999999999,
+     "q1": 14.028249999999998,
+     "q3": 15.170749999999998,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 15.741999999999999
+     "CpToolkit": 14.599499999999999
     },
     "perFeature": {
-     "(core:application)": 3.3609999999999998,
-     "task-dropdown": 2.238,
-     "(core:domain)": 2.137,
-     "(unknown)": 1.7159999999999997,
-     "(core:app)": 1.563,
-     "(core:adapters)": 1.3049999999999997,
-     "virtual-timer": 0.934,
-     "settings-panel": 0.722,
-     "latest-contests": 0.436,
-     "task-status": 0.229,
-     "contest-calendar": 0.227,
-     "(lib)": 0.183,
-     "hover-menu": 0.183,
-     "result-notifier": 0.177,
-     "wide-layout": 0.166,
-     "java-submit": 0.165
+     "task-dropdown": 3.4160000000000004,
+     "(core:application)": 2.69,
+     "(core:domain)": 1.9465,
+     "(core:app)": 1.174,
+     "settings-panel": 1.1175,
+     "(core:adapters)": 1.0524999999999998,
+     "(unknown)": 0.8579999999999999,
+     "virtual-timer": 0.554,
+     "latest-contests": 0.443,
+     "java-submit": 0.33399999999999996,
+     "wide-layout": 0.257,
+     "contest-calendar": 0.1985,
+     "hover-menu": 0.1785,
+     "result-notifier": 0.174,
+     "task-status": 0.1145,
+     "(lib)": 0.0915
     }
    },
    "C_default": {
     "userscriptMs": {
-     "median": 9.008,
-     "q1": 9.008,
-     "q3": 9.008,
-     "n": 1
+     "median": 13.038999999999998,
+     "q1": 11.023499999999999,
+     "q3": 15.054499999999997,
+     "n": 2
     },
     "perScript": {
-     "CpToolkit": 9.008
+     "CpToolkit": 13.038999999999998
     },
     "perFeature": {
-     "task-dropdown": 3.464,
-     "(core:application)": 1.514,
-     "clar-notifier": 1.055,
-     "(core:adapters)": 0.8300000000000001,
-     "latest-contests": 0.542,
-     "(core:shared)": 0.324,
-     "(core:app)": 0.191,
-     "result-notifier": 0.188,
-     "java-submit": 0.187,
-     "settings-panel": 0.184,
-     "hover-menu": 0.184,
-     "(core:ui)": 0.175,
-     "task-status": 0.17
+     "task-dropdown": 4.8445,
+     "(core:application)": 1.561,
+     "clar-notifier": 1.4465,
+     "(core:adapters)": 1.1515,
+     "(core:domain)": 0.835,
+     "(core:app)": 0.7449999999999999,
+     "(unknown)": 0.7394999999999999,
+     "settings-panel": 0.448,
+     "result-notifier": 0.29700000000000004,
+     "latest-contests": 0.271,
+     "java-submit": 0.1875,
+     "hover-menu": 0.178,
+     "(core:shared)": 0.162,
+     "(core:ui)": 0.0875,
+     "task-status": 0.085
     }
    }
   },
@@ -761,13 +774,631 @@
      "(core:ui)": 0.191,
      "java-submit": 0.185
     }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 19.053000000000004,
+     "q1": 19.053000000000004,
+     "q3": 19.053000000000004,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 19.053000000000004
+    },
+    "perFeature": {
+     "(core:application)": 4.206,
+     "task-dropdown": 3.536,
+     "clar-notifier": 3.13,
+     "(core:adapters)": 2.7710000000000004,
+     "(unknown)": 1.603,
+     "virtual-timer": 1.201,
+     "settings-panel": 1.082,
+     "(core:domain)": 0.364,
+     "latest-contests": 0.355,
+     "wide-layout": 0.249,
+     "hover-menu": 0.193,
+     "result-notifier": 0.189,
+     "(core:shared)": 0.174
+    }
    }
   },
-  "task": {},
-  "editorial": {},
-  "user": {},
-  "history": {},
-  "tessoku": {}
+  "task": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 34.731,
+     "q1": 34.731,
+     "q3": 34.731,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderHighlighter": 14.857000000000001,
+     "AtCoderListingTasks": 6.891999999999999,
+     "AtCoderEasyTestForJava": 3.799,
+     "AtCoderMarkdownCopier": 3.6890000000000005,
+     "AtCoderCustomDefaultSubmissions": 3.362,
+     "JavaCodeSubmitter": 1.79,
+     "AtCoderWidenContainer": 0.34199999999999997
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 36.967,
+     "q1": 36.967,
+     "q3": 36.967,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 36.967
+    },
+    "perFeature": {
+     "task-dropdown": 8.084999999999999,
+     "statement-highlight": 6.593,
+     "easy-test": 4.431,
+     "(core:domain)": 4.4079999999999995,
+     "(core:adapters)": 3.873,
+     "(core:app)": 3.782,
+     "(core:application)": 2.35,
+     "(unknown)": 1.4000000000000001,
+     "statement-copy": 1.204,
+     "submission-shortcuts": 0.45999999999999996,
+     "(lib)": 0.192,
+     "settings-panel": 0.189
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 42.00099999999999,
+     "q1": 42.00099999999999,
+     "q3": 42.00099999999999,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderHighlighter": 16.519,
+     "AtCoderListingTasks": 5.369000000000001,
+     "ProblemCopier": 4.807,
+     "AtCoderEasyTestForJava": 3.2729999999999997,
+     "AtCoderMarkdownCopier": 2.6899999999999995,
+     "VirtualTimer": 2.686,
+     "JavaCodeSubmitter": 1.8179999999999998,
+     "EfficientLayout": 1.303,
+     "AtCoderCustomDefaultSubmissions": 0.9169999999999999,
+     "AtCoderWidenContainer": 0.7969999999999999,
+     "LanguageButtons": 0.596,
+     "ResultNotifier": 0.489,
+     "EasyAccordion": 0.368,
+     "GoogleCalender": 0.192,
+     "QuestionCopier": 0.177
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 36.977,
+     "q1": 36.977,
+     "q3": 36.977,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 36.977
+    },
+    "perFeature": {
+     "statement-highlight": 9.843,
+     "task-dropdown": 6.402000000000001,
+     "easy-test": 4.934,
+     "(core:domain)": 4.183,
+     "(core:application)": 1.957,
+     "efficient-layout": 1.729,
+     "(unknown)": 1.5419999999999998,
+     "contest-calendar": 1.383,
+     "(core:adapters)": 1.3760000000000001,
+     "statement-copy": 1.222,
+     "latest-contests": 0.751,
+     "submission-shortcuts": 0.5740000000000001,
+     "task-status": 0.187,
+     "language-buttons": 0.186,
+     "result-notifier": 0.183,
+     "(core:app)": 0.181,
+     "(core:shared)": 0.177,
+     "(lib)": 0.167
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 37.689000000000014,
+     "q1": 37.689000000000014,
+     "q3": 37.689000000000014,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 37.689000000000014
+    },
+    "perFeature": {
+     "statement-highlight": 13.643999999999997,
+     "(core:application)": 6.6930000000000005,
+     "(core:adapters)": 3.7969999999999997,
+     "task-dropdown": 3.215,
+     "(core:app)": 2.081,
+     "statement-copy": 1.458,
+     "(core:domain)": 1.3659999999999999,
+     "clar-notifier": 1.337,
+     "settings-panel": 0.8819999999999999,
+     "latest-contests": 0.525,
+     "contest-calendar": 0.48,
+     "(unknown)": 0.44,
+     "submission-shortcuts": 0.373,
+     "hover-menu": 0.294,
+     "language-buttons": 0.222,
+     "variable-hover": 0.18,
+     "(core:shared)": 0.179,
+     "virtual-timer": 0.178,
+     "(lib)": 0.175,
+     "result-notifier": 0.17
+    }
+   }
+  },
+  "editorial": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 9.134,
+     "q1": 9.134,
+     "q3": 9.134,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 6.3629999999999995,
+     "JavaCodeSubmitter": 1.559,
+     "AtCoderCustomDefaultSubmissions": 0.762,
+     "AtCoderWidenContainer": 0.45
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 14.304,
+     "q1": 14.304,
+     "q3": 14.304,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 14.304
+    },
+    "perFeature": {
+     "task-dropdown": 4.096,
+     "(core:app)": 2.9250000000000003,
+     "(core:domain)": 1.795,
+     "(core:adapters)": 1.5550000000000002,
+     "(core:application)": 1.302,
+     "(unknown)": 1.0210000000000001,
+     "settings-panel": 0.663,
+     "java-submit": 0.476,
+     "(core:catalog)": 0.242,
+     "(lib)": 0.229
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 55.706999999999994,
+     "q1": 55.706999999999994,
+     "q3": 55.706999999999994,
+     "n": 1
+    },
+    "perScript": {
+     "ViewAllEditorials": 41.464999999999996,
+     "AtCoderListingTasks": 8.102,
+     "VirtualTimer": 2.251,
+     "JavaCodeSubmitter": 1.589,
+     "ResultNotifier": 1.15,
+     "AtCoderCustomDefaultSubmissions": 0.73,
+     "AtCoderWidenContainer": 0.42000000000000004
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 24.71999999999999,
+     "q1": 24.71999999999999,
+     "q3": 24.71999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 24.71999999999999
+    },
+    "perFeature": {
+     "editorial-list": 5.321000000000001,
+     "(core:adapters)": 4.588,
+     "task-dropdown": 4.051,
+     "(core:app)": 3.142,
+     "(core:domain)": 2.606,
+     "(core:application)": 2.4379999999999997,
+     "(unknown)": 0.7389999999999999,
+     "hover-menu": 0.405,
+     "result-notifier": 0.386,
+     "settings-panel": 0.365,
+     "latest-contests": 0.174,
+     "contest-calendar": 0.173,
+     "(lib)": 0.168,
+     "(core:shared)": 0.164
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 23.999000000000002,
+     "q1": 23.999000000000002,
+     "q3": 23.999000000000002,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 23.999000000000002
+    },
+    "perFeature": {
+     "(core:application)": 7.873,
+     "editorial-list": 3.8920000000000003,
+     "clar-notifier": 3.6630000000000003,
+     "task-dropdown": 2.5620000000000003,
+     "(core:adapters)": 2.467,
+     "(core:domain)": 1.107,
+     "(core:app)": 0.982,
+     "(unknown)": 0.376,
+     "settings-panel": 0.367,
+     "latest-contests": 0.183,
+     "java-submit": 0.183,
+     "result-notifier": 0.176,
+     "wide-layout": 0.168
+    }
+   }
+  },
+  "user": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 1.598,
+     "q1": 1.598,
+     "q3": 1.598,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderPerformanceOverlay": 1.314,
+     "AtCoderWidenContainer": 0.284
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 8.999,
+     "q1": 8.999,
+     "q3": 8.999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 8.999
+    },
+    "perFeature": {
+     "(core:adapters)": 2.1660000000000004,
+     "(core:app)": 1.8399999999999999,
+     "rating-graph": 1.471,
+     "(core:domain)": 1.4360000000000002,
+     "(unknown)": 1.182,
+     "(core:shared)": 0.514,
+     "wide-layout": 0.204,
+     "(core:application)": 0.186
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 2.7,
+     "q1": 2.7,
+     "q3": 2.7,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderPerformanceOverlay": 1.8330000000000002,
+     "ResultNotifier": 0.439,
+     "AtCoderWidenContainer": 0.238,
+     "EasyAccordion": 0.19
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 16.931,
+     "q1": 16.931,
+     "q3": 16.931,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 16.931
+    },
+    "perFeature": {
+     "(core:app)": 3.566,
+     "(core:adapters)": 3.1630000000000003,
+     "(core:domain)": 2.9599999999999995,
+     "(unknown)": 2.299,
+     "(core:application)": 1.962,
+     "rating-graph": 0.7849999999999999,
+     "(core:shared)": 0.645,
+     "settings-panel": 0.518,
+     "result-notifier": 0.347,
+     "latest-contests": 0.333,
+     "hover-menu": 0.185,
+     "wide-layout": 0.168
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 8.965,
+     "q1": 8.965,
+     "q3": 8.965,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 8.965
+    },
+    "perFeature": {
+     "(core:adapters)": 2.043,
+     "rating-graph": 1.876,
+     "(core:shared)": 1.3780000000000001,
+     "(core:app)": 1.115,
+     "(core:application)": 0.617,
+     "settings-panel": 0.578,
+     "(core:domain)": 0.5509999999999999,
+     "hover-menu": 0.224,
+     "latest-contests": 0.223,
+     "wide-layout": 0.181,
+     "result-notifier": 0.179
+    }
+   }
+  },
+  "history": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 0.454,
+     "q1": 0.454,
+     "q3": 0.454,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderWidenContainer": 0.454
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 10.524999999999999,
+     "q1": 10.524999999999999,
+     "q3": 10.524999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 10.524999999999999
+    },
+    "perFeature": {
+     "(core:adapters)": 5.973999999999998,
+     "(core:app)": 1.127,
+     "(unknown)": 1.085,
+     "(core:domain)": 0.7989999999999999,
+     "settings-panel": 0.676,
+     "(core:application)": 0.665,
+     "wide-layout": 0.199
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 11.479000000000001,
+     "q1": 11.479000000000001,
+     "q3": 11.479000000000001,
+     "n": 1
+    },
+    "perScript": {
+     "PerformanceColorizer": 10.414,
+     "ResultNotifier": 0.484,
+     "EasyAccordion": 0.396,
+     "AtCoderWidenContainer": 0.185
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 11.461,
+     "q1": 11.461,
+     "q3": 11.461,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 11.461
+    },
+    "perFeature": {
+     "(core:adapters)": 3.052,
+     "(core:domain)": 1.759,
+     "settings-panel": 1.6700000000000002,
+     "history-colors": 1.419,
+     "(unknown)": 1.089,
+     "(core:application)": 0.728,
+     "(core:app)": 0.528,
+     "hover-menu": 0.358,
+     "latest-contests": 0.341,
+     "result-notifier": 0.33999999999999997,
+     "(lib)": 0.177
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 5.92,
+     "q1": 5.92,
+     "q3": 5.92,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 5.92
+    },
+    "perFeature": {
+     "(core:application)": 1.06,
+     "history-colors": 1.057,
+     "(core:domain)": 0.945,
+     "settings-panel": 0.769,
+     "(core:adapters)": 0.5960000000000001,
+     "(core:app)": 0.509,
+     "wide-layout": 0.306,
+     "hover-menu": 0.286,
+     "latest-contests": 0.203,
+     "result-notifier": 0.189
+    }
+   }
+  },
+  "tessoku": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 8.463999999999999,
+     "q1": 8.463999999999999,
+     "q3": 8.463999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 6.170999999999999,
+     "JavaCodeSubmitter": 1.245,
+     "AtCoderCustomDefaultSubmissions": 0.536,
+     "AtCoderWidenContainer": 0.512
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 23.975999999999996,
+     "q1": 23.975999999999996,
+     "q3": 23.975999999999996,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 23.975999999999996
+    },
+    "perFeature": {
+     "task-dropdown": 13.919,
+     "(core:domain)": 3.757,
+     "(core:application)": 2.2790000000000004,
+     "(core:adapters)": 1.4449999999999998,
+     "(unknown)": 1.1019999999999999,
+     "(core:app)": 0.829,
+     "settings-panel": 0.278,
+     "wide-layout": 0.188,
+     "(lib)": 0.179
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 7.968999999999999,
+     "q1": 7.968999999999999,
+     "q3": 7.968999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "VirtualTimer": 3.015,
+     "AtCoderListingTasks": 2.9679999999999995,
+     "JavaCodeSubmitter": 1.986
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 24.389999999999993,
+     "q1": 24.389999999999993,
+     "q3": 24.389999999999993,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 24.389999999999993
+    },
+    "perFeature": {
+     "task-dropdown": 9.017,
+     "(core:application)": 4.273000000000001,
+     "java-submit": 3.298,
+     "(core:app)": 1.67,
+     "(core:adapters)": 1.3569999999999998,
+     "settings-panel": 1.2979999999999998,
+     "(core:domain)": 1.249,
+     "tessoku-difficulty": 0.8240000000000001,
+     "contest-calendar": 0.368,
+     "result-notifier": 0.316,
+     "virtual-timer": 0.193,
+     "wide-layout": 0.178,
+     "latest-contests": 0.178,
+     "hover-menu": 0.171
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 21.752000000000002,
+     "q1": 21.752000000000002,
+     "q3": 21.752000000000002,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 21.752000000000002
+    },
+    "perFeature": {
+     "task-dropdown": 12.175999999999997,
+     "(core:application)": 2.597,
+     "(core:adapters)": 2.374,
+     "(core:app)": 1.611,
+     "(core:domain)": 1.042,
+     "(unknown)": 0.747,
+     "result-notifier": 0.234,
+     "hover-menu": 0.226,
+     "settings-panel": 0.224,
+     "wide-layout": 0.181,
+     "java-submit": 0.176,
+     "contest-calendar": 0.164
+    }
+   }
+  }
  },
  "trace": {
   "top": {
@@ -9893,5 +10524,207 @@
     ]
    }
   }
+ },
+ "memory": {
+  "top": {},
+  "contests": {},
+  "contest": {},
+  "tasks": {},
+  "task": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 3.6721343994140625,
+     "q1": 3.6721343994140625,
+     "q3": 3.6721343994140625,
+     "n": 1
+    },
+    "heapBeforeGcMB": {
+     "median": 5.563209533691406,
+     "q1": 5.563209533691406,
+     "q3": 5.563209533691406,
+     "n": 1
+    },
+    "domNodes": {
+     "median": 2321,
+     "q1": 2321,
+     "q3": 2321,
+     "n": 1
+    },
+    "listeners": {
+     "median": 68,
+     "q1": 68,
+     "q3": 68,
+     "n": 1
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 1
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "v8ApiKB": {
+     "median": 722.65234375,
+     "q1": 722.65234375,
+     "q3": 722.65234375,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 5.5786590576171875,
+     "q1": 5.5786590576171875,
+     "q3": 5.5786590576171875,
+     "n": 1
+    },
+    "heapBeforeGcMB": {
+     "median": 9.120296478271484,
+     "q1": 9.120296478271484,
+     "q3": 9.120296478271484,
+     "n": 1
+    },
+    "domNodes": {
+     "median": 2556,
+     "q1": 2556,
+     "q3": 2556,
+     "n": 1
+    },
+    "listeners": {
+     "median": 139,
+     "q1": 139,
+     "q3": 139,
+     "n": 1
+    },
+    "documents": {
+     "median": 3,
+     "q1": 3,
+     "q3": 3,
+     "n": 1
+    },
+    "userscriptKB": {
+     "median": 189.39453125,
+     "q1": 189.39453125,
+     "q3": 189.39453125,
+     "n": 1
+    },
+    "scriptCodeKB": {
+     "median": 548.10546875,
+     "q1": 548.10546875,
+     "q3": 548.10546875,
+     "n": 1
+    },
+    "v8ApiKB": {
+     "median": 1691.32421875,
+     "q1": 1691.32421875,
+     "q3": 1691.32421875,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 52.3671875,
+     "AtCoderHighlighter": 46.3125,
+     "ProblemCopier": 25.2890625,
+     "AtCoderMarkdownCopier": 24.62109375,
+     "AtCoderWidenContainer": 14.98828125,
+     "JavaCodeSubmitter": 12.2421875,
+     "AtCoderCustomDefaultSubmissions": 6.40625,
+     "EfficientLayout": 2.0625,
+     "AtCoderEasyTestForJava": 2.02734375,
+     "EasyAccordion": 1.03125,
+     "SubmissionTimer": 1.03125,
+     "ResultNotifier": 1.015625
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 5.461963653564453,
+     "q1": 5.461963653564453,
+     "q3": 5.461963653564453,
+     "n": 1
+    },
+    "heapBeforeGcMB": {
+     "median": 8.838188171386719,
+     "q1": 8.838188171386719,
+     "q3": 8.838188171386719,
+     "n": 1
+    },
+    "domNodes": {
+     "median": 2683,
+     "q1": 2683,
+     "q3": 2683,
+     "n": 1
+    },
+    "listeners": {
+     "median": 139,
+     "q1": 139,
+     "q3": 139,
+     "n": 1
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 1
+    },
+    "userscriptKB": {
+     "median": 323.421875,
+     "q1": 323.421875,
+     "q3": 323.421875,
+     "n": 1
+    },
+    "scriptCodeKB": {
+     "median": 819.30078125,
+     "q1": 819.30078125,
+     "q3": 819.30078125,
+     "n": 1
+    },
+    "v8ApiKB": {
+     "median": 1445.6015625,
+     "q1": 1445.6015625,
+     "q3": 1445.6015625,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 323.421875
+    },
+    "perFeature": {
+     "(unknown)": 93.1796875,
+     "statement-highlight": 41.76171875,
+     "easy-test": 38.28125,
+     "(core:application)": 34.98828125,
+     "(core:app)": 27.7421875,
+     "task-dropdown": 17.578125,
+     "(core:domain)": 15.390625,
+     "statement-copy": 12.47265625,
+     "(core:adapters)": 8.19140625,
+     "efficient-layout": 6.390625,
+     "settings-panel": 6.33984375,
+     "java-submit": 4.2109375,
+     "submission-shortcuts": 3.5,
+     "hover-menu": 3.09375,
+     "wide-layout": 3.08984375,
+     "result-notifier": 3.0546875,
+     "language-buttons": 2.109375,
+     "virtual-timer": 2.046875
+    }
+   }
+  },
+  "editorial": {},
+  "user": {},
+  "history": {},
+  "tessoku": {}
  }
 }

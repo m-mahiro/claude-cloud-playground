@@ -199,6 +199,46 @@ function analyzeProfile(rows) {
 	return out;
 }
 
+// ---- メモリ(GC 後) ----
+const SHIM_FRAMES = new Set(["run", "onDcl", "onRoot", "__usBoot"]);
+function analyzeMemory(rows) {
+	const out = {};
+	for (const page of PAGES) {
+		const byCond = {};
+		for (const cond of CONDS) {
+			const rs = rows.filter((r) => r.page === page && r.cond === cond);
+			if (!rs.length) continue;
+			const perScript = {};
+			const perFeature = {};
+			for (const r of rs) {
+				for (const [k, v] of Object.entries(r.heapByScript)) if (k.startsWith("us:")) (perScript[k.slice(3)] ??= []).push(v / 1024);
+				const acc = {};
+				for (const [stack, b] of Object.entries(r.heapToolkitStacks ?? {})) {
+					const owner = stack ? ownerOfFrames(stack.split(" < ")) : "(top-level)";
+					acc[owner] = (acc[owner] || 0) + b / 1024;
+				}
+				for (const [k, v] of Object.entries(acc)) (perFeature[k] ??= []).push(v);
+			}
+			const med = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, median([...v, ...new Array(rs.length - v.length).fill(0)])]).sort((a, b) => b[1] - a[1]));
+			byCond[cond] = {
+				heapAfterGcMB: summary(rs.map((r) => r.afterGc.JSHeapUsedSize / 1048576)),
+				heapBeforeGcMB: summary(rs.map((r) => r.metrics.JSHeapUsedSize / 1048576)),
+				domNodes: summary(rs.map((r) => r.domCounters.nodes)),
+				listeners: summary(rs.map((r) => r.domCounters.jsEventListeners)),
+				documents: summary(rs.map((r) => r.domCounters.documents)),
+				// UserScript が確保して GC 後も残ったもの(KB)。shim の run は eval で読み込んだコード本体
+				userscriptKB: summary(rs.map((r) => Object.entries(r.heapByScript).filter(([k]) => k.startsWith("us:")).reduce((s2, [, v]) => s2 + v, 0) / 1024)),
+				scriptCodeKB: summary(rs.map((r) => Object.entries(r.heapByScript).filter(([k]) => SHIM_FRAMES.has(k)).reduce((s2, [, v]) => s2 + v, 0) / 1024)),
+				v8ApiKB: summary(rs.map((r) => (r.heapByScript["(V8 API)"] ?? 0) / 1024)),
+				perScript: med(perScript),
+				perFeature: med(perFeature),
+			};
+		}
+		out[page] = byCond;
+	}
+	return out;
+}
+
 // ---- DOM の重複アクセス ----
 const opKind = (op) => op.split(":")[0]; // query / read / write / observe
 function analyzeTrace(rows) {
@@ -312,8 +352,8 @@ const summaryJson = {
 	generatedAt: new Date().toISOString(),
 	counts: {
 		perfX1: perfX1.length, perfX4: perfX4.length, idle: read("idle-x1.jsonl").length,
-		profile: read("profile-x1.jsonl").length, trace: read("trace.jsonl").length,
-		failed: ["perf-x1.jsonl", "perf-x4.jsonl", "idle-x1.jsonl", "profile-x1.jsonl", "trace.jsonl"].reduce((s, f) => s + failedCount(f), 0),
+		profile: read("profile-x1.jsonl").length, trace: read("trace.jsonl").length, memory: read("memory-x1.jsonl").length,
+		failed: ["perf-x1.jsonl", "perf-x4.jsonl", "idle-x1.jsonl", "profile-x1.jsonl", "trace.jsonl", "memory-x1.jsonl"].reduce((s, f) => s + failedCount(f), 0),
 	},
 	scriptsPerPage: Object.fromEntries(PAGES.map((p) => [p, Object.fromEntries(CONDS.map((c) => [c, perfX1.find((r) => r.page === p && r.cond === c)?.scripts ?? []]))])),
 	errors: Object.fromEntries(PAGES.map((p) => [p, Object.fromEntries(CONDS.map((c) => [c, [...new Set(perfX1.filter((r) => r.page === p && r.cond === c).flatMap((r) => r.page_.us?.errors ?? []).map((e) => `${e.id}: ${e.message.split("\n")[0]}`))]]))])),
@@ -322,6 +362,7 @@ const summaryJson = {
 	idle: analyzeIdle(read("idle-x1.jsonl")),
 	profile: analyzeProfile(read("profile-x1.jsonl")),
 	trace: analyzeTrace(read("trace.jsonl")),
+	memory: analyzeMemory(read("memory-x1.jsonl")),
 };
 writeFileSync(R + "summary.json", JSON.stringify(summaryJson, null, 1));
 console.log("wrote results/summary.json", summaryJson.counts);
