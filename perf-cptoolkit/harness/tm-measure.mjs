@@ -8,7 +8,7 @@
 //   idle   … 読み込み後に放置したあいだの CPU 時間
 // 条件ごとに Chromium のプロファイルを分け、Tampermonkey を入れたまま繰り返し開く。
 // どの回も、計測のあとで「実際に動いたスクリプト」を Debugger から集めて記録する。
-import {appendFileSync, mkdirSync, readFileSync, writeFileSync, existsSync} from "node:fs";
+import {appendFileSync, mkdirSync, readFileSync, rmSync, writeFileSync} from "node:fs";
 import http from "node:http";
 import {createRequire} from "node:module";
 import {join} from "node:path";
@@ -22,18 +22,20 @@ const {values: args} = parseArgs({
 	options: {
 		crx: {type: "string"},
 		profiles: {type: "string", default: "/tmp/cp-perf-tm-profiles"},
-		n: {type: "string", default: "8"},
 		pages: {type: "string", default: Object.keys(PAGES).join(",")},
 		conds: {type: "string", default: "A,B_own,C_own,B_all,C_eq"},
-		out: {type: "string", default: "results/tm-x1.jsonl"},
-		mode: {type: "string", default: "cpu"},
-		throttle: {type: "string", default: "1"},
+		out: {type: "string", default: "results/tm"}, // <out>-<mode>-x<倍率>.jsonl に書く
+		// 「モード:回数[:CPU を遅くする倍率]」をカンマで並べる。ブラウザを起動し直すと Tampermonkey の
+		// スクリプトが動かなくなるので、全モードを1回の起動の中で続けて測る
+		plan: {type: "string", default: "cpu:8,memory:5,perf:10,perf:6:4,idle:3"},
+		"idle-pages": {type: "string", default: "top,contest,task,user"},
 		idle: {type: "string", default: "15000"},
 	},
 });
-const N = Number(args.n);
-const throttle = Number(args.throttle);
-const SETTLE = throttle > 1 ? 6000 : 3000;
+const PLAN = args.plan.split(",").map((step) => {
+	const [mode, n, rate = "1"] = step.split(":");
+	return {mode, n: Number(n), throttle: Number(rate)};
+});
 // CP Toolkit は、ソースマップで機能へ割り振れる版(中身は配布物と同じ、整形なし)を入れる
 const conditions = loadConditions({analysisBuild: true});
 const scriptIdByTmName = new Map();
@@ -68,7 +70,8 @@ function withSeed(script) {
 
 async function launch(cond) {
 	const dir = join(args.profiles, cond);
-	const fresh = !existsSync(join(dir, "installed.json"));
+	rmSync(dir, {recursive: true, force: true}); // 毎回入れ直す
+	const fresh = true;
 	mkdirSync(dir, {recursive: true});
 	const context = await chromium.launchPersistentContext(join(dir, "profile"), {
 		headless: true,
@@ -228,8 +231,8 @@ const TOOLKIT_SRC = readFileSync(new URL("../scripts/cptoolkit/CpToolkit.analysi
 const TOOLKIT_ANCHOR = "document.documentElement.dataset.cpToolkit = host.version;";
 const TOOLKIT_ANCHOR_LINE = TOOLKIT_SRC.findIndex((l) => l.includes(TOOLKIT_ANCHOR));
 
-async function runOnce(env, cond, pageKey, iteration) {
-	const mode = args.mode;
+async function runOnce(env, cond, pageKey, iteration, mode, throttle) {
+	const SETTLE = throttle > 1 ? 6000 : 3000;
 	const page = await env.context.newPage();
 	if (mode === "perf") await page.addInitScript(LONGTASK_JS);
 	const cdp = await env.context.newCDPSession(page);
@@ -283,26 +286,31 @@ async function runOnce(env, cond, pageKey, iteration) {
 }
 
 const condKeys = args.conds.split(",");
-const pageKeys = args.pages.split(",");
 const envs = {};
 for (const c of condKeys) envs[c] = await launch(c);
 console.log("installed:", Object.fromEntries(condKeys.map((c) => [c, envs[c].installed.length])));
 mkdirSync("results", {recursive: true});
-let done = 0;
-const total = N * pageKeys.length * condKeys.length;
-for (let i = 0; i < N; i++) {
-	for (const pageKey of pageKeys) {
-		for (const cond of condKeys) {
-			let row;
-			try {
-				row = await runOnce(envs[cond], cond, pageKey, i);
-			} catch (e) {
-				row = {mode: `tm-${args.mode}`, cond, page: pageKey, iteration: i, throttle, failed: String(e).slice(0, 400)};
+for (const {mode, n, throttle} of PLAN) {
+	const pageKeys = (mode === "idle" ? args["idle-pages"] : args.pages).split(",");
+	const out = `${args.out}-${mode}-x${throttle}.jsonl`;
+	let done = 0;
+	const total = n * pageKeys.length * condKeys.length;
+	// 条件を順番に回し、時間による偏りを条件の間で均す
+	for (let i = 0; i < n; i++) {
+		for (const pageKey of pageKeys) {
+			for (const cond of condKeys) {
+				let row;
+				try {
+					row = await runOnce(envs[cond], cond, pageKey, i, mode, throttle);
+				} catch (e) {
+					row = {mode: `tm-${mode}`, cond, page: pageKey, iteration: i, throttle, failed: String(e).slice(0, 400)};
+				}
+				appendFileSync(out, `${JSON.stringify(row)}\n`);
+				if (++done % 20 === 0 || row.failed) console.log(`[tm-${mode} x${throttle}] ${done}/${total} ${pageKey} ${cond} ran=${row.ran?.length ?? "-"} ${row.failed ?? ""}`);
 			}
-			appendFileSync(args.out, `${JSON.stringify(row)}\n`);
-			if (++done % 10 === 0 || row.failed) console.log(`[tm-${args.mode} x${throttle}] ${done}/${total} ${pageKey} ${cond} ran=${row.ran?.length ?? "-"} ${row.failed ?? ""}`);
 		}
 	}
+	console.log(`done ${mode} x${throttle}`);
 }
 for (const e of Object.values(envs)) await e.context.close();
 server.close();
