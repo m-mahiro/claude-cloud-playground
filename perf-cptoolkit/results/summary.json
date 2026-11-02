@@ -1,11 +1,11 @@
 {
- "generatedAt": "2026-11-02T12:10:29.023Z",
+ "generatedAt": "2026-11-02T12:17:07.345Z",
  "counts": {
   "perfX1": 0,
   "perfX4": 0,
   "idle": 0,
-  "profile": 0,
-  "trace": 23,
+  "profile": 23,
+  "trace": 108,
   "failed": 0
  },
  "scriptsPerPage": {
@@ -348,10 +348,421 @@
  },
  "idle": {},
  "profile": {
-  "top": {},
-  "contests": {},
-  "contest": {},
-  "tasks": {},
+  "top": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 8.485,
+     "q1": 8.485,
+     "q3": 8.485,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 8.485
+    },
+    "perFeature": {
+     "(core:domain)": 5.966,
+     "(unknown)": 1.932,
+     "(core:adapters)": 0.378,
+     "(core:app)": 0.209
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 2.033,
+     "q1": 2.033,
+     "q3": 2.033,
+     "n": 1
+    },
+    "perScript": {
+     "ContestDescriptionLink": 1.671,
+     "ResultNotifier": 0.362
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 7.516999999999999,
+     "q1": 7.516999999999999,
+     "q3": 7.516999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 7.516999999999999
+    },
+    "perFeature": {
+     "(core:domain)": 1.587,
+     "(core:application)": 1.504,
+     "(core:app)": 1.39,
+     "settings-panel": 0.873,
+     "(unknown)": 0.6950000000000001,
+     "result-notifier": 0.4,
+     "(core:adapters)": 0.364,
+     "top-links": 0.361,
+     "latest-contests": 0.177,
+     "(lib)": 0.166
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 9.805,
+     "q1": 9.805,
+     "q3": 9.805,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 9.805
+    },
+    "perFeature": {
+     "(core:app)": 3.4859999999999998,
+     "(core:adapters)": 1.517,
+     "(lib)": 1.458,
+     "latest-contests": 1.133,
+     "(unknown)": 0.6619999999999999,
+     "(core:domain)": 0.57,
+     "top-links": 0.5209999999999999,
+     "(core:application)": 0.458
+    }
+   }
+  },
+  "contests": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 1.661,
+     "q1": 1.661,
+     "q3": 1.661,
+     "n": 1
+    },
+    "perScript": {
+     "JavaCodeSubmitter": 1.661
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 5.599999999999999,
+     "q1": 5.599999999999999,
+     "q3": 5.599999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 5.599999999999999
+    },
+    "perFeature": {
+     "(core:app)": 1.4620000000000002,
+     "(core:domain)": 1.14,
+     "(unknown)": 0.867,
+     "(core:adapters)": 0.648,
+     "settings-panel": 0.546,
+     "(core:application)": 0.504,
+     "(lib)": 0.263,
+     "wide-layout": 0.17
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 5.314,
+     "q1": 5.314,
+     "q3": 5.314,
+     "n": 1
+    },
+    "perScript": {
+     "VirtualTimer": 2.559,
+     "JavaCodeSubmitter": 1.385,
+     "AtCoderWidenContainer": 0.667,
+     "AtCoderCustomDefaultSubmissions": 0.376,
+     "EasyAccordion": 0.327
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 12.969999999999999,
+     "q1": 12.969999999999999,
+     "q3": 12.969999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 12.969999999999999
+    },
+    "perFeature": {
+     "(core:application)": 5.362,
+     "(core:adapters)": 3.047,
+     "(unknown)": 1.808,
+     "(core:domain)": 0.7210000000000001,
+     "(core:app)": 0.5720000000000001,
+     "latest-contests": 0.35,
+     "(lib)": 0.285,
+     "hover-menu": 0.282,
+     "(core:shared)": 0.202,
+     "settings-panel": 0.173,
+     "result-notifier": 0.168
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 11.349000000000002,
+     "q1": 11.349000000000002,
+     "q3": 11.349000000000002,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 11.349000000000002
+    },
+    "perFeature": {
+     "(core:adapters)": 4.093,
+     "(core:domain)": 1.77,
+     "(core:app)": 1.706,
+     "(unknown)": 1.059,
+     "(core:application)": 0.907,
+     "latest-contests": 0.4,
+     "result-notifier": 0.347,
+     "settings-panel": 0.33599999999999997,
+     "(lib)": 0.2,
+     "(core:shared)": 0.179,
+     "hover-menu": 0.178,
+     "wide-layout": 0.174
+    }
+   }
+  },
+  "contest": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 9.789000000000001,
+     "q1": 9.789000000000001,
+     "q3": 9.789000000000001,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 6.465,
+     "JavaCodeSubmitter": 2.2300000000000004,
+     "AtCoderCustomDefaultSubmissions": 0.7310000000000001,
+     "AtCoderWidenContainer": 0.363
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 16.44,
+     "q1": 16.44,
+     "q3": 16.44,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 16.44
+    },
+    "perFeature": {
+     "task-dropdown": 6.423,
+     "(core:domain)": 5.994000000000001,
+     "(core:adapters)": 1.1560000000000001,
+     "(unknown)": 1.065,
+     "(core:application)": 0.9129999999999999,
+     "(core:app)": 0.7190000000000001,
+     "(lib)": 0.17
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 9.5,
+     "q1": 9.5,
+     "q3": 9.5,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 3.251,
+     "VirtualTimer": 2.732,
+     "JavaCodeSubmitter": 1.345,
+     "AtCoderCustomDefaultSubmissions": 0.9159999999999999,
+     "AtCoderWidenContainer": 0.592,
+     "ResultNotifier": 0.45699999999999996,
+     "GoogleCalender": 0.207
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 15.741999999999999,
+     "q1": 15.741999999999999,
+     "q3": 15.741999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 15.741999999999999
+    },
+    "perFeature": {
+     "(core:application)": 3.3609999999999998,
+     "task-dropdown": 2.238,
+     "(core:domain)": 2.137,
+     "(unknown)": 1.7159999999999997,
+     "(core:app)": 1.563,
+     "(core:adapters)": 1.3049999999999997,
+     "virtual-timer": 0.934,
+     "settings-panel": 0.722,
+     "latest-contests": 0.436,
+     "task-status": 0.229,
+     "contest-calendar": 0.227,
+     "(lib)": 0.183,
+     "hover-menu": 0.183,
+     "result-notifier": 0.177,
+     "wide-layout": 0.166,
+     "java-submit": 0.165
+    }
+   },
+   "C_default": {
+    "userscriptMs": {
+     "median": 9.008,
+     "q1": 9.008,
+     "q3": 9.008,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 9.008
+    },
+    "perFeature": {
+     "task-dropdown": 3.464,
+     "(core:application)": 1.514,
+     "clar-notifier": 1.055,
+     "(core:adapters)": 0.8300000000000001,
+     "latest-contests": 0.542,
+     "(core:shared)": 0.324,
+     "(core:app)": 0.191,
+     "result-notifier": 0.188,
+     "java-submit": 0.187,
+     "settings-panel": 0.184,
+     "hover-menu": 0.184,
+     "(core:ui)": 0.175,
+     "task-status": 0.17
+    }
+   }
+  },
+  "tasks": {
+   "A": {
+    "userscriptMs": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 1
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "userscriptMs": {
+     "median": 9.770000000000001,
+     "q1": 9.770000000000001,
+     "q3": 9.770000000000001,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 8.023000000000001,
+     "JavaCodeSubmitter": 1.407,
+     "AtCoderWidenContainer": 0.34
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "userscriptMs": {
+     "median": 9.734,
+     "q1": 9.734,
+     "q3": 9.734,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 9.734
+    },
+    "perFeature": {
+     "task-dropdown": 5.06,
+     "(core:adapters)": 1.9639999999999997,
+     "(core:application)": 0.912,
+     "(core:app)": 0.876,
+     "(core:domain)": 0.5780000000000001,
+     "settings-panel": 0.175,
+     "wide-layout": 0.169
+    }
+   },
+   "B_all": {
+    "userscriptMs": {
+     "median": 12.581999999999999,
+     "q1": 12.581999999999999,
+     "q3": 12.581999999999999,
+     "n": 1
+    },
+    "perScript": {
+     "AtCoderListingTasks": 6.535000000000001,
+     "VirtualTimer": 3.4089999999999994,
+     "JavaCodeSubmitter": 1.7499999999999998,
+     "AtCoderWidenContainer": 0.532,
+     "GoogleCalender": 0.356
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "userscriptMs": {
+     "median": 16.592000000000002,
+     "q1": 16.592000000000002,
+     "q3": 16.592000000000002,
+     "n": 1
+    },
+    "perScript": {
+     "CpToolkit": 16.592000000000002
+    },
+    "perFeature": {
+     "task-dropdown": 4.515000000000001,
+     "(core:application)": 2.6260000000000003,
+     "(core:adapters)": 2.0060000000000002,
+     "contest-calendar": 1.624,
+     "(core:domain)": 1.406,
+     "(core:app)": 1.048,
+     "settings-panel": 0.828,
+     "(unknown)": 0.664,
+     "result-notifier": 0.536,
+     "hover-menu": 0.469,
+     "(lib)": 0.29,
+     "latest-contests": 0.204,
+     "(core:ui)": 0.191,
+     "java-submit": 0.185
+    }
+   }
+  },
   "task": {},
   "editorial": {},
   "user": {},
@@ -375,7 +786,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 0,
-    "nodesScanned": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 0,
@@ -403,7 +816,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 0,
-    "nodesScanned": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 0,
@@ -431,7 +846,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 6,
-    "nodesScanned": 2253,
+    "nodesScannedUpperBound": 2253,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 2,
@@ -497,7 +914,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 12,
-    "nodesScanned": 5964,
+    "nodesScannedUpperBound": 5964,
+    "querySelectorAllCalls": 3,
+    "nodesScannedByQuerySelectorAll": 2233,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 6,
@@ -557,7 +976,9 @@
     "elementsWrittenByMultipleOwners": 2,
     "elementsByMultipleScripts": 0,
     "queryCalls": 12,
-    "nodesScanned": 6745,
+    "nodesScannedUpperBound": 6745,
+    "querySelectorAllCalls": 1,
+    "nodesScannedByQuerySelectorAll": 745,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 7,
@@ -677,7 +1098,9 @@
     "elementsWrittenByMultipleOwners": 2,
     "elementsByMultipleScripts": 0,
     "queryCalls": 12,
-    "nodesScanned": 6745,
+    "nodesScannedUpperBound": 6745,
+    "querySelectorAllCalls": 1,
+    "nodesScannedByQuerySelectorAll": 745,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 7,
@@ -799,7 +1222,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 0,
-    "nodesScanned": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 0,
@@ -827,7 +1252,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 3,
-    "nodesScanned": 1053,
+    "nodesScannedUpperBound": 1053,
+    "querySelectorAllCalls": 1,
+    "nodesScannedByQuerySelectorAll": 1053,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 0,
     "addEventListener": 2,
@@ -882,7 +1309,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 6,
-    "nodesScanned": 3189,
+    "nodesScannedUpperBound": 3189,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 2,
@@ -968,7 +1397,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 1,
     "queryCalls": 16,
-    "nodesScanned": 9711,
+    "nodesScannedUpperBound": 9711,
+    "querySelectorAllCalls": 3,
+    "nodesScannedByQuerySelectorAll": 3159,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 0,
     "addEventListener": 8,
@@ -1066,7 +1497,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 13,
-    "nodesScanned": 10590,
+    "nodesScannedUpperBound": 10590,
+    "querySelectorAllCalls": 2,
+    "nodesScannedByQuerySelectorAll": 2114,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 11,
@@ -1193,7 +1626,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 13,
-    "nodesScanned": 10590,
+    "nodesScannedUpperBound": 10590,
+    "querySelectorAllCalls": 2,
+    "nodesScannedByQuerySelectorAll": 2114,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 11,
@@ -1322,7 +1757,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 0,
-    "nodesScanned": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 0,
@@ -1350,7 +1787,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 14,
     "queryCalls": 206,
-    "nodesScanned": 3275,
+    "nodesScannedUpperBound": 3275,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 304,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 3,
     "addEventListener": 23,
@@ -1632,7 +2071,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 40,
-    "nodesScanned": 7876,
+    "nodesScannedUpperBound": 7876,
+    "querySelectorAllCalls": 8,
+    "nodesScannedByQuerySelectorAll": 285,
     "mutationObserversSubtree": 2,
     "mutationObserverCallbacks": 6,
     "addEventListener": 26,
@@ -1750,7 +2191,9 @@
     "elementsWrittenByMultipleOwners": 3,
     "elementsByMultipleScripts": 16,
     "queryCalls": 222,
-    "nodesScanned": 6751,
+    "nodesScannedUpperBound": 6751,
+    "querySelectorAllCalls": 13,
+    "nodesScannedByQuerySelectorAll": 1216,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 3,
     "addEventListener": 47,
@@ -2092,7 +2535,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 50,
-    "nodesScanned": 11144,
+    "nodesScannedUpperBound": 11144,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 901,
     "mutationObserversSubtree": 2,
     "mutationObserverCallbacks": 6,
     "addEventListener": 58,
@@ -2276,7 +2721,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 51,
-    "nodesScanned": 11452,
+    "nodesScannedUpperBound": 11452,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 901,
     "mutationObserversSubtree": 2,
     "mutationObserverCallbacks": 6,
     "addEventListener": 60,
@@ -2469,7 +2916,9 @@
     "elementsWrittenByMultipleOwners": 0,
     "elementsByMultipleScripts": 0,
     "queryCalls": 0,
-    "nodesScanned": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
     "mutationObserversSubtree": 0,
     "mutationObserverCallbacks": 0,
     "addEventListener": 0,
@@ -2497,7 +2946,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 14,
     "queryCalls": 206,
-    "nodesScanned": 2864,
+    "nodesScannedUpperBound": 2864,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 245,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 3,
     "addEventListener": 23,
@@ -2779,7 +3230,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 40,
-    "nodesScanned": 6578,
+    "nodesScannedUpperBound": 6578,
+    "querySelectorAllCalls": 8,
+    "nodesScannedByQuerySelectorAll": 285,
     "mutationObserversSubtree": 2,
     "mutationObserverCallbacks": 6,
     "addEventListener": 26,
@@ -2897,7 +3350,9 @@
     "elementsWrittenByMultipleOwners": 3,
     "elementsByMultipleScripts": 16,
     "queryCalls": 222,
-    "nodesScanned": 5807,
+    "nodesScannedUpperBound": 5807,
+    "querySelectorAllCalls": 13,
+    "nodesScannedByQuerySelectorAll": 980,
     "mutationObserversSubtree": 1,
     "mutationObserverCallbacks": 3,
     "addEventListener": 47,
@@ -3239,7 +3694,9 @@
     "elementsWrittenByMultipleOwners": 1,
     "elementsByMultipleScripts": 0,
     "queryCalls": 50,
-    "nodesScanned": 9256,
+    "nodesScannedUpperBound": 9256,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 783,
     "mutationObserversSubtree": 2,
     "mutationObserverCallbacks": 6,
     "addEventListener": 58,
@@ -3407,12 +3864,6034 @@
       }
      }
     ]
+   },
+   "C_default": {
+    "elementsTouched": 143,
+    "totalOps": 261,
+    "kindTotals": {
+     "query": 77,
+     "read": 21,
+     "write": 161,
+     "observe": 2
+    },
+    "repeatedSameOp": 1,
+    "repeatedSameKind": 93,
+    "elementsByMultipleOwners": 4,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 51,
+    "nodesScannedUpperBound": 9505,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 783,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 6,
+    "addEventListener": 60,
+    "timers": 15,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 12,
+      "ops": 12
+     },
+     "clar-notifier": {
+      "elements": 1,
+      "ops": 1
+     },
+     "contest-calendar": {
+      "elements": 2,
+      "ops": 2
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 11,
+      "querySelector": 9,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 6
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 11
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 24
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "clar-notifier": {
+      "querySelector": 1
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 2
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 16,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 4,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active",
+      "total": 3,
+      "owners": {
+       "hover-menu": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "li",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "hover-menu": {
+        "query": 1
+       }
+      }
+     }
+    ]
    }
   },
-  "task": {},
-  "editorial": {},
-  "user": {},
-  "history": {},
-  "tessoku": {}
+  "task": {
+   "A": {
+    "elementsTouched": 0,
+    "totalOps": 0,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 0,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 0,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 0,
+    "timers": 0,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {},
+    "perOwnerCalls": {},
+    "topShared": []
+   },
+   "B_own": {
+    "elementsTouched": 589,
+    "totalOps": 2567,
+    "kindTotals": {
+     "query": 1755,
+     "read": 429,
+     "write": 381,
+     "observe": 2
+    },
+    "repeatedSameOp": 1187,
+    "repeatedSameKind": 1563,
+    "elementsByMultipleOwners": 49,
+    "elementsWrittenByMultipleOwners": 2,
+    "elementsByMultipleScripts": 49,
+    "queryCalls": 2841,
+    "nodesScannedUpperBound": 20383,
+    "querySelectorAllCalls": 19,
+    "nodesScannedByQuerySelectorAll": 6951,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 4,
+    "addEventListener": 28,
+    "timers": 4,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 2,
+    "forcedBy": {
+     "AtCoderMarkdownCopier": 1,
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 347,
+      "ops": 617
+     },
+     "AtCoderEasyTestForJava": {
+      "elements": 1,
+      "ops": 1
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 12,
+      "ops": 25
+     },
+     "AtCoderHighlighter": {
+      "elements": 244,
+      "ops": 1866
+     },
+     "AtCoderMarkdownCopier": {
+      "elements": 30,
+      "ops": 52
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "AtCoderEasyTestForJava": {
+      "querySelector": 1,
+      "set innerHTML": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 8,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 3
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 12,
+      "setAttribute": 1
+     },
+     "AtCoderHighlighter": {
+      "setTimeout": 1,
+      "getElementById": 3,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 1,
+      "set id": 1,
+      "set textContent": 3,
+      "appendChild": 11,
+      "querySelectorAll": 7,
+      "querySelector": 26,
+      "get textContent": 154,
+      "add": 50,
+      "contains": 140,
+      "closest": 2584,
+      "set className": 2,
+      "replaceChild": 2
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 173,
+      "getAttribute": 97,
+      "setAttribute": 74,
+      "XMLHttpRequest": 1,
+      "appendChild": 190,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 5,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 14,
+      "addEventListener": 21,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9
+     },
+     "AtCoderMarkdownCopier": {
+      "getElementById": 1,
+      "querySelectorAll": 2,
+      "getComputedStyle": 1,
+      "querySelector": 11,
+      "get textContent": 10,
+      "set textContent": 5,
+      "set className": 6,
+      "addEventListener": 5,
+      "appendChild": 6
+     }
+    },
+    "topShared": [
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active > a",
+      "total": 14,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 3,
+        "read": 1,
+        "write": 8
+       }
+      }
+     },
+     {
+      "element": "li > ul.dropdown-menu > li > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement",
+      "total": 5,
+      "owners": {
+       "AtCoderHighlighter": {
+        "query": 2,
+        "observe": 1,
+        "read": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 5,
+      "owners": {
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 5,
+      "owners": {
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 5,
+      "owners": {
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 5,
+      "owners": {
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html",
+      "total": 4,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.back-to-home.pull-right > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a.dropdown-toggle",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_own": {
+    "elementsTouched": 345,
+    "totalOps": 2096,
+    "kindTotals": {
+     "query": 1557,
+     "read": 187,
+     "write": 349,
+     "observe": 3
+    },
+    "repeatedSameOp": 1085,
+    "repeatedSameKind": 1502,
+    "elementsByMultipleOwners": 45,
+    "elementsWrittenByMultipleOwners": 2,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 2837,
+    "nodesScannedUpperBound": 76380,
+    "querySelectorAllCalls": 19,
+    "nodesScannedByQuerySelectorAll": 9231,
+    "mutationObserversSubtree": 3,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 42,
+    "timers": 13,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-copy": {
+      "elements": 53,
+      "ops": 117
+     },
+     "submission-shortcuts": {
+      "elements": 7,
+      "ops": 17
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "easy-test": {
+      "elements": 52,
+      "ops": 120
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-highlight": {
+      "elements": 159,
+      "ops": 1614
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 7,
+      "querySelector": 9,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 6
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 7
+     },
+     "statement-highlight": {
+      "set textContent": 3,
+      "append": 4,
+      "setTimeout": 1,
+      "new MutationObserver": 1,
+      "getElementById": 2,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 2,
+      "querySelectorAll": 6,
+      "querySelector": 20,
+      "get textContent": 70,
+      "add": 50,
+      "contains": 70,
+      "closest": 2686,
+      "set className": 2
+     },
+     "statement-copy": {
+      "getElementById": 1,
+      "querySelectorAll": 1,
+      "querySelector": 38,
+      "get textContent": 20,
+      "set className": 10,
+      "set textContent": 9,
+      "append": 19,
+      "addEventListener": 9
+     },
+     "submission-shortcuts": {
+      "querySelector": 4,
+      "set textContent": 3,
+      "append": 6,
+      "set className": 4
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     },
+     "easy-test": {
+      "set className": 25,
+      "append": 42,
+      "querySelector": 26,
+      "set hidden": 3,
+      "set title": 1,
+      "set textContent": 14,
+      "addEventListener": 3,
+      "querySelectorAll": 4,
+      "closest": 9,
+      "get textContent": 6,
+      "setTimeout": 1,
+      "replaceChildren": 1,
+      "toggle": 3,
+      "after": 3
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 36,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "statement-copy": {
+        "query": 9
+       },
+       "submission-shortcuts": {
+        "query": 3
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "easy-test": {
+        "query": 10
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 5,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "statement-highlight": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "easy-test": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-ja > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-ja > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-en > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-en > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     }
+    ]
+   },
+   "B_all": {
+    "elementsTouched": 900,
+    "totalOps": 3983,
+    "kindTotals": {
+     "query": 1855,
+     "read": 1640,
+     "write": 486,
+     "observe": 2
+    },
+    "repeatedSameOp": 1207,
+    "repeatedSameKind": 2490,
+    "elementsByMultipleOwners": 128,
+    "elementsWrittenByMultipleOwners": 5,
+    "elementsByMultipleScripts": 128,
+    "queryCalls": 2943,
+    "nodesScannedUpperBound": 46218,
+    "querySelectorAllCalls": 44,
+    "nodesScannedByQuerySelectorAll": 14865,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 5,
+    "addEventListener": 54,
+    "timers": 5,
+    "intervals": 0,
+    "network": 2,
+    "forcedLayoutSuspects": 3,
+    "forcedBy": {
+     "ProblemCopier": 1,
+     "AtCoderMarkdownCopier": 1,
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 347,
+      "ops": 617
+     },
+     "AtCoderEasyTestForJava": {
+      "elements": 1,
+      "ops": 1
+     },
+     "ProblemCopier": {
+      "elements": 362,
+      "ops": 1282
+     },
+     "AtCoderHighlighter": {
+      "elements": 252,
+      "ops": 1882
+     },
+     "AtCoderMarkdownCopier": {
+      "elements": 30,
+      "ops": 52
+     },
+     "EfficientLayout": {
+      "elements": 37,
+      "ops": 80
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 12,
+      "ops": 25
+     },
+     "GoogleCalender": {
+      "elements": 4,
+      "ops": 7
+     },
+     "QuestionCopier": {
+      "elements": 2,
+      "ops": 4
+     },
+     "EasyAccordion": {
+      "elements": 11,
+      "ops": 11
+     },
+     "ResultNotifier": {
+      "elements": 6,
+      "ops": 14
+     },
+     "LanguageButtons": {
+      "elements": 1,
+      "ops": 2
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "AtCoderEasyTestForJava": {
+      "querySelector": 1,
+      "set innerHTML": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 8,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 3
+     },
+     "ProblemCopier": {
+      "querySelector": 8,
+      "get innerText": 1,
+      "querySelectorAll": 19,
+      "contains": 973,
+      "get textContent": 228,
+      "set className": 6,
+      "set innerText": 4,
+      "setAttribute": 16,
+      "appendChild": 6,
+      "addEventListener": 1
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 12,
+      "setAttribute": 1
+     },
+     "AtCoderHighlighter": {
+      "setTimeout": 1,
+      "getElementById": 3,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 2,
+      "set id": 1,
+      "set textContent": 3,
+      "appendChild": 11,
+      "querySelectorAll": 7,
+      "querySelector": 26,
+      "get textContent": 162,
+      "add": 50,
+      "contains": 140,
+      "closest": 2628,
+      "set className": 2,
+      "replaceChild": 2
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 173,
+      "getAttribute": 97,
+      "setAttribute": 74,
+      "XMLHttpRequest": 1,
+      "appendChild": 190,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 5,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 14,
+      "addEventListener": 21,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9
+     },
+     "AtCoderMarkdownCopier": {
+      "getElementById": 1,
+      "querySelectorAll": 2,
+      "getComputedStyle": 1,
+      "querySelector": 11,
+      "get textContent": 10,
+      "set textContent": 5,
+      "set className": 6,
+      "addEventListener": 5,
+      "appendChild": 6
+     },
+     "EasyAccordion": {
+      "getElementsByClassName": 3,
+      "querySelectorAll": 2,
+      "addEventListener": 22
+     },
+     "EfficientLayout": {
+      "querySelectorAll": 3,
+      "removeChild": 19,
+      "querySelector": 7,
+      "set textContent": 4,
+      "appendChild": 27,
+      "set className": 4,
+      "insertBefore": 1
+     },
+     "GoogleCalender": {
+      "querySelector": 3,
+      "get innerHTML": 1,
+      "querySelectorAll": 1,
+      "insertAdjacentHTML": 1
+     },
+     "LanguageButtons": {
+      "set className": 1,
+      "set innerHTML": 1,
+      "getElementById": 1
+     },
+     "QuestionCopier": {
+      "set textContent": 1,
+      "set className": 1,
+      "addEventListener": 1,
+      "querySelector": 1,
+      "appendChild": 1
+     },
+     "ResultNotifier": {
+      "addEventListener": 2,
+      "setTimeout": 1,
+      "getElementsByTagName": 6,
+      "appendChild": 6,
+      "set innerHTML": 2,
+      "set textContent": 2,
+      "removeChild": 2
+     },
+     "SubmissionTimer": {
+      "getElementById": 3
+     },
+     "VirtualTimer": {
+      "fetch": 1,
+      "querySelector": 1
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head",
+      "total": 6,
+      "owners": {
+       "EfficientLayout": {
+        "write": 1
+       },
+       "ResultNotifier": {
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement > span.lang > span.lang-ja",
+      "total": 16,
+      "owners": {
+       "ProblemCopier": {
+        "query": 2
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "EfficientLayout": {
+        "write": 12
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 15,
+      "owners": {
+       "ProblemCopier": {
+        "read": 8,
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement > span.lang > span.lang-en",
+      "total": 13,
+      "owners": {
+       "ProblemCopier": {
+        "query": 2
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1
+       },
+       "EfficientLayout": {
+        "write": 10
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 13,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 13,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 13,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 12,
+      "owners": {
+       "ProblemCopier": {
+        "read": 7,
+        "query": 1
+       },
+       "AtCoderMarkdownCopier": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement > span.lang > span.lang-ja > div.part",
+      "total": 11,
+      "owners": {
+       "ProblemCopier": {
+        "query": 1,
+        "read": 7
+       },
+       "EfficientLayout": {
+        "query": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement > span.lang > span.lang-ja > div.part",
+      "total": 11,
+      "owners": {
+       "ProblemCopier": {
+        "query": 1,
+        "read": 7
+       },
+       "EfficientLayout": {
+        "query": 1
+       },
+       "AtCoderHighlighter": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_eq": {
+    "elementsTouched": 401,
+    "totalOps": 2229,
+    "kindTotals": {
+     "query": 1599,
+     "read": 217,
+     "write": 410,
+     "observe": 3
+    },
+    "repeatedSameOp": 1093,
+    "repeatedSameKind": 1535,
+    "elementsByMultipleOwners": 50,
+    "elementsWrittenByMultipleOwners": 2,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 2889,
+    "nodesScannedUpperBound": 102203,
+    "querySelectorAllCalls": 23,
+    "nodesScannedByQuerySelectorAll": 14122,
+    "mutationObserversSubtree": 3,
+    "mutationObserverCallbacks": 9,
+    "addEventListener": 77,
+    "timers": 22,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-copy": {
+      "elements": 53,
+      "ops": 117
+     },
+     "efficient-layout": {
+      "elements": 53,
+      "ops": 101
+     },
+     "submission-shortcuts": {
+      "elements": 7,
+      "ops": 17
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "easy-test": {
+      "elements": 52,
+      "ops": 120
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-highlight": {
+      "elements": 159,
+      "ops": 1614
+     },
+     "hover-menu": {
+      "elements": 12,
+      "ops": 12
+     },
+     "contest-calendar": {
+      "elements": 2,
+      "ops": 2
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 16,
+      "querySelector": 9,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 6
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 16
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 24
+     },
+     "statement-highlight": {
+      "set textContent": 3,
+      "append": 4,
+      "setTimeout": 1,
+      "new MutationObserver": 1,
+      "getElementById": 2,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 3,
+      "querySelectorAll": 6,
+      "querySelector": 20,
+      "get textContent": 70,
+      "add": 50,
+      "contains": 70,
+      "closest": 2702,
+      "set className": 2
+     },
+     "statement-copy": {
+      "getElementById": 1,
+      "querySelectorAll": 1,
+      "querySelector": 38,
+      "get textContent": 20,
+      "set className": 10,
+      "set textContent": 9,
+      "append": 19,
+      "addEventListener": 9
+     },
+     "efficient-layout": {
+      "querySelectorAll": 2,
+      "remove": 6,
+      "contains": 18,
+      "querySelector": 22,
+      "get textContent": 12,
+      "set textContent": 5,
+      "append": 30,
+      "set className": 4,
+      "before": 2
+     },
+     "submission-shortcuts": {
+      "querySelector": 4,
+      "set textContent": 3,
+      "append": 6,
+      "set className": 4
+     },
+     "language-buttons": {
+      "querySelector": 1
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "submission-timer": {
+      "querySelector": 1
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 2
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     },
+     "easy-test": {
+      "set className": 25,
+      "append": 42,
+      "querySelector": 26,
+      "set hidden": 3,
+      "set title": 1,
+      "set textContent": 14,
+      "addEventListener": 3,
+      "querySelectorAll": 4,
+      "closest": 9,
+      "get textContent": 6,
+      "setTimeout": 1,
+      "replaceChildren": 1,
+      "toggle": 3,
+      "after": 3
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 42,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "statement-copy": {
+        "query": 9
+       },
+       "efficient-layout": {
+        "query": 4
+       },
+       "submission-shortcuts": {
+        "query": 3
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "latest-contests": {
+        "query": 2
+       },
+       "easy-test": {
+        "query": 10
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 7,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "statement-highlight": {
+        "write": 1
+       },
+       "efficient-layout": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       },
+       "easy-test": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 1,
+        "read": 1
+       },
+       "efficient-layout": {
+        "query": 1,
+        "read": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_default": {
+    "elementsTouched": 318,
+    "totalOps": 2013,
+    "kindTotals": {
+     "query": 1555,
+     "read": 181,
+     "write": 274,
+     "observe": 3
+    },
+    "repeatedSameOp": 1085,
+    "repeatedSameKind": 1451,
+    "elementsByMultipleOwners": 46,
+    "elementsWrittenByMultipleOwners": 2,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 2800,
+    "nodesScannedUpperBound": 67747,
+    "querySelectorAllCalls": 17,
+    "nodesScannedByQuerySelectorAll": 6755,
+    "mutationObserversSubtree": 3,
+    "mutationObserverCallbacks": 7,
+    "addEventListener": 79,
+    "timers": 22,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-copy": {
+      "elements": 53,
+      "ops": 117
+     },
+     "submission-shortcuts": {
+      "elements": 7,
+      "ops": 17
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "statement-highlight": {
+      "elements": 159,
+      "ops": 1614
+     },
+     "variable-hover": {
+      "elements": 3,
+      "ops": 4
+     },
+     "hover-menu": {
+      "elements": 12,
+      "ops": 12
+     },
+     "clar-notifier": {
+      "elements": 1,
+      "ops": 1
+     },
+     "contest-calendar": {
+      "elements": 2,
+      "ops": 2
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 17,
+      "querySelector": 9,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 6
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 17
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 24
+     },
+     "statement-highlight": {
+      "set textContent": 3,
+      "append": 4,
+      "setTimeout": 1,
+      "new MutationObserver": 1,
+      "getElementById": 2,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 1,
+      "querySelectorAll": 6,
+      "querySelector": 20,
+      "get textContent": 70,
+      "add": 50,
+      "contains": 70,
+      "closest": 2674,
+      "set className": 2
+     },
+     "variable-hover": {
+      "querySelector": 1,
+      "set textContent": 1,
+      "append": 2,
+      "addEventListener": 4
+     },
+     "statement-copy": {
+      "getElementById": 1,
+      "querySelectorAll": 1,
+      "querySelector": 38,
+      "get textContent": 20,
+      "set className": 10,
+      "set textContent": 9,
+      "append": 19,
+      "addEventListener": 9
+     },
+     "submission-shortcuts": {
+      "querySelector": 4,
+      "set textContent": 3,
+      "append": 6,
+      "set className": 4
+     },
+     "language-buttons": {
+      "querySelector": 1
+     },
+     "source-comments": {
+      "querySelector": 1
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "clar-notifier": {
+      "querySelector": 1
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 2
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 28,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "statement-copy": {
+        "query": 9
+       },
+       "submission-shortcuts": {
+        "query": 3
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 6,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "statement-highlight": {
+        "write": 1
+       },
+       "variable-hover": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#task-statement",
+      "total": 4,
+      "owners": {
+       "statement-highlight": {
+        "query": 1,
+        "observe": 1
+       },
+       "variable-hover": {
+        "query": 1
+       },
+       "statement-copy": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-ja > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang-en > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div.io-style > div.part > section > h3",
+      "total": 6,
+      "owners": {
+       "statement-copy": {
+        "query": 2,
+        "read": 1,
+        "write": 1
+       },
+       "statement-highlight": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-ja > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-ja > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-en > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "span.lang > span.lang-en > div.part > section",
+      "total": 4,
+      "owners": {
+       "statement-copy": {
+        "query": 1
+       },
+       "statement-highlight": {
+        "query": 2,
+        "write": 1
+       }
+      }
+     }
+    ]
+   }
+  },
+  "editorial": {
+   "A": {
+    "elementsTouched": 0,
+    "totalOps": 0,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 0,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 0,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 0,
+    "timers": 0,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {},
+    "perOwnerCalls": {},
+    "topShared": []
+   },
+   "B_own": {
+    "elementsTouched": 349,
+    "totalOps": 648,
+    "kindTotals": {
+     "query": 229,
+     "read": 124,
+     "write": 294,
+     "observe": 1
+    },
+    "repeatedSameOp": 26,
+    "repeatedSameKind": 163,
+    "elementsByMultipleOwners": 14,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 14,
+    "queryCalls": 206,
+    "nodesScannedUpperBound": 4175,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 528,
+    "mutationObserversSubtree": 1,
+    "mutationObserverCallbacks": 3,
+    "addEventListener": 23,
+    "timers": 3,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 1,
+    "forcedBy": {
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 347,
+      "ops": 617
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 12,
+      "ops": 25
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 8,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 3
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 12,
+      "setAttribute": 1
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 173,
+      "getAttribute": 97,
+      "setAttribute": 74,
+      "XMLHttpRequest": 1,
+      "appendChild": 190,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 5,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 14,
+      "addEventListener": 21,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9
+     }
+    },
+    "topShared": [
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 14,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 3,
+        "read": 1,
+        "write": 8
+       }
+      }
+     },
+     {
+      "element": "li > ul.dropdown-menu > li > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html",
+      "total": 4,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.back-to-home.pull-right > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a.dropdown-toggle",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "a#fix-cnvtb",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html > body",
+      "total": 2,
+      "owners": {
+       "AtCoderListingTasks": {
+        "write": 1
+       },
+       "JavaCodeSubmitter": {
+        "observe": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_own": {
+    "elementsTouched": 122,
+    "totalOps": 228,
+    "kindTotals": {
+     "query": 58,
+     "read": 21,
+     "write": 147,
+     "observe": 2
+    },
+    "repeatedSameOp": 1,
+    "repeatedSameKind": 86,
+    "elementsByMultipleOwners": 2,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 40,
+    "nodesScannedUpperBound": 12804,
+    "querySelectorAllCalls": 8,
+    "nodesScannedByQuerySelectorAll": 285,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 6,
+    "addEventListener": 26,
+    "timers": 7,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 3,
+      "querySelector": 9,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 6
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 3
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 14,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 10
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       }
+      }
+     }
+    ]
+   },
+   "B_all": {
+    "elementsTouched": 1257,
+    "totalOps": 3398,
+    "kindTotals": {
+     "query": 1303,
+     "read": 1135,
+     "write": 959,
+     "observe": 1
+    },
+    "repeatedSameOp": 225,
+    "repeatedSameKind": 814,
+    "elementsByMultipleOwners": 134,
+    "elementsWrittenByMultipleOwners": 3,
+    "elementsByMultipleScripts": 134,
+    "queryCalls": 237,
+    "nodesScannedUpperBound": 18621,
+    "querySelectorAllCalls": 13,
+    "nodesScannedByQuerySelectorAll": 2112,
+    "mutationObserversSubtree": 1,
+    "mutationObserverCallbacks": 3,
+    "addEventListener": 51,
+    "timers": 4,
+    "intervals": 3,
+    "network": 4,
+    "forcedLayoutSuspects": 1,
+    "forcedBy": {
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 347,
+      "ops": 617
+     },
+     "ViewAllEditorials": {
+      "elements": 1026,
+      "ops": 2718
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 12,
+      "ops": 25
+     },
+     "GoogleCalender": {
+      "elements": 4,
+      "ops": 7
+     },
+     "EasyAccordion": {
+      "elements": 11,
+      "ops": 11
+     },
+     "ResultNotifier": {
+      "elements": 6,
+      "ops": 14
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 8,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 3
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 12,
+      "setAttribute": 1
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 173,
+      "getAttribute": 97,
+      "setAttribute": 74,
+      "XMLHttpRequest": 1,
+      "appendChild": 190,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 5,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 14,
+      "addEventListener": 21,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9
+     },
+     "EasyAccordion": {
+      "getElementsByClassName": 3,
+      "querySelectorAll": 2,
+      "addEventListener": 22
+     },
+     "GoogleCalender": {
+      "querySelector": 3,
+      "get innerHTML": 1,
+      "querySelectorAll": 1,
+      "insertAdjacentHTML": 1
+     },
+     "ResultNotifier": {
+      "addEventListener": 2,
+      "setTimeout": 1,
+      "getElementsByTagName": 6,
+      "appendChild": 6,
+      "set innerHTML": 2,
+      "set textContent": 2,
+      "removeChild": 2
+     },
+     "ViewAllEditorials": {
+      "set textContent": 10,
+      "appendChild": 300,
+      "getElementsByTagName": 9,
+      "contains": 56,
+      "fetch": 2,
+      "setInterval": 3,
+      "querySelector": 4,
+      "add": 1,
+      "get textContent": 60,
+      "set className": 164,
+      "setAttribute": 33,
+      "replaceChild": 72,
+      "getElementsByClassName": 2,
+      "getAttribute": 894,
+      "addEventListener": 4,
+      "insertBefore": 71,
+      "removeChild": 1
+     },
+     "VirtualTimer": {
+      "fetch": 1,
+      "querySelector": 1
+     }
+    },
+    "topShared": [
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 8,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "GoogleCalender": {
+        "query": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 8,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "GoogleCalender": {
+        "query": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html > body",
+      "total": 8,
+      "owners": {
+       "ResultNotifier": {
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "write": 1
+       },
+       "ViewAllEditorials": {
+        "query": 3,
+        "read": 1
+       },
+       "JavaCodeSubmitter": {
+        "observe": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 17,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 3,
+        "read": 1,
+        "write": 8
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 10,
+      "owners": {
+       "ResultNotifier": {
+        "query": 1,
+        "write": 1
+       },
+       "ViewAllEditorials": {
+        "write": 4,
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "li > ul.dropdown-menu > li > a",
+      "total": 8,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.back-to-home.pull-right > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a.dropdown-toggle",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active > a",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "a#fix-cnvtb",
+      "total": 7,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "ViewAllEditorials": {
+        "query": 2,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html",
+      "total": 6,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       },
+       "ViewAllEditorials": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_eq": {
+    "elementsTouched": 595,
+    "totalOps": 1136,
+    "kindTotals": {
+     "query": 224,
+     "read": 105,
+     "write": 805,
+     "observe": 2
+    },
+    "repeatedSameOp": 187,
+    "repeatedSameKind": 481,
+    "elementsByMultipleOwners": 8,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 58,
+    "nodesScannedUpperBound": 25157,
+    "querySelectorAllCalls": 11,
+    "nodesScannedByQuerySelectorAll": 1890,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 67,
+    "timers": 14,
+    "intervals": 1,
+    "network": 2,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "editorial-list": {
+      "elements": 458,
+      "ops": 876
+     },
+     "hover-menu": {
+      "elements": 12,
+      "ops": 12
+     },
+     "contest-calendar": {
+      "elements": 2,
+      "ops": 2
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 10,
+      "querySelector": 11,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 8
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 10
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 24
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "editorial-list": {
+      "querySelectorAll": 1,
+      "contains": 28,
+      "set textContent": 10,
+      "append": 9,
+      "addEventListener": 8,
+      "setInterval": 1,
+      "fetch": 1,
+      "querySelector": 2,
+      "set className": 165,
+      "get textContent": 56,
+      "setAttribute": 27,
+      "appendChild": 289,
+      "replaceChild": 72,
+      "getElementsByTagName": 3,
+      "insertBefore": 71,
+      "removeChild": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 2
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head",
+      "total": 9,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "editorial-list": {
+        "write": 5
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "html > head > meta",
+      "total": 16,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 8,
+      "owners": {
+       "task-dropdown": {
+        "query": 1,
+        "write": 6
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "a",
+      "total": 4,
+      "owners": {
+       "task-dropdown": {
+        "write": 3
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li",
+      "total": 3,
+      "owners": {
+       "hover-menu": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "a",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "li",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "hover-menu": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "div#navbar-collapse > ul.nav.navbar-nav > li > a.contest-title",
+      "total": 2,
+      "owners": {
+       "editorial-list": {
+        "query": 1
+       },
+       "contest-calendar": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_default": {
+    "elementsTouched": 596,
+    "totalOps": 1137,
+    "kindTotals": {
+     "query": 225,
+     "read": 105,
+     "write": 805,
+     "observe": 2
+    },
+    "repeatedSameOp": 187,
+    "repeatedSameKind": 481,
+    "elementsByMultipleOwners": 8,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 59,
+    "nodesScannedUpperBound": 25689,
+    "querySelectorAllCalls": 11,
+    "nodesScannedByQuerySelectorAll": 1890,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 69,
+    "timers": 16,
+    "intervals": 1,
+    "network": 2,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 110,
+      "ops": 197
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "editorial-list": {
+      "elements": 458,
+      "ops": 876
+     },
+     "hover-menu": {
+      "elements": 12,
+      "ops": 12
+     },
+     "clar-notifier": {
+      "elements": 1,
+      "ops": 1
+     },
+     "contest-calendar": {
+      "elements": 2,
+      "ops": 2
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 12,
+      "querySelector": 11,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 8
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 12
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 24
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "clar-notifier": {
+      "querySelector": 1
+     },
+     "task-dropdown": {
+      "querySelector": 18,
+      "set textContent": 29,
+      "append": 72,
+      "set className": 15,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 19,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 8,
+      "getAttribute": 7,
+      "get textContent": 14
+     },
+     "editorial-list": {
+      "querySelectorAll": 1,
+      "contains": 28,
+      "set textContent": 10,
+      "append": 9,
+      "addEventListener": 8,
+      "setInterval": 1,
+      "fetch": 1,
+      "querySelector": 2,
+      "set className": 165,
+      "get textContent": 56,
+      "setAttribute": 27,
+      "appendChild": 289,
+      "replaceChild": 72,
+      "getElementsByTagName": 3,
+      "insertBefore": 71,
+      "removeChild": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 2
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head",
+      "total": 9,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "editorial-list": {
+        "write": 5
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "html > head > meta",
+      "total": 16,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 10
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 8,
+      "owners": {
+       "task-dropdown": {
+        "query": 1,
+        "write": 6
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "a",
+      "total": 4,
+      "owners": {
+       "task-dropdown": {
+        "write": 3
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li",
+      "total": 3,
+      "owners": {
+       "hover-menu": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "a",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "editorial-list": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "li",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "hover-menu": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "div#navbar-collapse > ul.nav.navbar-nav > li > a.contest-title",
+      "total": 2,
+      "owners": {
+       "editorial-list": {
+        "query": 1
+       },
+       "contest-calendar": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   }
+  },
+  "user": {
+   "A": {
+    "elementsTouched": 0,
+    "totalOps": 0,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 0,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 0,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 0,
+    "timers": 0,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {},
+    "perOwnerCalls": {},
+    "topShared": []
+   },
+   "B_own": {
+    "elementsTouched": 7,
+    "totalOps": 19,
+    "kindTotals": {
+     "query": 3,
+     "read": 1,
+     "write": 15,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 10,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 63,
+    "nodesScannedUpperBound": 983,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 2,
+    "timers": 1,
+    "intervals": 1,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderPerformanceOverlay": {
+      "elements": 4,
+      "ops": 14
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "AtCoderPerformanceOverlay": {
+      "getElementsByClassName": 3,
+      "set className": 2,
+      "set id": 2,
+      "set cssText": 2,
+      "set textContent": 2,
+      "appendChild": 2,
+      "get textContent": 1,
+      "addEventListener": 1,
+      "setInterval": 1,
+      "getElementById": 60
+     }
+    },
+    "topShared": []
+   },
+   "C_own": {
+    "elementsTouched": 14,
+    "totalOps": 30,
+    "kindTotals": {
+     "query": 6,
+     "read": 0,
+     "write": 24,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 13,
+    "elementsByMultipleOwners": 2,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 65,
+    "nodesScannedUpperBound": 1401,
+    "querySelectorAllCalls": 1,
+    "nodesScannedByQuerySelectorAll": 393,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 3,
+    "timers": 59,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "rating-graph": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 2,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 1
+     },
+     "rating-graph": {
+      "querySelectorAll": 1,
+      "fetch": 1,
+      "getElementById": 58,
+      "setTimeout": 58
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 4,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 2,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       }
+      }
+     }
+    ]
+   },
+   "B_all": {
+    "elementsTouched": 17,
+    "totalOps": 37,
+    "kindTotals": {
+     "query": 9,
+     "read": 1,
+     "write": 27,
+     "observe": 0
+    },
+    "repeatedSameOp": 2,
+    "repeatedSameKind": 16,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 74,
+    "nodesScannedUpperBound": 3280,
+    "querySelectorAllCalls": 2,
+    "nodesScannedByQuerySelectorAll": 656,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 12,
+    "timers": 2,
+    "intervals": 1,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderPerformanceOverlay": {
+      "elements": 4,
+      "ops": 14
+     },
+     "EasyAccordion": {
+      "elements": 4,
+      "ops": 4
+     },
+     "ResultNotifier": {
+      "elements": 6,
+      "ops": 14
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "AtCoderPerformanceOverlay": {
+      "getElementsByClassName": 3,
+      "set className": 2,
+      "set id": 2,
+      "set cssText": 2,
+      "set textContent": 2,
+      "appendChild": 2,
+      "get textContent": 1,
+      "addEventListener": 1,
+      "setInterval": 1,
+      "getElementById": 60
+     },
+     "EasyAccordion": {
+      "getElementsByClassName": 3,
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "ResultNotifier": {
+      "addEventListener": 2,
+      "setTimeout": 1,
+      "getElementsByTagName": 6,
+      "appendChild": 6,
+      "set innerHTML": 2,
+      "set textContent": 2,
+      "removeChild": 2
+     }
+    },
+    "topShared": []
+   },
+   "C_eq": {
+    "elementsTouched": 25,
+    "totalOps": 52,
+    "kindTotals": {
+     "query": 14,
+     "read": 0,
+     "write": 38,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 20,
+    "elementsByMultipleOwners": 3,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 72,
+    "nodesScannedUpperBound": 3719,
+    "querySelectorAllCalls": 3,
+    "nodesScannedByQuerySelectorAll": 1059,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 16,
+    "timers": 62,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "latest-contests": {
+      "elements": 10,
+      "ops": 18
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 4,
+      "ops": 4
+     },
+     "rating-graph": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 5,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 4
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "rating-graph": {
+      "querySelectorAll": 1,
+      "fetch": 1,
+      "getElementById": 58,
+      "setTimeout": 58
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 6,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "header#header > div.header-inner.no-break > nav.header-nav.j-menu_gnav > ul.header-page",
+      "total": 3,
+      "owners": {
+       "settings-panel": {
+        "query": 1,
+        "write": 1
+       },
+       "latest-contests": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_default": {
+    "elementsTouched": 25,
+    "totalOps": 52,
+    "kindTotals": {
+     "query": 14,
+     "read": 0,
+     "write": 38,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 20,
+    "elementsByMultipleOwners": 3,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 72,
+    "nodesScannedUpperBound": 3719,
+    "querySelectorAllCalls": 3,
+    "nodesScannedByQuerySelectorAll": 1059,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 16,
+    "timers": 62,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "latest-contests": {
+      "elements": 10,
+      "ops": 18
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 4,
+      "ops": 4
+     },
+     "rating-graph": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 5,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 4
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "rating-graph": {
+      "querySelectorAll": 1,
+      "fetch": 1,
+      "getElementById": 58,
+      "setTimeout": 58
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 6,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "header#header > div.header-inner.no-break > nav.header-nav.j-menu_gnav > ul.header-page",
+      "total": 3,
+      "owners": {
+       "settings-panel": {
+        "query": 1,
+        "write": 1
+       },
+       "latest-contests": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   }
+  },
+  "history": {
+   "A": {
+    "elementsTouched": 0,
+    "totalOps": 0,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 0,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 0,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 0,
+    "timers": 0,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {},
+    "perOwnerCalls": {},
+    "topShared": []
+   },
+   "B_own": {
+    "elementsTouched": 3,
+    "totalOps": 5,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 5,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 2,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 1,
+    "timers": 1,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     }
+    },
+    "topShared": []
+   },
+   "C_own": {
+    "elementsTouched": 13,
+    "totalOps": 29,
+    "kindTotals": {
+     "query": 5,
+     "read": 0,
+     "write": 24,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 13,
+    "elementsByMultipleOwners": 2,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 6,
+    "nodesScannedUpperBound": 7620,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 2,
+    "timers": 1,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 1,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 1
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 4,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 2,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       }
+      }
+     }
+    ]
+   },
+   "B_all": {
+    "elementsTouched": 1309,
+    "totalOps": 2326,
+    "kindTotals": {
+     "query": 1289,
+     "read": 572,
+     "write": 465,
+     "observe": 0
+    },
+    "repeatedSameOp": 2,
+    "repeatedSameKind": 584,
+    "elementsByMultipleOwners": 1,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 1,
+    "queryCalls": 302,
+    "nodesScannedUpperBound": 27080,
+    "querySelectorAllCalls": 2,
+    "nodesScannedByQuerySelectorAll": 5060,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 11,
+    "timers": 5,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "PerformanceColorizer": {
+      "elements": 1297,
+      "ops": 2303
+     },
+     "EasyAccordion": {
+      "elements": 4,
+      "ops": 4
+     },
+     "ResultNotifier": {
+      "elements": 6,
+      "ops": 14
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "EasyAccordion": {
+      "getElementsByClassName": 3,
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "PerformanceColorizer": {
+      "set className": 1,
+      "getAttribute": 4,
+      "appendChild": 5,
+      "getElementsByTagName": 289,
+      "set id": 1,
+      "getElementsByName": 1,
+      "removeChild": 1,
+      "set innerHTML": 4,
+      "setAttribute": 148,
+      "setTimeout": 3,
+      "getElementById": 1,
+      "get textContent": 568,
+      "set textContent": 288
+     },
+     "ResultNotifier": {
+      "addEventListener": 2,
+      "setTimeout": 1,
+      "getElementsByTagName": 6,
+      "appendChild": 6,
+      "set innerHTML": 2,
+      "set textContent": 2,
+      "removeChild": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html",
+      "total": 4,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "PerformanceColorizer": {
+        "write": 2
+       }
+      }
+     }
+    ]
+   },
+   "C_eq": {
+    "elementsTouched": 1160,
+    "totalOps": 1471,
+    "kindTotals": {
+     "query": 1149,
+     "read": 284,
+     "write": 38,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 20,
+    "elementsByMultipleOwners": 3,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 156,
+    "nodesScannedUpperBound": 30033,
+    "querySelectorAllCalls": 145,
+    "nodesScannedByQuerySelectorAll": 9741,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 16,
+    "timers": 5,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "latest-contests": {
+      "elements": 10,
+      "ops": 18
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 4,
+      "ops": 4
+     },
+     "history-colors": {
+      "elements": 1136,
+      "ops": 1420
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 5,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 5
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "history-colors": {
+      "querySelectorAll": 143,
+      "get textContent": 284
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 6,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "header#header > div.header-inner.no-break > nav.header-nav.j-menu_gnav > ul.header-page",
+      "total": 3,
+      "owners": {
+       "settings-panel": {
+        "query": 1,
+        "write": 1
+       },
+       "latest-contests": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_default": {
+    "elementsTouched": 1160,
+    "totalOps": 1471,
+    "kindTotals": {
+     "query": 1149,
+     "read": 284,
+     "write": 38,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 20,
+    "elementsByMultipleOwners": 3,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 156,
+    "nodesScannedUpperBound": 30033,
+    "querySelectorAllCalls": 145,
+    "nodesScannedByQuerySelectorAll": 9741,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 16,
+    "timers": 5,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 1,
+      "ops": 1
+     },
+     "latest-contests": {
+      "elements": 10,
+      "ops": 18
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 4,
+      "ops": 4
+     },
+     "history-colors": {
+      "elements": 1136,
+      "ops": 1420
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 5,
+      "querySelector": 1
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 5
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 8
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "history-colors": {
+      "querySelectorAll": 143,
+      "get textContent": 284
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 6,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "latest-contests": {
+        "query": 2
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "header#header > div.header-inner.no-break > nav.header-nav.j-menu_gnav > ul.header-page",
+      "total": 3,
+      "owners": {
+       "settings-panel": {
+        "query": 1,
+        "write": 1
+       },
+       "latest-contests": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   }
+  },
+  "tessoku": {
+   "A": {
+    "elementsTouched": 0,
+    "totalOps": 0,
+    "kindTotals": {
+     "query": 0,
+     "read": 0,
+     "write": 0,
+     "observe": 0
+    },
+    "repeatedSameOp": 0,
+    "repeatedSameKind": 0,
+    "elementsByMultipleOwners": 0,
+    "elementsWrittenByMultipleOwners": 0,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 0,
+    "nodesScannedUpperBound": 0,
+    "querySelectorAllCalls": 0,
+    "nodesScannedByQuerySelectorAll": 0,
+    "mutationObserversSubtree": 0,
+    "mutationObserverCallbacks": 0,
+    "addEventListener": 0,
+    "timers": 0,
+    "intervals": 0,
+    "network": 0,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {},
+    "perOwnerCalls": {},
+    "topShared": []
+   },
+   "B_own": {
+    "elementsTouched": 3069,
+    "totalOps": 5661,
+    "kindTotals": {
+     "query": 2226,
+     "read": 1121,
+     "write": 2313,
+     "observe": 1
+    },
+    "repeatedSameOp": 314,
+    "repeatedSameKind": 1605,
+    "elementsByMultipleOwners": 12,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 12,
+    "queryCalls": 1649,
+    "nodesScannedUpperBound": 21133,
+    "querySelectorAllCalls": 10,
+    "nodesScannedByQuerySelectorAll": 1238,
+    "mutationObserversSubtree": 1,
+    "mutationObserverCallbacks": 4,
+    "addEventListener": 167,
+    "timers": 3,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 1,
+    "forcedBy": {
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 3067,
+      "ops": 5634
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 10,
+      "ops": 21
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 10,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 4
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 10,
+      "setAttribute": 1
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 1614,
+      "getAttribute": 808,
+      "setAttribute": 361,
+      "XMLHttpRequest": 1,
+      "appendChild": 1920,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 6,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 302,
+      "addEventListener": 165,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9,
+      "removeAttribute": 1
+     }
+    },
+    "topShared": [
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active > a",
+      "total": 14,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 3,
+        "read": 1,
+        "write": 8
+       }
+      }
+     },
+     {
+      "element": "li > ul.dropdown-menu > li > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html",
+      "total": 4,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.back-to-home.pull-right > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a.dropdown-toggle",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "a#fix-cnvtb",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html > body",
+      "total": 2,
+      "owners": {
+       "AtCoderListingTasks": {
+        "write": 1
+       },
+       "JavaCodeSubmitter": {
+        "observe": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_own": {
+    "elementsTouched": 1563,
+    "totalOps": 2536,
+    "kindTotals": {
+     "query": 923,
+     "read": 453,
+     "write": 1158,
+     "observe": 2
+    },
+    "repeatedSameOp": 1,
+    "repeatedSameKind": 665,
+    "elementsByMultipleOwners": 2,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 331,
+    "nodesScannedUpperBound": 37218,
+    "querySelectorAllCalls": 152,
+    "nodesScannedByQuerySelectorAll": 2142,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 170,
+    "timers": 7,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 1551,
+      "ops": 2505
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 3,
+      "querySelector": 11,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 8
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 3
+     },
+     "task-dropdown": {
+      "querySelector": 163,
+      "set textContent": 462,
+      "append": 649,
+      "set className": 16,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 163,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 152,
+      "getAttribute": 151,
+      "get textContent": 302
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 15,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 11
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 3,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       }
+      }
+     }
+    ]
+   },
+   "B_all": {
+    "elementsTouched": 3083,
+    "totalOps": 5691,
+    "kindTotals": {
+     "query": 2242,
+     "read": 1122,
+     "write": 2326,
+     "observe": 1
+    },
+    "repeatedSameOp": 316,
+    "repeatedSameKind": 1612,
+    "elementsByMultipleOwners": 14,
+    "elementsWrittenByMultipleOwners": 3,
+    "elementsByMultipleScripts": 14,
+    "queryCalls": 1665,
+    "nodesScannedUpperBound": 34779,
+    "querySelectorAllCalls": 13,
+    "nodesScannedByQuerySelectorAll": 4952,
+    "mutationObserversSubtree": 1,
+    "mutationObserverCallbacks": 4,
+    "addEventListener": 187,
+    "timers": 4,
+    "intervals": 0,
+    "network": 2,
+    "forcedLayoutSuspects": 1,
+    "forcedBy": {
+     "AtCoderListingTasks": 1
+    },
+    "perOwner": {
+     "AtCoderWidenContainer": {
+      "elements": 3,
+      "ops": 5
+     },
+     "AtCoderListingTasks": {
+      "elements": 3067,
+      "ops": 5634
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "elements": 10,
+      "ops": 21
+     },
+     "GoogleCalender": {
+      "elements": 4,
+      "ops": 7
+     },
+     "EasyAccordion": {
+      "elements": 9,
+      "ops": 9
+     },
+     "ResultNotifier": {
+      "elements": 6,
+      "ops": 14
+     },
+     "JavaCodeSubmitter": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "AtCoderWidenContainer": {
+      "set textContent": 2,
+      "appendChild": 2,
+      "addEventListener": 1,
+      "setTimeout": 1,
+      "remove": 1
+     },
+     "JavaCodeSubmitter": {
+      "addEventListener": 1,
+      "setTimeout": 2,
+      "getElementById": 10,
+      "new MutationObserver": 1,
+      "MutationObserver.observe(subtree)": 1,
+      "MutationObserver callback": 4
+     },
+     "AtCoderCustomDefaultSubmissions": {
+      "querySelectorAll": 1,
+      "getAttribute": 10,
+      "setAttribute": 1
+     },
+     "AtCoderListingTasks": {
+      "getElementById": 7,
+      "getElementsByTagName": 1614,
+      "getAttribute": 808,
+      "setAttribute": 361,
+      "XMLHttpRequest": 1,
+      "appendChild": 1920,
+      "set innerHTML": 11,
+      "getElementsByClassName": 4,
+      "set className": 6,
+      "set id": 2,
+      "insertBefore": 4,
+      "getElementsByName": 4,
+      "removeChild": 2,
+      "get textContent": 302,
+      "addEventListener": 165,
+      "getComputedStyle": 1,
+      "querySelectorAll": 9,
+      "removeAttribute": 1
+     },
+     "EasyAccordion": {
+      "getElementsByClassName": 3,
+      "querySelectorAll": 2,
+      "addEventListener": 18
+     },
+     "GoogleCalender": {
+      "querySelector": 3,
+      "get innerHTML": 1,
+      "querySelectorAll": 1,
+      "insertAdjacentHTML": 1
+     },
+     "ResultNotifier": {
+      "addEventListener": 2,
+      "setTimeout": 1,
+      "getElementsByTagName": 6,
+      "appendChild": 6,
+      "set innerHTML": 2,
+      "set textContent": 2,
+      "removeChild": 2
+     },
+     "VirtualTimer": {
+      "fetch": 1,
+      "querySelector": 1
+     }
+    },
+    "topShared": [
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "GoogleCalender": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.contest-duration > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       },
+       "GoogleCalender": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "html > body",
+      "total": 4,
+      "owners": {
+       "ResultNotifier": {
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "write": 1
+       },
+       "JavaCodeSubmitter": {
+        "observe": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active > a",
+      "total": 14,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 3,
+        "read": 1,
+        "write": 8
+       }
+      }
+     },
+     {
+      "element": "li > ul.dropdown-menu > li > a",
+      "total": 5,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html",
+      "total": 4,
+      "owners": {
+       "AtCoderWidenContainer": {
+        "write": 2
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > div > small.back-to-home.pull-right > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a.dropdown-toggle",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li > a",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "a#fix-cnvtb",
+      "total": 4,
+      "owners": {
+       "AtCoderCustomDefaultSubmissions": {
+        "query": 1,
+        "read": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "read": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 4,
+      "owners": {
+       "ResultNotifier": {
+        "query": 1,
+        "write": 1
+       },
+       "AtCoderListingTasks": {
+        "query": 1,
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active",
+      "total": 3,
+      "owners": {
+       "EasyAccordion": {
+        "query": 1
+       },
+       "AtCoderListingTasks": {
+        "write": 2
+       }
+      }
+     }
+    ]
+   },
+   "C_eq": {
+    "elementsTouched": 2040,
+    "totalOps": 3338,
+    "kindTotals": {
+     "query": 1396,
+     "read": 605,
+     "write": 1335,
+     "observe": 2
+    },
+    "repeatedSameOp": 1,
+    "repeatedSameKind": 677,
+    "elementsByMultipleOwners": 4,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 648,
+    "nodesScannedUpperBound": 57829,
+    "querySelectorAllCalls": 155,
+    "nodesScannedByQuerySelectorAll": 5683,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 199,
+    "timers": 14,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 1551,
+      "ops": 2505
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "contest-calendar": {
+      "elements": 7,
+      "ops": 12
+     },
+     "tessoku-difficulty": {
+      "elements": 457,
+      "ops": 762
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 10,
+      "ops": 10
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 10,
+      "querySelector": 11,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 8
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 10
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 20
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "task-dropdown": {
+      "querySelector": 163,
+      "set textContent": 462,
+      "append": 649,
+      "set className": 16,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 163,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 152,
+      "getAttribute": 151,
+      "get textContent": 302
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 3,
+      "get textContent": 1,
+      "set className": 2,
+      "append": 5,
+      "set textContent": 1
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "tessoku-difficulty": {
+      "querySelector": 305,
+      "querySelectorAll": 1,
+      "get textContent": 151,
+      "prepend": 151,
+      "set className": 1,
+      "set textContent": 1,
+      "append": 1,
+      "after": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 19,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 11
+       },
+       "latest-contests": {
+        "query": 2
+       },
+       "contest-calendar": {
+        "query": 1
+       },
+       "tessoku-difficulty": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 5,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       },
+       "contest-calendar": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active",
+      "total": 3,
+      "owners": {
+       "hover-menu": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "li",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "hover-menu": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   },
+   "C_default": {
+    "elementsTouched": 2041,
+    "totalOps": 3339,
+    "kindTotals": {
+     "query": 1397,
+     "read": 605,
+     "write": 1335,
+     "observe": 2
+    },
+    "repeatedSameOp": 1,
+    "repeatedSameKind": 677,
+    "elementsByMultipleOwners": 4,
+    "elementsWrittenByMultipleOwners": 1,
+    "elementsByMultipleScripts": 0,
+    "queryCalls": 649,
+    "nodesScannedUpperBound": 59071,
+    "querySelectorAllCalls": 155,
+    "nodesScannedByQuerySelectorAll": 5683,
+    "mutationObserversSubtree": 2,
+    "mutationObserverCallbacks": 8,
+    "addEventListener": 201,
+    "timers": 16,
+    "intervals": 0,
+    "network": 1,
+    "forcedLayoutSuspects": 0,
+    "forcedBy": {},
+    "perOwner": {
+     "settings-panel": {
+      "elements": 12,
+      "ops": 25
+     },
+     "(core:adapters)": {
+      "elements": 2,
+      "ops": 3
+     },
+     "task-dropdown": {
+      "elements": 1551,
+      "ops": 2505
+     },
+     "latest-contests": {
+      "elements": 9,
+      "ops": 17
+     },
+     "contest-calendar": {
+      "elements": 7,
+      "ops": 12
+     },
+     "tessoku-difficulty": {
+      "elements": 457,
+      "ops": 762
+     },
+     "wide-layout": {
+      "elements": 2,
+      "ops": 3
+     },
+     "hover-menu": {
+      "elements": 10,
+      "ops": 10
+     },
+     "clar-notifier": {
+      "elements": 1,
+      "ops": 1
+     },
+     "virtual-timer": {
+      "elements": 1,
+      "ops": 1
+     }
+    },
+    "perOwnerCalls": {
+     "settings-panel": {
+      "querySelector": 5,
+      "set textContent": 5,
+      "append": 11,
+      "set className": 3,
+      "set hidden": 2,
+      "addEventListener": 1
+     },
+     "(core:adapters)": {
+      "addEventListener": 12,
+      "querySelector": 11,
+      "new MutationObserver": 2,
+      "MutationObserver.observe(subtree)": 2,
+      "setTimeout": 2,
+      "MutationObserver callback": 8
+     },
+     "wide-layout": {
+      "set textContent": 1,
+      "append": 2
+     },
+     "(core:shared)": {
+      "setTimeout": 12
+     },
+     "hover-menu": {
+      "querySelectorAll": 2,
+      "addEventListener": 20
+     },
+     "result-notifier": {
+      "addEventListener": 1
+     },
+     "clar-notifier": {
+      "querySelector": 1
+     },
+     "task-dropdown": {
+      "querySelector": 163,
+      "set textContent": 462,
+      "append": 649,
+      "set className": 16,
+      "setAttribute": 4,
+      "add": 1,
+      "addEventListener": 163,
+      "prepend": 2,
+      "fetch": 1,
+      "querySelectorAll": 152,
+      "getAttribute": 151,
+      "get textContent": 302
+     },
+     "latest-contests": {
+      "querySelector": 5,
+      "set textContent": 3,
+      "append": 8,
+      "set className": 3,
+      "addEventListener": 1
+     },
+     "contest-calendar": {
+      "querySelector": 3,
+      "get textContent": 1,
+      "set className": 2,
+      "append": 5,
+      "set textContent": 1
+     },
+     "virtual-timer": {
+      "querySelector": 1
+     },
+     "tessoku-difficulty": {
+      "querySelector": 305,
+      "querySelectorAll": 1,
+      "get textContent": 151,
+      "prepend": 151,
+      "set className": 1,
+      "set textContent": 1,
+      "append": 1,
+      "after": 1
+     },
+     "java-submit": {
+      "addEventListener": 3,
+      "setTimeout": 2
+     }
+    },
+    "topShared": [
+     {
+      "element": "html > head > meta",
+      "total": 19,
+      "owners": {
+       "settings-panel": {
+        "query": 3
+       },
+       "(core:adapters)": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "query": 11
+       },
+       "latest-contests": {
+        "query": 2
+       },
+       "contest-calendar": {
+        "query": 1
+       },
+       "tessoku-difficulty": {
+        "query": 1
+       }
+      }
+     },
+     {
+      "element": "html > head",
+      "total": 5,
+      "owners": {
+       "wide-layout": {
+        "write": 1
+       },
+       "settings-panel": {
+        "write": 1
+       },
+       "task-dropdown": {
+        "write": 1
+       },
+       "latest-contests": {
+        "write": 1
+       },
+       "contest-calendar": {
+        "write": 1
+       }
+      }
+     },
+     {
+      "element": "div#contest-nav-tabs > ul.nav.nav-tabs > li.active",
+      "total": 3,
+      "owners": {
+       "hover-menu": {
+        "query": 1
+       },
+       "task-dropdown": {
+        "write": 2
+       }
+      }
+     },
+     {
+      "element": "li",
+      "total": 2,
+      "owners": {
+       "settings-panel": {
+        "write": 1
+       },
+       "hover-menu": {
+        "query": 1
+       }
+      }
+     }
+    ]
+   }
+  }
  }
 }

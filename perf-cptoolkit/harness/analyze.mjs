@@ -239,7 +239,7 @@ function analyzeTrace(rows) {
 			const multiWriter = multiOwner.filter(([, e]) => [...e.owners.values()].filter((o) => o.write).length >= 2);
 			const multiScript = [...perEl.values()].filter((e) => e.scripts.size >= 2).length;
 			// API 呼び出し
-			let scanned = 0, docScans = 0, queryCalls = 0, moSubtree = 0, moCallbacks = 0, listeners = 0, timers = 0, intervals = 0, net = 0;
+			let scanned = 0, scannedQsa = 0, qsaCalls = 0, docScans = 0, queryCalls = 0, moSubtree = 0, moCallbacks = 0, listeners = 0, timers = 0, intervals = 0, net = 0;
 			const perOwnerCalls = {};
 			for (const [key, v] of t.calls) {
 				const [c, api] = key.split("|");
@@ -249,6 +249,10 @@ function analyzeTrace(rows) {
 				if (/^(querySelector|querySelectorAll|getElementsBy|getElementById|closest|matches)/.test(api)) {
 					queryCalls += v.n;
 					scanned += v.scanned;
+				}
+				if (api === "querySelectorAll") {
+					qsaCalls += v.n;
+					scannedQsa += v.scanned;
 				}
 				if (api === "MutationObserver.observe(subtree)") moSubtree += v.n;
 				if (api === "MutationObserver callback") moCallbacks += v.n;
@@ -281,7 +285,9 @@ function analyzeTrace(rows) {
 				elementsWrittenByMultipleOwners: multiWriter.length,
 				elementsByMultipleScripts: multiScript,
 				queryCalls,
-				nodesScanned: scanned,
+				nodesScannedUpperBound: scanned, // querySelector は途中で打ち切るので過大。上限値
+				querySelectorAllCalls: qsaCalls,
+				nodesScannedByQuerySelectorAll: scannedQsa,
 				mutationObserversSubtree: moSubtree,
 				mutationObserverCallbacks: moCallbacks,
 				addEventListener: listeners,
