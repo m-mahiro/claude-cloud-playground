@@ -1,0 +1,7 @@
+scripts/legacy-nsubaru/
+scripts/legacy-public/
+scripts/cptoolkit/
+scripts/requires/
+fixtures/
+results/*.jsonl
+results/run-all.log
