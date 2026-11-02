@@ -20,6 +20,7 @@ const {values: args} = parseArgs({
 		pages: {type: "string", default: Object.keys(PAGES).join(",")},
 		conds: {type: "string", default: "A,B_own,C_own,B_all,C_eq"},
 		out: {type: "string", default: "results/tm-x1.jsonl"},
+		mode: {type: "string", default: "cpu"}, // cpu: CPU プロファイル / memory: GC 後のヒープ
 	},
 });
 const N = Number(args.n);
@@ -59,18 +60,30 @@ async function launch(cond) {
 		locale: "ja-JP",
 		timezoneId: "Asia/Tokyo",
 		bypassCSP: true,
-		args: [`--disable-extensions-except=${args.crx}`, `--load-extension=${args.crx}`],
+		args: [`--disable-extensions-except=${args.crx}`, `--load-extension=${args.crx}`, "--enable-precise-memory-info"],
 	});
 	let sw = context.serviceWorkers()[0] ?? await context.waitForEvent("serviceworker");
 	const extId = new URL(sw.url()).host;
-	if (fresh) {
-		await new Promise((r) => setTimeout(r, 3000)); // 拡張の起動を待つ
-		// Chrome 138 以降は拡張ごとに「ユーザー スクリプトを許可」を ON にする必要がある
+	await new Promise((r) => setTimeout(r, 3000)); // 拡張の起動を待つ
+	// Chrome 138 以降は拡張ごとに「ユーザー スクリプトを許可」を ON にする必要がある。
+	// 環境によっては起動し直すと外れるので、毎回確かめて OFF のときだけ押す
+	const allowed = () => sw.evaluate(async () => {
+		try {
+			await chrome.userScripts.getScripts();
+			return true;
+		} catch {
+			return false;
+		}
+	});
+	if (!(await allowed())) {
 		const p = await context.newPage();
 		await p.goto(`chrome://extensions/?id=${extId}`);
 		await p.locator("#allow-user-scripts").first().click();
 		await p.waitForTimeout(2000);
 		await p.close();
+		if (!(await allowed())) throw new Error(`could not allow user scripts for ${cond}`);
+	}
+	if (fresh) {
 		const installed = [];
 		for (const s of conditions[cond].scripts) {
 			const name = `${cond}/${s.id}.user.js`;
@@ -133,19 +146,36 @@ async function runOnce(env, cond, pageKey, iteration) {
 	const cdp = await env.context.newCDPSession(page);
 	await cdp.send("Network.clearBrowserCache");
 	await cdp.send("Performance.enable");
-	await cdp.send("Profiler.enable");
-	await cdp.send("Profiler.setSamplingInterval", {interval: 100});
-	await cdp.send("Profiler.start");
+	if (args.mode === "cpu") {
+		await cdp.send("Profiler.enable");
+		await cdp.send("Profiler.setSamplingInterval", {interval: 100});
+		await cdp.send("Profiler.start");
+	}
 	const t0 = Date.now();
 	await page.goto(PAGES[pageKey], {waitUntil: "load", timeout: 120000});
 	const loadWall = Date.now() - t0;
 	await page.waitForTimeout(SETTLE);
-	const metrics = Object.fromEntries((await cdp.send("Performance.getMetrics")).metrics.map((m) => [m.name, m.value]));
-	const {profile} = await cdp.send("Profiler.stop");
-	const agg = aggregate(profile, env.extId);
+	const getMetrics = async () => Object.fromEntries((await cdp.send("Performance.getMetrics")).metrics.map((m) => [m.name, m.value]));
+	const metrics = await getMetrics();
+	let agg = {};
+	if (args.mode === "cpu") {
+		const {profile} = await cdp.send("Profiler.stop");
+		agg = aggregate(profile, env.extId);
+	} else {
+		// シムの memory モードと同じく、GC を2回かけて残ったものだけを数える。
+		// Tampermonkey が UserScript を動かす世界も、ページと同じ JS ヒープに載る
+		await cdp.send("HeapProfiler.enable");
+		await cdp.send("HeapProfiler.collectGarbage");
+		await cdp.send("HeapProfiler.collectGarbage");
+		agg = {
+			afterGc: await getMetrics(),
+			domCounters: await cdp.send("Memory.getDOMCounters"),
+			inPage: await page.evaluate(() => ({heap: performance.memory?.usedJSHeapSize, nodes: document.getElementsByTagName("*").length, marker: document.documentElement.dataset.cpToolkit ?? null})),
+		};
+	}
 	const marker = await page.evaluate(() => document.documentElement.dataset.cpToolkit ?? null);
 	await page.close();
-	return {mode: "tm", cond, page: pageKey, iteration, installed: env.installed.length, loadWall, metrics, ...agg, cpToolkitVersion: marker};
+	return {mode: args.mode === "cpu" ? "tm" : "tm-memory", cond, page: pageKey, iteration, installed: env.installed.length, loadWall, metrics, ...agg, cpToolkitVersion: marker};
 }
 
 const condKeys = args.conds.split(",");
