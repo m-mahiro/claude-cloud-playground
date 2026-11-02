@@ -145,8 +145,8 @@
   </section>
 
   <section id="memory">
-    <h2>メモリはほぼ同じ</h2>
-    <p>読み込みの3秒後に GC を2回かけ、残った JS ヒープを測りました。スクリプトなしとの差が、UserScript が増やした分です。CP Toolkit は OFF の機能のコードも読み込むため、コードの分は旧スクリプトより大きく、実行中に作るデータは小さめです。</p>
+    <h2>メモリは CP Toolkit のほうが常に多い</h2>
+    <p>読み込みの3秒後に GC を2回かけ、残った JS ヒープを測りました。スクリプトなしとの差が、UserScript が増やした分です。CP Toolkit はどのページでも <b data-draw="memMin" data-source="facts_mem" data-field="min_mb">—</b>〜<b data-draw="memMax" data-source="facts_mem" data-field="max_mb">—</b> MB 増えます。OFF の機能も含めた全体のコード(約 <b data-draw="codeKb" data-source="facts_mem" data-field="code_kb">—</b> KB)を読み込んで保持するためで、旧スクリプトがほとんど動かないページほど差が開きます。問題文ページのように旧スクリプトが多く動くページでは同程度です。</p>
     <div class="card">
       <h3>GC 後の JS ヒープの増分(スクリプトなしとの差)</h3>
       <div class="legend">
@@ -282,6 +282,23 @@
       return [{load_min: Math.min(...loads), load_max: Math.max(...loads), iqr_min: Math.min(...iqrs), iqr_max: Math.max(...iqrs), idle_max_diff: Math.max(...diffs)}];
     },
   });
+  dash.calc('facts_mem', {
+    title: 'メモリの要約',
+    description: 'CP Toolkit(旧26本と同じ機能)の GC 後ヒープの増分の範囲と、読み込んだコードの量の中央値。',
+    inputs: ['memory'],
+    fn: (memory) => {
+      const c = memory.filter((r) => r.cond === 'C_eq');
+      const code = c.map((r) => r.script_code_kb).sort((a, b) => a - b);
+      return [{min_mb: Math.min(...c.map((r) => r.heap_overhead_mb)), max_mb: Math.max(...c.map((r) => r.heap_overhead_mb)), code_kb: code[Math.floor(code.length / 2)]}];
+    },
+  });
+  const factOf = (name, id, field, f) => dash.draw(name, (el) => {
+    const d = dash.data(id);
+    el.textContent = d.status === 'ok' && d.data.length ? f(d.data[0][field]) : '—';
+  });
+  factOf('memMin', 'facts_mem', 'min_mb', d3.format('.1f'));
+  factOf('memMax', 'facts_mem', 'max_mb', d3.format('.1f'));
+  factOf('codeKb', 'facts_mem', 'code_kb', d3.format(',.0f'));
   const fact = (name, field, f) => dash.draw(name, (el) => {
     const d = dash.data('facts');
     el.textContent = d.status === 'ok' && d.data.length ? f(d.data[0][field]) : '—';

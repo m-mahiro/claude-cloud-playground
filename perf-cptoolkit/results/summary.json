@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-02T14:02:19.154Z",
+ "generatedAt": "2026-11-02T14:18:23.663Z",
  "counts": {
   "perfX1": 648,
   "perfX4": 324,
   "idle": 72,
   "profile": 162,
   "trace": 108,
-  "memory": 0,
+  "memory": 270,
   "failed": 0
  },
  "scriptsPerPage": {
@@ -26016,14 +26016,3404 @@
   }
  },
  "memory": {
-  "top": {},
-  "contests": {},
-  "contest": {},
-  "tasks": {},
-  "task": {},
-  "editorial": {},
-  "user": {},
-  "history": {},
-  "tessoku": {}
+  "top": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 2.9081344604492188,
+     "q1": 2.9081344604492188,
+     "q3": 2.9081878662109375,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.188301086425781,
+     "q1": 4.162971496582031,
+     "q3": 4.1978759765625,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2519,
+     "q1": 2519,
+     "q3": 2519,
+     "n": 5
+    },
+    "listeners": {
+     "median": 70,
+     "q1": 70,
+     "q3": 70,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 697.66796875,
+     "q1": 694.42578125,
+     "q3": 708.7890625,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.9081687927246094,
+     "q1": 2.9081153869628906,
+     "q3": 2.9082069396972656,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.1825714111328125,
+     "q1": 4.175434112548828,
+     "q3": 4.1999969482421875,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2519,
+     "q1": 2519,
+     "q3": 2519,
+     "n": 5
+    },
+    "listeners": {
+     "median": 70,
+     "q1": 70,
+     "q3": 70,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 745.00390625,
+     "q1": 735.16015625,
+     "q3": 752.6015625,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 4.5355987548828125,
+     "q1": 4.535457611083984,
+     "q3": 4.536182403564453,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.4657135009765625,
+     "q1": 7.44122314453125,
+     "q3": 7.502922058105469,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2535,
+     "q1": 2535,
+     "q3": 2535,
+     "n": 5
+    },
+    "listeners": {
+     "median": 72,
+     "q1": 72,
+     "q3": 72,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 150.8515625,
+     "q1": 144.359375,
+     "q3": 161.13671875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 831.26953125,
+     "q1": 822.7578125,
+     "q3": 837.14453125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1396.96875,
+     "q1": 1391.20703125,
+     "q3": 1409.1796875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 150.8515625
+    },
+    "perFeature": {
+     "(unknown)": 87.71484375,
+     "(core:app)": 21.18359375,
+     "(core:domain)": 14.5625,
+     "(core:application)": 12.44140625,
+     "settings-panel": 11.38671875,
+     "(core:adapters)": 4.09375,
+     "(core:shared)": 0,
+     "(lib)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 3.001667022705078,
+     "q1": 3.0016212463378906,
+     "q3": 3.001667022705078,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.458896636962891,
+     "q1": 4.439304351806641,
+     "q3": 4.461734771728516,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2538,
+     "q1": 2538,
+     "q3": 2538,
+     "n": 5
+    },
+    "listeners": {
+     "median": 76,
+     "q1": 76,
+     "q3": 76,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 3.109375,
+     "q1": 2.0625,
+     "q3": 4.13671875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 42.2734375,
+     "q1": 37.95703125,
+     "q3": 43.1484375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 762.1171875,
+     "q1": 760.64453125,
+     "q3": 778.796875,
+     "n": 5
+    },
+    "perScript": {
+     "ResultNotifier": 2.109375,
+     "EasyAccordion": 1.01171875
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 4.549274444580078,
+     "q1": 4.548763275146484,
+     "q3": 4.549938201904297,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.463466644287109,
+     "q1": 7.463321685791016,
+     "q3": 7.497180938720703,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2523,
+     "q1": 2523,
+     "q3": 2523,
+     "n": 5
+    },
+    "listeners": {
+     "median": 74,
+     "q1": 74,
+     "q3": 74,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 170.25390625,
+     "q1": 160.33984375,
+     "q3": 171.94921875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 831.75390625,
+     "q1": 825.328125,
+     "q3": 851.1953125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1401.59375,
+     "q1": 1397.6171875,
+     "q3": 1409.1015625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 170.25390625
+    },
+    "perFeature": {
+     "(unknown)": 92.1640625,
+     "(core:application)": 21.48828125,
+     "(core:app)": 16.63671875,
+     "settings-panel": 11.98828125,
+     "(core:domain)": 10.390625,
+     "result-notifier": 6.9375,
+     "(core:adapters)": 5.10546875,
+     "top-links": 2.05078125,
+     "latest-contests": 1.015625,
+     "(lib)": 1.01171875,
+     "(core:shared)": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 4.535377502441406,
+     "q1": 4.535205841064453,
+     "q3": 4.535915374755859,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.458686828613281,
+     "q1": 7.443634033203125,
+     "q3": 7.4619598388671875,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2523,
+     "q1": 2523,
+     "q3": 2523,
+     "n": 5
+    },
+    "listeners": {
+     "median": 74,
+     "q1": 74,
+     "q3": 74,
+     "n": 5
+    },
+    "documents": {
+     "median": 5,
+     "q1": 5,
+     "q3": 5,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 166.3359375,
+     "q1": 164.52734375,
+     "q3": 171.20703125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 829.9609375,
+     "q1": 829.79296875,
+     "q3": 840.7265625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1405.76171875,
+     "q1": 1394.85546875,
+     "q3": 1412.96484375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 166.3359375
+    },
+    "perFeature": {
+     "(unknown)": 93.82421875,
+     "(core:application)": 20.828125,
+     "(core:app)": 18.12109375,
+     "settings-panel": 14.47265625,
+     "(core:domain)": 7.14453125,
+     "(core:adapters)": 3.14453125,
+     "result-notifier": 2.78125,
+     "latest-contests": 2.02734375,
+     "top-links": 1.03125,
+     "(core:shared)": 0,
+     "(lib)": 0
+    }
+   }
+  },
+  "contests": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 2.0465660095214844,
+     "q1": 2.0286827087402344,
+     "q3": 2.0465660095214844,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.0118980407714844,
+     "q1": 3.011058807373047,
+     "q3": 3.0224151611328125,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3229,
+     "q1": 3229,
+     "q3": 3229,
+     "n": 5
+    },
+    "listeners": {
+     "median": 222,
+     "q1": 222,
+     "q3": 222,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 714.31640625,
+     "q1": 701.953125,
+     "q3": 721.01953125,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.2355804443359375,
+     "q1": 2.2353515625,
+     "q3": 2.236125946044922,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.641498565673828,
+     "q1": 3.6414947509765625,
+     "q3": 3.641529083251953,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3233,
+     "q1": 3233,
+     "q3": 3233,
+     "n": 5
+    },
+    "listeners": {
+     "median": 224,
+     "q1": 224,
+     "q3": 224,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 38.33984375,
+     "q1": 38.11328125,
+     "q3": 41.44140625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 75.0546875,
+     "q1": 72.1171875,
+     "q3": 78.51171875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 770.6953125,
+     "q1": 766.875,
+     "q3": 792.08203125,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderWidenContainer": 22.96875,
+     "JavaCodeSubmitter": 14.47265625,
+     "AtCoderCustomDefaultSubmissions": 3.296875
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 3.671875,
+     "q1": 3.671588897705078,
+     "q3": 3.671947479248047,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.495227813720703,
+     "q1": 6.488773345947266,
+     "q3": 6.4965667724609375,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3247,
+     "q1": 3247,
+     "q3": 3247,
+     "n": 5
+    },
+    "listeners": {
+     "median": 224,
+     "q1": 224,
+     "q3": 224,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 160.9453125,
+     "q1": 157.48828125,
+     "q3": 162.4140625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 827.9921875,
+     "q1": 822.08203125,
+     "q3": 828.00390625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1369.375,
+     "q1": 1364.97265625,
+     "q3": 1387.98046875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 160.9453125
+    },
+    "perFeature": {
+     "(unknown)": 87.41015625,
+     "(core:domain)": 18.79296875,
+     "(core:application)": 18.50390625,
+     "(core:app)": 15.16015625,
+     "settings-panel": 12.41796875,
+     "(core:adapters)": 6.1328125,
+     "wide-layout": 2.13671875,
+     "(lib)": 1.01171875,
+     "(core:shared)": 1.0078125
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 2.377960205078125,
+     "q1": 2.377777099609375,
+     "q3": 2.3782119750976562,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.7448768615722656,
+     "q1": 3.7380828857421875,
+     "q3": 3.7467041015625,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3236,
+     "q1": 3236,
+     "q3": 3236,
+     "n": 5
+    },
+    "listeners": {
+     "median": 230,
+     "q1": 230,
+     "q3": 230,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 90.0625,
+     "q1": 86.67578125,
+     "q3": 94.3515625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 125.3515625,
+     "q1": 120.33203125,
+     "q3": 127.91796875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 862.265625,
+     "q1": 855.1875,
+     "q3": 874.578125,
+     "n": 5
+    },
+    "perScript": {
+     "ResultNotifier": 48.0078125,
+     "AtCoderWidenContainer": 22.82421875,
+     "JavaCodeSubmitter": 17.5234375,
+     "AtCoderCustomDefaultSubmissions": 2.04296875,
+     "VirtualTimer": 1.015625,
+     "EasyAccordion": 0,
+     "GoogleCalender": 0
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 3.6800498962402344,
+     "q1": 3.6798858642578125,
+     "q3": 3.6801071166992188,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.529182434082031,
+     "q1": 6.508918762207031,
+     "q3": 6.535564422607422,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3257,
+     "q1": 3257,
+     "q3": 3257,
+     "n": 5
+    },
+    "listeners": {
+     "median": 230,
+     "q1": 230,
+     "q3": 230,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 172.94140625,
+     "q1": 170.6640625,
+     "q3": 175.6796875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 826.92578125,
+     "q1": 815.87109375,
+     "q3": 830.94140625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1390.1640625,
+     "q1": 1365.94140625,
+     "q3": 1397.6640625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 172.94140625
+    },
+    "perFeature": {
+     "(unknown)": 92.921875,
+     "(core:app)": 20.6875,
+     "(core:application)": 19.40234375,
+     "settings-panel": 12.86328125,
+     "(core:domain)": 10.28515625,
+     "(core:adapters)": 5.15234375,
+     "result-notifier": 3.765625,
+     "wide-layout": 2.13671875,
+     "hover-menu": 2.0546875,
+     "latest-contests": 1.01171875,
+     "(lib)": 1.01171875,
+     "(core:shared)": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 3.6669960021972656,
+     "q1": 3.6668968200683594,
+     "q3": 3.6672439575195312,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.502140045166016,
+     "q1": 6.5017547607421875,
+     "q3": 6.513763427734375,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3257,
+     "q1": 3257,
+     "q3": 3257,
+     "n": 5
+    },
+    "listeners": {
+     "median": 230,
+     "q1": 230,
+     "q3": 230,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 159.70703125,
+     "q1": 151.0703125,
+     "q3": 164.9453125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 835.6328125,
+     "q1": 823.75390625,
+     "q3": 839.03125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1390.359375,
+     "q1": 1374.328125,
+     "q3": 1403.8203125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 159.70703125
+    },
+    "perFeature": {
+     "(unknown)": 90.859375,
+     "(core:application)": 19.7890625,
+     "(core:app)": 17.93359375,
+     "settings-panel": 10.3125,
+     "(core:domain)": 9.22265625,
+     "hover-menu": 3.06640625,
+     "(core:adapters)": 3.0625,
+     "result-notifier": 2.0703125,
+     "latest-contests": 1.1015625,
+     "(core:shared)": 1.0390625,
+     "(lib)": 1.015625,
+     "wide-layout": 1.0078125
+    }
+   }
+  },
+  "contest": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 1.9023971557617188,
+     "q1": 1.8959159851074219,
+     "q3": 1.9023971557617188,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 2.855499267578125,
+     "q1": 2.853351593017578,
+     "q3": 2.860095977783203,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 887,
+     "q1": 887,
+     "q3": 887,
+     "n": 5
+    },
+    "listeners": {
+     "median": 43,
+     "q1": 43,
+     "q3": 43,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 715.20703125,
+     "q1": 713.91796875,
+     "q3": 735.28515625,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.3664588928222656,
+     "q1": 2.366283416748047,
+     "q3": 2.366504669189453,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.642047882080078,
+     "q1": 3.6418190002441406,
+     "q3": 3.6450233459472656,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1018,
+     "q1": 1018,
+     "q3": 1018,
+     "n": 5
+    },
+    "listeners": {
+     "median": 66,
+     "q1": 66,
+     "q3": 66,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 94.24609375,
+     "q1": 90.875,
+     "q3": 101.96875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 146.75,
+     "q1": 145.08203125,
+     "q3": 147.265625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 867.69140625,
+     "q1": 865.5859375,
+     "q3": 877.2421875,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 51.6484375,
+     "AtCoderWidenContainer": 21.10546875,
+     "JavaCodeSubmitter": 15.5703125,
+     "AtCoderCustomDefaultSubmissions": 4.33984375
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 3.5724143981933594,
+     "q1": 3.572357177734375,
+     "q3": 3.5755844116210938,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.943073272705078,
+     "q1": 5.941932678222656,
+     "q3": 5.950298309326172,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1078,
+     "q1": 1078,
+     "q3": 1078,
+     "n": 5
+    },
+    "listeners": {
+     "median": 69,
+     "q1": 69,
+     "q3": 69,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 209.625,
+     "q1": 193.06640625,
+     "q3": 216.79296875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 826.93359375,
+     "q1": 825.45703125,
+     "q3": 828.49609375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1399.40234375,
+     "q1": 1382.765625,
+     "q3": 1403.2578125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 209.625
+    },
+    "perFeature": {
+     "(unknown)": 94.0859375,
+     "task-dropdown": 37.08984375,
+     "(core:app)": 20.6328125,
+     "(core:application)": 18.7109375,
+     "(core:domain)": 14.3203125,
+     "(core:adapters)": 10.2734375,
+     "settings-panel": 8.41015625,
+     "java-submit": 5.09375,
+     "wide-layout": 2.02734375,
+     "(lib)": 1.01171875,
+     "(core:ui)": 0,
+     "(core:shared)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 2.530609130859375,
+     "q1": 2.53045654296875,
+     "q3": 2.530628204345703,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.937408447265625,
+     "q1": 3.936321258544922,
+     "q3": 3.947856903076172,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1024,
+     "q1": 1024,
+     "q3": 1024,
+     "n": 5
+    },
+    "listeners": {
+     "median": 90,
+     "q1": 90,
+     "q3": 90,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 147.6796875,
+     "q1": 144.33203125,
+     "q3": 148.91015625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 195.51171875,
+     "q1": 194.609375,
+     "q3": 197.08203125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 941.5703125,
+     "q1": 933.39453125,
+     "q3": 949.24609375,
+     "n": 5
+    },
+    "perScript": {
+     "ResultNotifier": 48.0078125,
+     "AtCoderListingTasks": 47.6953125,
+     "AtCoderWidenContainer": 26.00390625,
+     "JavaCodeSubmitter": 14.44921875,
+     "AtCoderCustomDefaultSubmissions": 6.37890625,
+     "EasyAccordion": 2.02734375,
+     "VirtualTimer": 1.0390625
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 3.5955963134765625,
+     "q1": 3.5947647094726562,
+     "q3": 3.5956687927246094,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.978729248046875,
+     "q1": 5.9781036376953125,
+     "q3": 5.984291076660156,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1087,
+     "q1": 1087,
+     "q3": 1087,
+     "n": 5
+    },
+    "listeners": {
+     "median": 95,
+     "q1": 95,
+     "q3": 95,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 232.12109375,
+     "q1": 216.66796875,
+     "q3": 237.36328125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 816.4296875,
+     "q1": 816.03125,
+     "q3": 825.515625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1419.58203125,
+     "q1": 1404.12890625,
+     "q3": 1420.52734375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 232.12109375
+    },
+    "perFeature": {
+     "(unknown)": 93.0546875,
+     "task-dropdown": 33.34765625,
+     "(core:application)": 31.890625,
+     "(core:app)": 21.7734375,
+     "(core:adapters)": 16.64453125,
+     "(core:domain)": 10.296875,
+     "settings-panel": 7.2890625,
+     "hover-menu": 6.12890625,
+     "java-submit": 5.5859375,
+     "result-notifier": 3.7734375,
+     "wide-layout": 1.0625,
+     "virtual-timer": 1.015625,
+     "contest-calendar": 1.015625,
+     "latest-contests": 1.01171875,
+     "(lib)": 0,
+     "task-status": 0,
+     "(core:shared)": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 3.589130401611328,
+     "q1": 3.589130401611328,
+     "q3": 3.5901527404785156,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.971012115478516,
+     "q1": 5.9665679931640625,
+     "q3": 5.971927642822266,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1087,
+     "q1": 1087,
+     "q3": 1087,
+     "n": 5
+    },
+    "listeners": {
+     "median": 97,
+     "q1": 97,
+     "q3": 97,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 242.4765625,
+     "q1": 240.36328125,
+     "q3": 245.33203125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 821.609375,
+     "q1": 821.37109375,
+     "q3": 841.8515625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1413.04296875,
+     "q1": 1382.59765625,
+     "q3": 1417.6796875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 242.4765625
+    },
+    "perFeature": {
+     "(unknown)": 95.8125,
+     "task-dropdown": 33.80078125,
+     "(core:application)": 29.83984375,
+     "(core:app)": 21.953125,
+     "(core:adapters)": 13.50390625,
+     "settings-panel": 10.375,
+     "clar-notifier": 9.57421875,
+     "(core:domain)": 8.40625,
+     "java-submit": 5.07421875,
+     "hover-menu": 3.12109375,
+     "result-notifier": 2.765625,
+     "wide-layout": 2.08984375,
+     "(lib)": 1.0625,
+     "virtual-timer": 1.0625,
+     "latest-contests": 1.03125,
+     "contest-calendar": 0,
+     "task-status": 0,
+     "(core:ui)": 0
+    }
+   }
+  },
+  "tasks": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 1.8498306274414062,
+     "q1": 1.8497543334960938,
+     "q3": 1.8500213623046875,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 2.7989234924316406,
+     "q1": 2.7986717224121094,
+     "q3": 2.8075103759765625,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 689,
+     "q1": 689,
+     "q3": 689,
+     "n": 5
+    },
+    "listeners": {
+     "median": 43,
+     "q1": 43,
+     "q3": 43,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 707.01953125,
+     "q1": 700.70703125,
+     "q3": 739.65234375,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.3520164489746094,
+     "q1": 2.3517417907714844,
+     "q3": 2.3520164489746094,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.6260833740234375,
+     "q1": 3.6236038208007812,
+     "q3": 3.6271591186523438,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 820,
+     "q1": 820,
+     "q3": 820,
+     "n": 5
+    },
+    "listeners": {
+     "median": 66,
+     "q1": 66,
+     "q3": 66,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 95.9296875,
+     "q1": 88.22265625,
+     "q3": 97.43359375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 149.44140625,
+     "q1": 144.3359375,
+     "q3": 152.37890625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 874.62890625,
+     "q1": 851.9140625,
+     "q3": 893.90625,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 56.80078125,
+     "AtCoderWidenContainer": 20.4453125,
+     "JavaCodeSubmitter": 12.640625,
+     "AtCoderCustomDefaultSubmissions": 5.20703125
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 3.52227783203125,
+     "q1": 3.5212669372558594,
+     "q3": 3.524921417236328,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.903186798095703,
+     "q1": 5.897216796875,
+     "q3": 5.907291412353516,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 880,
+     "q1": 880,
+     "q3": 880,
+     "n": 5
+    },
+    "listeners": {
+     "median": 69,
+     "q1": 69,
+     "q3": 69,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 207.38671875,
+     "q1": 198.875,
+     "q3": 213.58203125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 829.02734375,
+     "q1": 822.13671875,
+     "q3": 834.33203125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1364.80078125,
+     "q1": 1356.203125,
+     "q3": 1400.24609375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 207.38671875
+    },
+    "perFeature": {
+     "(unknown)": 91.14453125,
+     "task-dropdown": 36.7265625,
+     "(core:app)": 23.12109375,
+     "(core:application)": 18.09765625,
+     "(core:domain)": 14.640625,
+     "settings-panel": 13.29296875,
+     "(core:adapters)": 7.32421875,
+     "java-submit": 4.5234375,
+     "wide-layout": 2.0703125,
+     "(core:ui)": 0,
+     "(lib)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 2.5161590576171875,
+     "q1": 2.5161209106445312,
+     "q3": 2.516265869140625,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.919525146484375,
+     "q1": 3.91943359375,
+     "q3": 3.920429229736328,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 826,
+     "q1": 826,
+     "q3": 826,
+     "n": 5
+    },
+    "listeners": {
+     "median": 90,
+     "q1": 90,
+     "q3": 90,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 149.50390625,
+     "q1": 136.8046875,
+     "q3": 156.45703125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 191.12109375,
+     "q1": 186.3046875,
+     "q3": 191.703125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 928.86328125,
+     "q1": 928.05078125,
+     "q3": 936.27734375,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 56.8125,
+     "ResultNotifier": 49.015625,
+     "AtCoderWidenContainer": 23.1953125,
+     "JavaCodeSubmitter": 10.4296875,
+     "AtCoderCustomDefaultSubmissions": 5.57421875,
+     "VirtualTimer": 2.0859375,
+     "EasyAccordion": 0
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 3.5447616577148438,
+     "q1": 3.537029266357422,
+     "q3": 3.549823760986328,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.917774200439453,
+     "q1": 5.9127655029296875,
+     "q3": 5.923435211181641,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 889,
+     "q1": 889,
+     "q3": 889,
+     "n": 5
+    },
+    "listeners": {
+     "median": 95,
+     "q1": 95,
+     "q3": 95,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 236.08984375,
+     "q1": 218.5,
+     "q3": 237.19921875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 820.91796875,
+     "q1": 816.203125,
+     "q3": 835.2265625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1400.0546875,
+     "q1": 1392.56640625,
+     "q3": 1406.98828125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 236.08984375
+    },
+    "perFeature": {
+     "(unknown)": 99.140625,
+     "task-dropdown": 34.0859375,
+     "(core:application)": 27.39453125,
+     "(core:app)": 21.0546875,
+     "(core:domain)": 13.34375,
+     "(core:adapters)": 9.265625,
+     "settings-panel": 8.21875,
+     "java-submit": 3.359375,
+     "hover-menu": 3.15234375,
+     "result-notifier": 2.76171875,
+     "(core:ui)": 1.09375,
+     "wide-layout": 1.07421875,
+     "(lib)": 0,
+     "task-status": 0,
+     "contest-calendar": 0,
+     "virtual-timer": 0,
+     "latest-contests": 0,
+     "(core:shared)": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 3.5334243774414062,
+     "q1": 3.528423309326172,
+     "q3": 3.5336227416992188,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.918666839599609,
+     "q1": 5.909263610839844,
+     "q3": 5.919273376464844,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 889,
+     "q1": 889,
+     "q3": 889,
+     "n": 5
+    },
+    "listeners": {
+     "median": 97,
+     "q1": 97,
+     "q3": 97,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 228.328125,
+     "q1": 224.765625,
+     "q3": 231.57421875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 833.3359375,
+     "q1": 832.2265625,
+     "q3": 833.984375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1381.125,
+     "q1": 1367.671875,
+     "q3": 1411.8828125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 228.328125
+    },
+    "perFeature": {
+     "(unknown)": 87.4765625,
+     "(core:application)": 32.05859375,
+     "task-dropdown": 28.39453125,
+     "(core:app)": 21.12109375,
+     "clar-notifier": 13.30859375,
+     "settings-panel": 12.51171875,
+     "(core:domain)": 10.328125,
+     "(core:adapters)": 9.39453125,
+     "java-submit": 4.3828125,
+     "hover-menu": 4.10546875,
+     "result-notifier": 3.0625,
+     "wide-layout": 2.04296875,
+     "latest-contests": 1.03125,
+     "(lib)": 0,
+     "contest-calendar": 0,
+     "task-status": 0,
+     "virtual-timer": 0,
+     "(core:catalog)": 0
+    }
+   }
+  },
+  "task": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 3.6721572875976562,
+     "q1": 3.6721038818359375,
+     "q3": 3.678058624267578,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.5475921630859375,
+     "q1": 5.507335662841797,
+     "q3": 5.561149597167969,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2321,
+     "q1": 2321,
+     "q3": 2321,
+     "n": 5
+    },
+    "listeners": {
+     "median": 68,
+     "q1": 68,
+     "q3": 68,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 726.14453125,
+     "q1": 724.13671875,
+     "q3": 744.00390625,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 4.8225555419921875,
+     "q1": 4.822437286376953,
+     "q3": 4.823001861572266,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 8.185314178466797,
+     "q1": 8.185089111328125,
+     "q3": 8.200817108154297,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2476,
+     "q1": 2476,
+     "q3": 2476,
+     "n": 5
+    },
+    "listeners": {
+     "median": 96,
+     "q1": 96,
+     "q3": 96,
+     "n": 5
+    },
+    "documents": {
+     "median": 3,
+     "q1": 3,
+     "q3": 3,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 145.0234375,
+     "q1": 144.41015625,
+     "q3": 148.9140625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 463.22265625,
+     "q1": 453.71484375,
+     "q3": 466.73828125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1224.953125,
+     "q1": 1213.76953125,
+     "q3": 1252.8671875,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 46.30078125,
+     "AtCoderHighlighter": 40.140625,
+     "AtCoderMarkdownCopier": 23.0234375,
+     "AtCoderWidenContainer": 18.8046875,
+     "JavaCodeSubmitter": 13.296875,
+     "AtCoderCustomDefaultSubmissions": 4.10546875,
+     "AtCoderEasyTestForJava": 2.16796875
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 5.445560455322266,
+     "q1": 5.439640045166016,
+     "q3": 5.4455718994140625,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 8.763206481933594,
+     "q1": 8.761764526367188,
+     "q3": 8.786346435546875,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2628,
+     "q1": 2628,
+     "q3": 2628,
+     "n": 5
+    },
+    "listeners": {
+     "median": 113,
+     "q1": 113,
+     "q3": 113,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 298.265625,
+     "q1": 296.58203125,
+     "q3": 306.7421875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 829.09375,
+     "q1": 822.20703125,
+     "q3": 836.38671875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1385.17578125,
+     "q1": 1383.25,
+     "q3": 1387.48046875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 298.265625
+    },
+    "perFeature": {
+     "(unknown)": 88.83203125,
+     "statement-highlight": 41.78125,
+     "easy-test": 34.75,
+     "task-dropdown": 23.8984375,
+     "(core:application)": 23.296875,
+     "(core:app)": 19.66796875,
+     "(core:domain)": 18.703125,
+     "statement-copy": 15.58203125,
+     "settings-panel": 8.328125,
+     "submission-shortcuts": 6.77734375,
+     "(core:adapters)": 5.40234375,
+     "java-submit": 2.09375,
+     "wide-layout": 1.015625,
+     "(lib)": 0,
+     "(core:shared)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 5.577613830566406,
+     "q1": 5.574184417724609,
+     "q3": 5.577732086181641,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 9.138572692871094,
+     "q1": 9.133049011230469,
+     "q3": 9.152420043945312,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2556,
+     "q1": 2556,
+     "q3": 2556,
+     "n": 5
+    },
+    "listeners": {
+     "median": 139,
+     "q1": 139,
+     "q3": 139,
+     "n": 5
+    },
+    "documents": {
+     "median": 3,
+     "q1": 3,
+     "q3": 3,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 189.703125,
+     "q1": 176.3515625,
+     "q3": 191.95703125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 541.16015625,
+     "q1": 539.86328125,
+     "q3": 541.31640625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1689.05078125,
+     "q1": 1687.18359375,
+     "q3": 1704.84765625,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 48.69921875,
+     "AtCoderHighlighter": 38.0234375,
+     "ProblemCopier": 25.5078125,
+     "AtCoderMarkdownCopier": 21.76171875,
+     "AtCoderWidenContainer": 20.8046875,
+     "JavaCodeSubmitter": 11.3671875,
+     "AtCoderCustomDefaultSubmissions": 5.5703125,
+     "AtCoderEasyTestForJava": 5.28515625,
+     "EfficientLayout": 0,
+     "QuestionCopier": 0,
+     "ResultNotifier": 0,
+     "VirtualTimer": 0,
+     "EasyAccordion": 0,
+     "LanguageButtons": 0,
+     "SubmissionTimer": 0
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 5.4675750732421875,
+     "q1": 5.462093353271484,
+     "q3": 5.468059539794922,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 8.790782928466797,
+     "q1": 8.790687561035156,
+     "q3": 8.801834106445312,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2683,
+     "q1": 2683,
+     "q3": 2683,
+     "n": 5
+    },
+    "listeners": {
+     "median": 139,
+     "q1": 139,
+     "q3": 139,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 324.88671875,
+     "q1": 323.5703125,
+     "q3": 325.703125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 824.1875,
+     "q1": 812.203125,
+     "q3": 833.29296875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1390.84765625,
+     "q1": 1371.984375,
+     "q3": 1400.1015625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 324.88671875
+    },
+    "perFeature": {
+     "(unknown)": 87.7109375,
+     "statement-highlight": 39.68359375,
+     "easy-test": 36.03125,
+     "(core:application)": 35.94921875,
+     "task-dropdown": 22.1796875,
+     "(core:app)": 17.44921875,
+     "(core:domain)": 15.48046875,
+     "statement-copy": 13.33984375,
+     "(core:adapters)": 11.5078125,
+     "settings-panel": 9.32421875,
+     "submission-shortcuts": 5.890625,
+     "efficient-layout": 5.2578125,
+     "result-notifier": 4.11328125,
+     "hover-menu": 4.046875,
+     "java-submit": 2.16015625,
+     "language-buttons": 2.109375,
+     "wide-layout": 1.0625,
+     "contest-calendar": 1.03125,
+     "task-status": 1.03125,
+     "(core:shared)": 0,
+     "latest-contests": 0,
+     "(lib)": 0,
+     "virtual-timer": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 5.426166534423828,
+     "q1": 5.425682067871094,
+     "q3": 5.429115295410156,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 8.772041320800781,
+     "q1": 8.743377685546875,
+     "q3": 8.772563934326172,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2558,
+     "q1": 2558,
+     "q3": 2558,
+     "n": 5
+    },
+    "listeners": {
+     "median": 135,
+     "q1": 135,
+     "q3": 135,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 294.0859375,
+     "q1": 287.85546875,
+     "q3": 325.89453125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 828.375,
+     "q1": 825.78125,
+     "q3": 839.87109375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1387.078125,
+     "q1": 1382.12109375,
+     "q3": 1389.90234375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 294.0859375
+    },
+    "perFeature": {
+     "(unknown)": 91.64453125,
+     "(core:application)": 47.13671875,
+     "statement-highlight": 33.4296875,
+     "task-dropdown": 25.84375,
+     "(core:app)": 18.16015625,
+     "(core:adapters)": 16.53515625,
+     "statement-copy": 15.32421875,
+     "(core:domain)": 12.515625,
+     "settings-panel": 9.2265625,
+     "clar-notifier": 7.58203125,
+     "submission-shortcuts": 5.3984375,
+     "hover-menu": 4.13671875,
+     "result-notifier": 2.7578125,
+     "java-submit": 2.03125,
+     "wide-layout": 1.0625,
+     "language-buttons": 1.03125,
+     "virtual-timer": 1.015625,
+     "latest-contests": 1.01171875,
+     "task-status": 1.0078125,
+     "(core:catalog)": 0,
+     "variable-hover": 0,
+     "(lib)": 0,
+     "(core:shared)": 0,
+     "contest-calendar": 0
+    }
+   }
+  },
+  "editorial": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 1.976806640625,
+     "q1": 1.9766845703125,
+     "q3": 1.9814376831054688,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 2.9347305297851562,
+     "q1": 2.9302902221679688,
+     "q3": 2.947582244873047,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1379,
+     "q1": 1379,
+     "q3": 1379,
+     "n": 5
+    },
+    "listeners": {
+     "median": 42,
+     "q1": 42,
+     "q3": 42,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 728.75390625,
+     "q1": 710.5390625,
+     "q3": 737.1484375,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.4391746520996094,
+     "q1": 2.4345970153808594,
+     "q3": 2.4395751953125,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 3.72625732421875,
+     "q1": 3.7241477966308594,
+     "q3": 3.7364730834960938,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1510,
+     "q1": 1510,
+     "q3": 1510,
+     "n": 5
+    },
+    "listeners": {
+     "median": 65,
+     "q1": 65,
+     "q3": 65,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 92.24609375,
+     "q1": 88.9296875,
+     "q3": 96.3359375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 141.33984375,
+     "q1": 136.15625,
+     "q3": 143.96875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 890.3984375,
+     "q1": 860.26171875,
+     "q3": 890.66015625,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 48.38671875,
+     "AtCoderWidenContainer": 27.921875,
+     "JavaCodeSubmitter": 13.7109375,
+     "AtCoderCustomDefaultSubmissions": 4.140625
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 3.658855438232422,
+     "q1": 3.6453857421875,
+     "q3": 3.6641998291015625,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.046199798583984,
+     "q1": 6.044757843017578,
+     "q3": 6.048332214355469,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1570,
+     "q1": 1570,
+     "q3": 1570,
+     "n": 5
+    },
+    "listeners": {
+     "median": 68,
+     "q1": 68,
+     "q3": 68,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 208.453125,
+     "q1": 196.64453125,
+     "q3": 209.171875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 816.44921875,
+     "q1": 814.09765625,
+     "q3": 820.96875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1396.15625,
+     "q1": 1382.6640625,
+     "q3": 1398.0546875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 208.453125
+    },
+    "perFeature": {
+     "(unknown)": 83.796875,
+     "task-dropdown": 38.28125,
+     "(core:application)": 20.51953125,
+     "(core:app)": 17.89453125,
+     "(core:domain)": 16.60546875,
+     "settings-panel": 11.265625,
+     "(core:adapters)": 8.46484375,
+     "java-submit": 4.25,
+     "wide-layout": 2.1328125,
+     "(lib)": 0,
+     "(core:ui)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 4.7616119384765625,
+     "q1": 4.761577606201172,
+     "q3": 4.762859344482422,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.708408355712891,
+     "q1": 7.688510894775391,
+     "q3": 7.732227325439453,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1990,
+     "q1": 1990,
+     "q3": 1990,
+     "n": 5
+    },
+    "listeners": {
+     "median": 95,
+     "q1": 95,
+     "q3": 95,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 843.81640625,
+     "q1": 843.265625,
+     "q3": 886.859375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 489.69921875,
+     "q1": 489.046875,
+     "q3": 495.4375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1548.09375,
+     "q1": 1544.16796875,
+     "q3": 1555.59375,
+     "n": 5
+    },
+    "perScript": {
+     "ViewAllEditorials": 713.65234375,
+     "ResultNotifier": 49.0390625,
+     "AtCoderListingTasks": 41.13671875,
+     "AtCoderWidenContainer": 20.05859375,
+     "JavaCodeSubmitter": 15.41015625,
+     "AtCoderCustomDefaultSubmissions": 6.11328125,
+     "EasyAccordion": 1.03125,
+     "VirtualTimer": 0
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 4.917388916015625,
+     "q1": 4.915203094482422,
+     "q3": 4.920356750488281,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.604228973388672,
+     "q1": 7.600276947021484,
+     "q3": 7.607421875,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2043,
+     "q1": 2043,
+     "q3": 2043,
+     "n": 5
+    },
+    "listeners": {
+     "median": 99,
+     "q1": 99,
+     "q3": 99,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 243.23828125,
+     "q1": 237.4375,
+     "q3": 247.50390625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 826.1484375,
+     "q1": 813.01953125,
+     "q3": 839.22265625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1379,
+     "q1": 1362.75,
+     "q3": 1384.53515625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 243.23828125
+    },
+    "perFeature": {
+     "(unknown)": 89.77734375,
+     "task-dropdown": 30.14453125,
+     "(core:application)": 27.58203125,
+     "editorial-list": 19.8828125,
+     "(core:app)": 14.44921875,
+     "(core:adapters)": 12.60546875,
+     "(core:domain)": 12.20703125,
+     "settings-panel": 10.33203125,
+     "hover-menu": 5.12109375,
+     "java-submit": 3.125,
+     "result-notifier": 2.765625,
+     "wide-layout": 1.03125,
+     "virtual-timer": 1.0078125,
+     "contest-calendar": 1.0078125,
+     "task-status": 0,
+     "(lib)": 0,
+     "latest-contests": 0,
+     "(core:shared)": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 4.911457061767578,
+     "q1": 4.909446716308594,
+     "q3": 4.912162780761719,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.591583251953125,
+     "q1": 7.570091247558594,
+     "q3": 7.600349426269531,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 2043,
+     "q1": 2043,
+     "q3": 2043,
+     "n": 5
+    },
+    "listeners": {
+     "median": 101,
+     "q1": 101,
+     "q3": 101,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 246.42578125,
+     "q1": 237.3671875,
+     "q3": 263.67578125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 830.16796875,
+     "q1": 823.9765625,
+     "q3": 843.03515625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1384.515625,
+     "q1": 1368.30859375,
+     "q3": 1389.9609375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 246.42578125
+    },
+    "perFeature": {
+     "(unknown)": 87.88671875,
+     "(core:application)": 31.38671875,
+     "task-dropdown": 29.31640625,
+     "editorial-list": 18.70703125,
+     "(core:app)": 18.57421875,
+     "(core:adapters)": 13.34375,
+     "(core:domain)": 11.49609375,
+     "settings-panel": 10.30859375,
+     "clar-notifier": 8.4140625,
+     "hover-menu": 5.19921875,
+     "java-submit": 4.23828125,
+     "result-notifier": 2.06640625,
+     "wide-layout": 2.02734375,
+     "(lib)": 1.01171875,
+     "(core:shared)": 0,
+     "latest-contests": 0,
+     "contest-calendar": 0,
+     "virtual-timer": 0,
+     "(core:catalog)": 0,
+     "(core:ui)": 0
+    }
+   }
+  },
+  "user": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 2.7442970275878906,
+     "q1": 2.7434234619140625,
+     "q3": 2.744434356689453,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.576396942138672,
+     "q1": 4.572319030761719,
+     "q3": 4.576587677001953,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1173,
+     "q1": 1173,
+     "q3": 1173,
+     "n": 5
+    },
+    "listeners": {
+     "median": 65,
+     "q1": 65,
+     "q3": 65,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 721.86328125,
+     "q1": 719.19921875,
+     "q3": 741.0390625,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.9147911071777344,
+     "q1": 2.9146499633789062,
+     "q3": 2.9158973693847656,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.2138519287109375,
+     "q1": 4.2074127197265625,
+     "q3": 5.032581329345703,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1181,
+     "q1": 1181,
+     "q3": 1181,
+     "n": 5
+    },
+    "listeners": {
+     "median": 66,
+     "q1": 66,
+     "q3": 66,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 34.671875,
+     "q1": 31.69140625,
+     "q3": 38.33203125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 74.58984375,
+     "q1": 73.7890625,
+     "q3": 75.33984375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 768.609375,
+     "q1": 764.62109375,
+     "q3": 802.3828125,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderWidenContainer": 20.37890625,
+     "AtCoderPerformanceOverlay": 14.34375
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 4.410671234130859,
+     "q1": 4.410118103027344,
+     "q3": 4.4124298095703125,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.237552642822266,
+     "q1": 7.218772888183594,
+     "q3": 7.240467071533203,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1191,
+     "q1": 1191,
+     "q3": 1191,
+     "n": 5
+    },
+    "listeners": {
+     "median": 67,
+     "q1": 67,
+     "q3": 67,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 187.05078125,
+     "q1": 186.83984375,
+     "q3": 200.7734375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 834.24609375,
+     "q1": 828.14453125,
+     "q3": 839.84375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1382.71484375,
+     "q1": 1376.38671875,
+     "q3": 1389.55078125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 187.05078125
+    },
+    "perFeature": {
+     "(unknown)": 86.73046875,
+     "rating-graph": 36.94921875,
+     "(core:application)": 19.8046875,
+     "(core:app)": 18.16015625,
+     "(core:domain)": 11.5703125,
+     "settings-panel": 10.79296875,
+     "(core:adapters)": 4.16015625,
+     "wide-layout": 1.0625,
+     "(lib)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 3.032398223876953,
+     "q1": 3.031940460205078,
+     "q3": 3.032428741455078,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.436058044433594,
+     "q1": 4.424732208251953,
+     "q3": 4.438816070556641,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1184,
+     "q1": 1184,
+     "q3": 1184,
+     "n": 5
+    },
+    "listeners": {
+     "median": 76,
+     "q1": 76,
+     "q3": 76,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 84.27734375,
+     "q1": 77.60546875,
+     "q3": 97.44921875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 107.45703125,
+     "q1": 104.05078125,
+     "q3": 108.6015625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 821.12890625,
+     "q1": 809.7265625,
+     "q3": 822.96875,
+     "n": 5
+    },
+    "perScript": {
+     "ResultNotifier": 49.015625,
+     "AtCoderWidenContainer": 23.40234375,
+     "AtCoderPerformanceOverlay": 8.29296875,
+     "EasyAccordion": 0
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 4.423927307128906,
+     "q1": 4.423805236816406,
+     "q3": 4.424407958984375,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.239204406738281,
+     "q1": 7.2324066162109375,
+     "q3": 7.2406463623046875,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1201,
+     "q1": 1201,
+     "q3": 1201,
+     "n": 5
+    },
+    "listeners": {
+     "median": 77,
+     "q1": 77,
+     "q3": 77,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 198.83203125,
+     "q1": 194.46484375,
+     "q3": 203.54296875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 826.15625,
+     "q1": 821.453125,
+     "q3": 826.3359375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1393.9296875,
+     "q1": 1380.375,
+     "q3": 1395.7265625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 198.83203125
+    },
+    "perFeature": {
+     "(unknown)": 86.5390625,
+     "rating-graph": 36.56640625,
+     "(core:application)": 22.8125,
+     "(core:app)": 16.85546875,
+     "(core:domain)": 12.35546875,
+     "settings-panel": 9.9140625,
+     "(core:adapters)": 4.0703125,
+     "result-notifier": 3.77734375,
+     "hover-menu": 3.078125,
+     "wide-layout": 1.0625,
+     "(core:shared)": 1.0625,
+     "(lib)": 1.03125,
+     "latest-contests": 1.015625
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 4.409107208251953,
+     "q1": 4.4081573486328125,
+     "q3": 4.413459777832031,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.218647003173828,
+     "q1": 7.2180938720703125,
+     "q3": 7.219032287597656,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 1201,
+     "q1": 1201,
+     "q3": 1201,
+     "n": 5
+    },
+    "listeners": {
+     "median": 77,
+     "q1": 77,
+     "q3": 77,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 209.2734375,
+     "q1": 204.69140625,
+     "q3": 212.60546875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 834.2109375,
+     "q1": 834.11328125,
+     "q3": 835.87890625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1380.35546875,
+     "q1": 1373.703125,
+     "q3": 1405.25,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 209.2734375
+    },
+    "perFeature": {
+     "(unknown)": 87.93359375,
+     "rating-graph": 40.13671875,
+     "(core:application)": 24.08984375,
+     "(core:app)": 21.4375,
+     "settings-panel": 14.46875,
+     "(core:domain)": 9.19921875,
+     "hover-menu": 3.23046875,
+     "(core:adapters)": 3.14453125,
+     "result-notifier": 2.765625,
+     "wide-layout": 2.09375,
+     "latest-contests": 1.01171875,
+     "(lib)": 0,
+     "(core:shared)": 0
+    }
+   }
+  },
+  "history": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 2.941570281982422,
+     "q1": 2.9415626525878906,
+     "q3": 2.9419822692871094,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.358695983886719,
+     "q1": 4.340213775634766,
+     "q3": 4.361568450927734,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6448,
+     "q1": 6448,
+     "q3": 6448,
+     "n": 5
+    },
+    "listeners": {
+     "median": 362,
+     "q1": 362,
+     "q3": 362,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 745.81640625,
+     "q1": 743.2578125,
+     "q3": 746.15234375,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.9825172424316406,
+     "q1": 2.9813690185546875,
+     "q3": 2.982818603515625,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.404483795166016,
+     "q1": 4.381618499755859,
+     "q3": 4.411174774169922,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6452,
+     "q1": 6452,
+     "q3": 6452,
+     "n": 5
+    },
+    "listeners": {
+     "median": 363,
+     "q1": 363,
+     "q3": 363,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 25.6328125,
+     "q1": 21.44140625,
+     "q3": 30.29296875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 13.31640625,
+     "q1": 12.4296875,
+     "q3": 14.921875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 715.01171875,
+     "q1": 714.9921875,
+     "q3": 741.75390625,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderWidenContainer": 25.6328125
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 4.560417175292969,
+     "q1": 4.558986663818359,
+     "q3": 4.560657501220703,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.328006744384766,
+     "q1": 7.321460723876953,
+     "q3": 7.328563690185547,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6466,
+     "q1": 6466,
+     "q3": 6466,
+     "n": 5
+    },
+    "listeners": {
+     "median": 364,
+     "q1": 364,
+     "q3": 364,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 168.203125,
+     "q1": 156.25390625,
+     "q3": 172.5625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 834.75,
+     "q1": 816.828125,
+     "q3": 835.73046875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1382.2265625,
+     "q1": 1377.921875,
+     "q3": 1393.19921875,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 168.203125
+    },
+    "perFeature": {
+     "(unknown)": 92.64453125,
+     "(core:app)": 22.79296875,
+     "(core:application)": 17.50390625,
+     "settings-panel": 13.9296875,
+     "(core:domain)": 13.25,
+     "(core:adapters)": 6.2265625,
+     "wide-layout": 2.0625,
+     "(lib)": 1.0078125,
+     "(core:shared)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 3.5796661376953125,
+     "q1": 3.5796051025390625,
+     "q3": 3.5796775817871094,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 5.505596160888672,
+     "q1": 5.4890899658203125,
+     "q3": 5.515354156494141,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6314,
+     "q1": 6314,
+     "q3": 6314,
+     "n": 5
+    },
+    "listeners": {
+     "median": 373,
+     "q1": 373,
+     "q3": 373,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 245.04296875,
+     "q1": 238.546875,
+     "q3": 251.984375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 137.796875,
+     "q1": 137.2578125,
+     "q3": 147.859375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 948.93359375,
+     "q1": 948.3671875,
+     "q3": 951.796875,
+     "n": 5
+    },
+    "perScript": {
+     "PerformanceColorizer": 223.93359375,
+     "AtCoderWidenContainer": 19.12109375,
+     "ResultNotifier": 2.09375,
+     "EasyAccordion": 1.125
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 4.578792572021484,
+     "q1": 4.5781707763671875,
+     "q3": 4.578838348388672,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.380298614501953,
+     "q1": 7.354194641113281,
+     "q3": 7.383403778076172,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6476,
+     "q1": 6476,
+     "q3": 6476,
+     "n": 5
+    },
+    "listeners": {
+     "median": 374,
+     "q1": 374,
+     "q3": 374,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 172.92578125,
+     "q1": 168.51171875,
+     "q3": 175.21484375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 825.6484375,
+     "q1": 822.640625,
+     "q3": 828.37109375,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1390.98046875,
+     "q1": 1385.51171875,
+     "q3": 1395.0234375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 172.92578125
+    },
+    "perFeature": {
+     "(unknown)": 97.96484375,
+     "(core:application)": 22.8125,
+     "(core:app)": 17.16015625,
+     "(core:domain)": 12.45703125,
+     "settings-panel": 12.453125,
+     "result-notifier": 4.8046875,
+     "hover-menu": 3.07421875,
+     "(core:adapters)": 3.0625,
+     "history-colors": 2.08203125,
+     "wide-layout": 1.09375,
+     "(lib)": 0,
+     "latest-contests": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 4.5658111572265625,
+     "q1": 4.565773010253906,
+     "q3": 4.5659637451171875,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 7.3357391357421875,
+     "q1": 7.329143524169922,
+     "q3": 7.342998504638672,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 6476,
+     "q1": 6476,
+     "q3": 6476,
+     "n": 5
+    },
+    "listeners": {
+     "median": 374,
+     "q1": 374,
+     "q3": 374,
+     "n": 5
+    },
+    "documents": {
+     "median": 4,
+     "q1": 4,
+     "q3": 4,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 171.9375,
+     "q1": 164.09375,
+     "q3": 176.04296875,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 825.47265625,
+     "q1": 815.3359375,
+     "q3": 841.2578125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1391.0625,
+     "q1": 1373.8046875,
+     "q3": 1405.765625,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 171.9375
+    },
+    "perFeature": {
+     "(unknown)": 87.14453125,
+     "(core:application)": 25.79296875,
+     "(core:app)": 16.78125,
+     "(core:domain)": 12.37890625,
+     "settings-panel": 11.3671875,
+     "result-notifier": 3.78125,
+     "(core:adapters)": 3.1484375,
+     "hover-menu": 3.125,
+     "wide-layout": 3.06640625,
+     "latest-contests": 1.0625,
+     "(lib)": 1.03125,
+     "history-colors": 1.01953125,
+     "(core:catalog)": 0
+    }
+   }
+  },
+  "tessoku": {
+   "A": {
+    "heapAfterGcMB": {
+     "median": 1.9220733642578125,
+     "q1": 1.920379638671875,
+     "q3": 1.922210693359375,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 2.883098602294922,
+     "q1": 2.8796615600585938,
+     "q3": 2.88311767578125,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 3100,
+     "q1": 3100,
+     "q3": 3100,
+     "n": 5
+    },
+    "listeners": {
+     "median": 41,
+     "q1": 41,
+     "q3": 41,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 0,
+     "q1": 0,
+     "q3": 0,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 734.2734375,
+     "q1": 732.42578125,
+     "q3": 736.1875,
+     "n": 5
+    },
+    "perScript": {},
+    "perFeature": {}
+   },
+   "B_own": {
+    "heapAfterGcMB": {
+     "median": 2.533618927001953,
+     "q1": 2.5333099365234375,
+     "q3": 2.536449432373047,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.586498260498047,
+     "q1": 4.5750732421875,
+     "q3": 4.711521148681641,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 4528,
+     "q1": 4528,
+     "q3": 4528,
+     "n": 5
+    },
+    "listeners": {
+     "median": 208,
+     "q1": 208,
+     "q3": 208,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 112.86328125,
+     "q1": 112.52734375,
+     "q3": 119.0859375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 147.4453125,
+     "q1": 142.48828125,
+     "q3": 149.38671875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 883.984375,
+     "q1": 834.6484375,
+     "q3": 887.609375,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 69.046875,
+     "AtCoderWidenContainer": 25.48828125,
+     "JavaCodeSubmitter": 12.3828125,
+     "AtCoderCustomDefaultSubmissions": 10.3046875
+    },
+    "perFeature": {}
+   },
+   "C_own": {
+    "heapAfterGcMB": {
+     "median": 3.645221710205078,
+     "q1": 3.6450042724609375,
+     "q3": 3.6452903747558594,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.139522552490234,
+     "q1": 6.122344970703125,
+     "q3": 6.141166687011719,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 5452,
+     "q1": 5452,
+     "q3": 5452,
+     "n": 5
+    },
+    "listeners": {
+     "median": 211,
+     "q1": 211,
+     "q3": 211,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 256.0546875,
+     "q1": 232.26953125,
+     "q3": 263.89453125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 838.69140625,
+     "q1": 834.6953125,
+     "q3": 849.78515625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1379.8828125,
+     "q1": 1369.40234375,
+     "q3": 1381.7734375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 256.0546875
+    },
+    "perFeature": {
+     "(unknown)": 91.22265625,
+     "task-dropdown": 60.13671875,
+     "(core:application)": 27.03125,
+     "(core:adapters)": 25.90625,
+     "(core:app)": 14.6484375,
+     "(core:domain)": 14.52734375,
+     "settings-panel": 5.1640625,
+     "java-submit": 4.3046875,
+     "wide-layout": 1.01953125,
+     "(lib)": 1.0078125,
+     "(core:shared)": 0,
+     "(core:catalog)": 0
+    }
+   },
+   "B_all": {
+    "heapAfterGcMB": {
+     "median": 2.7023468017578125,
+     "q1": 2.7018165588378906,
+     "q3": 2.703113555908203,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 4.957012176513672,
+     "q1": 4.942066192626953,
+     "q3": 5.0028228759765625,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 4534,
+     "q1": 4534,
+     "q3": 4534,
+     "n": 5
+    },
+    "listeners": {
+     "median": 228,
+     "q1": 228,
+     "q3": 228,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 163.60546875,
+     "q1": 163.40625,
+     "q3": 163.74609375,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 190.23828125,
+     "q1": 188.96484375,
+     "q3": 191.87890625,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 916.5,
+     "q1": 888.625,
+     "q3": 932.3984375,
+     "n": 5
+    },
+    "perScript": {
+     "AtCoderListingTasks": 67.39453125,
+     "ResultNotifier": 48.0078125,
+     "AtCoderWidenContainer": 25.92578125,
+     "JavaCodeSubmitter": 12.4609375,
+     "AtCoderCustomDefaultSubmissions": 4.3828125,
+     "VirtualTimer": 1.01953125,
+     "EasyAccordion": 1.01171875
+    },
+    "perFeature": {}
+   },
+   "C_eq": {
+    "heapAfterGcMB": {
+     "median": 3.68707275390625,
+     "q1": 3.682445526123047,
+     "q3": 3.6872024536132812,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.2366790771484375,
+     "q1": 6.2359771728515625,
+     "q3": 6.2367095947265625,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 5620,
+     "q1": 5620,
+     "q3": 5620,
+     "n": 5
+    },
+    "listeners": {
+     "median": 234,
+     "q1": 234,
+     "q3": 234,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 291.59765625,
+     "q1": 280.3125,
+     "q3": 298.03125,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 835.1796875,
+     "q1": 830.47265625,
+     "q3": 841.88671875,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1376.984375,
+     "q1": 1356.078125,
+     "q3": 1389.48828125,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 291.59765625
+    },
+    "perFeature": {
+     "(unknown)": 91.6953125,
+     "task-dropdown": 54.87890625,
+     "(core:application)": 34.73828125,
+     "(core:adapters)": 27.30078125,
+     "(core:app)": 19.1953125,
+     "tessoku-difficulty": 18.515625,
+     "(core:domain)": 17.44921875,
+     "settings-panel": 9.3515625,
+     "contest-calendar": 4.265625,
+     "hover-menu": 3.0703125,
+     "java-submit": 3.0625,
+     "wide-layout": 2.046875,
+     "result-notifier": 2.0390625,
+     "virtual-timer": 1.0625,
+     "(core:shared)": 1.015625,
+     "latest-contests": 1.0078125,
+     "(core:ui)": 0,
+     "task-status": 0
+    }
+   },
+   "C_default": {
+    "heapAfterGcMB": {
+     "median": 3.6727256774902344,
+     "q1": 3.6717872619628906,
+     "q3": 3.6773338317871094,
+     "n": 5
+    },
+    "heapBeforeGcMB": {
+     "median": 6.187221527099609,
+     "q1": 6.1797637939453125,
+     "q3": 6.192836761474609,
+     "n": 5
+    },
+    "domNodes": {
+     "median": 5620,
+     "q1": 5620,
+     "q3": 5620,
+     "n": 5
+    },
+    "listeners": {
+     "median": 234,
+     "q1": 234,
+     "q3": 234,
+     "n": 5
+    },
+    "documents": {
+     "median": 2,
+     "q1": 2,
+     "q3": 2,
+     "n": 5
+    },
+    "userscriptKB": {
+     "median": 301.58203125,
+     "q1": 285.328125,
+     "q3": 309.4140625,
+     "n": 5
+    },
+    "scriptCodeKB": {
+     "median": 826.8671875,
+     "q1": 819.4375,
+     "q3": 828.9453125,
+     "n": 5
+    },
+    "v8ApiKB": {
+     "median": 1395.94140625,
+     "q1": 1389.8359375,
+     "q3": 1396.7734375,
+     "n": 5
+    },
+    "perScript": {
+     "CpToolkit": 301.58203125
+    },
+    "perFeature": {
+     "(unknown)": 93.50390625,
+     "task-dropdown": 58.84375,
+     "(core:adapters)": 33.72265625,
+     "(core:application)": 32.140625,
+     "(core:app)": 20.49609375,
+     "tessoku-difficulty": 18.54296875,
+     "(core:domain)": 11.4921875,
+     "settings-panel": 8.26171875,
+     "contest-calendar": 5.375,
+     "java-submit": 5.3515625,
+     "hover-menu": 4.08984375,
+     "result-notifier": 2.765625,
+     "wide-layout": 2.07421875,
+     "virtual-timer": 1.03125,
+     "(lib)": 0,
+     "clar-notifier": 0,
+     "latest-contests": 0,
+     "task-status": 0
+    }
+   }
+  }
  }
 }
