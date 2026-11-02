@@ -1,7 +1,13 @@
 // 実際の Tampermonkey に UserScript を入れて計測する。シムでは測れない、
 // スクリプト1本ごとの注入や GM API の準備の負荷を含めた比較。
-//   node harness/tm-measure.mjs --crx <Tampermonkey を展開したフォルダ> --n 8 --out results/tm-x1.jsonl
+//   node harness/tm-measure.mjs --crx <Tampermonkey を展開したフォルダ> --mode cpu --n 8 --out results/tm-cpu.jsonl
+// mode:
+//   cpu    … CPU プロファイル。Tampermonkey 自身と、スクリプトごと(CP Toolkit は機能ごと)の時間
+//   memory … GC 後のヒープと、サンプリングヒーププロファイラによるスクリプトごとの生存メモリ
+//   perf   … CDP Performance.getMetrics と Long Task(--throttle で CPU を遅くできる)
+//   idle   … 読み込み後に放置したあいだの CPU 時間
 // 条件ごとに Chromium のプロファイルを分け、Tampermonkey を入れたまま繰り返し開く。
+// どの回も、計測のあとで「実際に動いたスクリプト」を Debugger から集めて記録する。
 import {appendFileSync, mkdirSync, readFileSync, writeFileSync, existsSync} from "node:fs";
 import http from "node:http";
 import {createRequire} from "node:module";
@@ -20,12 +26,23 @@ const {values: args} = parseArgs({
 		pages: {type: "string", default: Object.keys(PAGES).join(",")},
 		conds: {type: "string", default: "A,B_own,C_own,B_all,C_eq"},
 		out: {type: "string", default: "results/tm-x1.jsonl"},
-		mode: {type: "string", default: "cpu"}, // cpu: CPU プロファイル / memory: GC 後のヒープ
+		mode: {type: "string", default: "cpu"},
+		throttle: {type: "string", default: "1"},
+		idle: {type: "string", default: "15000"},
 	},
 });
 const N = Number(args.n);
-const SETTLE = 3000;
-const conditions = loadConditions();
+const throttle = Number(args.throttle);
+const SETTLE = throttle > 1 ? 6000 : 3000;
+// CP Toolkit は、ソースマップで機能へ割り振れる版(中身は配布物と同じ、整形なし)を入れる
+const conditions = loadConditions({analysisBuild: true});
+const scriptIdByTmName = new Map();
+const tmName = (name) => `${name.replace(/ /g, "-")}.user.js`;
+for (const c of Object.values(conditions)) for (const s of c.scripts) scriptIdByTmName.set(tmName(s.name), s.id);
+const LONGTASK_JS = `(() => { if (window.top !== window) return;
+ window.__lt = {n: 0, total: 0};
+ try { new PerformanceObserver((l) => { for (const e of l.getEntries()) { __lt.n++; __lt.total += e.duration; } }).observe({type: "longtask", buffered: true}); } catch {}
+})();`;
 const store = new FixtureStore();
 
 // UserScript を配る小さなサーバー。Tampermonkey は *.user.js への遷移を拾ってインストール画面を開く
@@ -108,26 +125,34 @@ async function launch(cond) {
 	return {context, extId, installed: JSON.parse(readFileSync(join(dir, "installed.json"), "utf8"))};
 }
 
-function aggregate(profile, extId) {
+/** Tampermonkey の URL から、どのスクリプトか(または Tampermonkey 自身か)を決める */
+function classifier(extId) {
+	return (url) => {
+		if (!url) return null;
+		if (url.startsWith(`chrome-extension://${extId}/userscript.html`)) {
+			const name = decodeURIComponent(new URL(url).searchParams.get("name") ?? "");
+			return `us:${scriptIdByTmName.get(name) ?? name}`;
+		}
+		if (url.startsWith(`chrome-extension://${extId}/`)) return "tampermonkey";
+		return "page";
+	};
+}
+const isToolkit = (url) => url.includes("userscript.html") && url.includes("name=CP-Toolkit");
+
+function aggregateCpu(profile, extId) {
+	const classify = classifier(extId);
 	const byId = new Map(profile.nodes.map((n) => [n.id, n]));
 	const parent = new Map();
 	for (const n of profile.nodes) for (const c of n.children ?? []) parent.set(c, n.id);
-	const out = {};
-	const urls = {};
-	const classify = (url) => {
-		if (!url) return null;
-		if (url.startsWith(`chrome-extension://${extId}/userscript.html`)) return "userscript"; // スクリプト本体(@require を含む)
-		if (url.startsWith(`chrome-extension://${extId}/`)) return "tampermonkey"; // Tampermonkey 自身の content script
-		return "page";
-	};
+	const byBucket = {};
+	const toolkitStacks = {};
 	for (let i = 0; i < profile.samples.length; i++) {
 		const dt = (profile.timeDeltas[i + 1] ?? 0) / 1000;
-		let id = profile.samples[i];
+		const id = profile.samples[i];
 		const node = byId.get(id);
 		let bucket = classify(node.callFrame.url);
-		if (node.callFrame.url) urls[node.callFrame.url] = (urls[node.callFrame.url] || 0) + dt;
 		if (!bucket) {
-			// ネイティブ関数は呼び出し元へ寄せる
+			// ネイティブ関数(DOM API など)は呼び出し元へ寄せる
 			let p = parent.get(id);
 			while (p !== undefined && !bucket) {
 				bucket = classify(byId.get(p).callFrame.url);
@@ -135,21 +160,90 @@ function aggregate(profile, extId) {
 			}
 			bucket ??= node.callFrame.functionName || "(native)";
 		}
-		out[bucket] = (out[bucket] || 0) + dt;
+		byBucket[bucket] = (byBucket[bucket] || 0) + dt;
+		if (bucket === "us:CpToolkit") {
+			const frames = [];
+			for (let cur = id; cur !== undefined && frames.length < 25; cur = parent.get(cur)) {
+				const cf = byId.get(cur).callFrame;
+				if (isToolkit(cf.url)) frames.push(`${cf.lineNumber + 1}:${cf.columnNumber + 1}`);
+			}
+			const key = frames.join(" < ");
+			toolkitStacks[key] = (toolkitStacks[key] || 0) + dt;
+		}
 	}
-	const topUrls = Object.entries(urls).filter(([u]) => !u.startsWith("https://")).sort((a, b) => b[1] - a[1]).slice(0, 40);
-	return {byBucket: out, topUrls};
+	return {byBucket, toolkitStacks};
 }
 
+function aggregateHeap(profile, extId) {
+	const classify = classifier(extId);
+	const heapByBucket = {};
+	const heapToolkitStacks = {};
+	const walk = (node, chain) => {
+		const here = [...chain, node];
+		if (node.selfSize > 0) {
+			let bucket = null;
+			for (let i = here.length - 1; i >= 0 && !bucket; i--) bucket = classify(here[i].callFrame.url);
+			bucket ??= node.callFrame.functionName || "(native)";
+			heapByBucket[bucket] = (heapByBucket[bucket] || 0) + node.selfSize;
+			if (bucket === "us:CpToolkit") {
+				const key = here.filter((n) => isToolkit(n.callFrame.url)).reverse().slice(0, 25)
+					.map((n) => `${n.callFrame.lineNumber + 1}:${n.callFrame.columnNumber + 1}`).join(" < ");
+				heapToolkitStacks[key] = (heapToolkitStacks[key] || 0) + node.selfSize;
+			}
+		}
+		for (const c of node.children ?? []) walk(c, here);
+	};
+	walk(profile.head, []);
+	return {heapByBucket, heapToolkitStacks};
+}
+
+/** 計測のあとで Debugger を有効にし、このページで実際に読み込まれた UserScript を集める。
+ * CP Toolkit は、Tampermonkey が前に足した行数(ソースマップとのずれ)も求める */
+async function scriptsThatRan(cdp, extId) {
+	const parsed = [];
+	const onParsed = (e) => parsed.push(e);
+	cdp.on("Debugger.scriptParsed", onParsed);
+	await cdp.send("Debugger.enable");
+	await new Promise((r) => setTimeout(r, 300));
+	cdp.off("Debugger.scriptParsed", onParsed);
+	const classify = classifier(extId);
+	const ran = new Set();
+	let toolkitLineOffset = null;
+	for (const e of parsed) {
+		const b = classify(e.url);
+		if (!b?.startsWith("us:")) continue;
+		ran.add(b.slice(3));
+		if (isToolkit(e.url) && toolkitLineOffset === null) {
+			const {scriptSource} = await cdp.send("Debugger.getScriptSource", {scriptId: e.scriptId});
+			const lines = scriptSource.split("\n");
+			const at = lines.findIndex((l) => l.includes(TOOLKIT_ANCHOR));
+			if (at >= 0) toolkitLineOffset = at - TOOLKIT_ANCHOR_LINE + e.startLine;
+		}
+	}
+	await cdp.send("Debugger.disable");
+	return {ran: [...ran].sort(), toolkitLineOffset};
+}
+// ソースマップの行と Tampermonkey 上の行の対応を取る目印(ソースマップ側の行は 0 始まり)
+const TOOLKIT_SRC = readFileSync(new URL("../scripts/cptoolkit/CpToolkit.analysis.user.js", import.meta.url), "utf8").split("\n");
+const TOOLKIT_ANCHOR = "document.documentElement.dataset.cpToolkit = host.version;";
+const TOOLKIT_ANCHOR_LINE = TOOLKIT_SRC.findIndex((l) => l.includes(TOOLKIT_ANCHOR));
+
 async function runOnce(env, cond, pageKey, iteration) {
+	const mode = args.mode;
 	const page = await env.context.newPage();
+	if (mode === "perf") await page.addInitScript(LONGTASK_JS);
 	const cdp = await env.context.newCDPSession(page);
 	await cdp.send("Network.clearBrowserCache");
 	await cdp.send("Performance.enable");
-	if (args.mode === "cpu") {
+	if (throttle > 1) await cdp.send("Emulation.setCPUThrottlingRate", {rate: throttle});
+	if (mode === "cpu") {
 		await cdp.send("Profiler.enable");
 		await cdp.send("Profiler.setSamplingInterval", {interval: 100});
 		await cdp.send("Profiler.start");
+	}
+	if (mode === "memory") {
+		await cdp.send("HeapProfiler.enable");
+		await cdp.send("HeapProfiler.startSampling", {samplingInterval: 1024});
 	}
 	const t0 = Date.now();
 	await page.goto(PAGES[pageKey], {waitUntil: "load", timeout: 120000});
@@ -157,25 +251,35 @@ async function runOnce(env, cond, pageKey, iteration) {
 	await page.waitForTimeout(SETTLE);
 	const getMetrics = async () => Object.fromEntries((await cdp.send("Performance.getMetrics")).metrics.map((m) => [m.name, m.value]));
 	const metrics = await getMetrics();
-	let agg = {};
-	if (args.mode === "cpu") {
+	const row = {mode: `tm-${mode}`, cond, page: pageKey, iteration, throttle, installed: env.installed.length, loadWall, metrics};
+	if (mode === "cpu") {
 		const {profile} = await cdp.send("Profiler.stop");
-		agg = aggregate(profile, env.extId);
-	} else {
+		Object.assign(row, aggregateCpu(profile, env.extId));
+	}
+	if (mode === "memory") {
 		// シムの memory モードと同じく、GC を2回かけて残ったものだけを数える。
 		// Tampermonkey が UserScript を動かす世界も、ページと同じ JS ヒープに載る
-		await cdp.send("HeapProfiler.enable");
 		await cdp.send("HeapProfiler.collectGarbage");
 		await cdp.send("HeapProfiler.collectGarbage");
-		agg = {
-			afterGc: await getMetrics(),
-			domCounters: await cdp.send("Memory.getDOMCounters"),
-			inPage: await page.evaluate(() => ({heap: performance.memory?.usedJSHeapSize, nodes: document.getElementsByTagName("*").length, marker: document.documentElement.dataset.cpToolkit ?? null})),
-		};
+		row.afterGc = await getMetrics();
+		row.domCounters = await cdp.send("Memory.getDOMCounters");
+		const {profile} = await cdp.send("HeapProfiler.getSamplingProfile");
+		await cdp.send("HeapProfiler.stopSampling");
+		Object.assign(row, aggregateHeap(profile, env.extId));
 	}
-	const marker = await page.evaluate(() => document.documentElement.dataset.cpToolkit ?? null);
+	if (mode === "idle") {
+		await page.waitForTimeout(Number(args.idle));
+		const after = await getMetrics();
+		row.idleMs = Number(args.idle);
+		row.idle = Object.fromEntries(Object.keys(after).map((k) => [k, after[k] - (metrics[k] ?? 0)]));
+	}
+	row.page_ = await page.evaluate(() => {
+		const nav = performance.getEntriesByType("navigation")[0];
+		return {longtasks: window.__lt, dcl: nav?.domContentLoadedEventEnd, load: nav?.loadEventEnd, nodes: document.getElementsByTagName("*").length, marker: document.documentElement.dataset.cpToolkit ?? null};
+	});
+	Object.assign(row, await scriptsThatRan(cdp, env.extId));
 	await page.close();
-	return {mode: args.mode === "cpu" ? "tm" : "tm-memory", cond, page: pageKey, iteration, installed: env.installed.length, loadWall, metrics, ...agg, cpToolkitVersion: marker};
+	return row;
 }
 
 const condKeys = args.conds.split(",");
@@ -193,10 +297,10 @@ for (let i = 0; i < N; i++) {
 			try {
 				row = await runOnce(envs[cond], cond, pageKey, i);
 			} catch (e) {
-				row = {mode: "tm", cond, page: pageKey, iteration: i, failed: String(e).slice(0, 400)};
+				row = {mode: `tm-${args.mode}`, cond, page: pageKey, iteration: i, throttle, failed: String(e).slice(0, 400)};
 			}
 			appendFileSync(args.out, `${JSON.stringify(row)}\n`);
-			if (++done % 10 === 0) console.log(`[tm] ${done}/${total} ${pageKey} ${cond} ${row.failed ?? ""}`);
+			if (++done % 10 === 0 || row.failed) console.log(`[tm-${args.mode} x${throttle}] ${done}/${total} ${pageKey} ${cond} ran=${row.ran?.length ?? "-"} ${row.failed ?? ""}`);
 		}
 	}
 }
