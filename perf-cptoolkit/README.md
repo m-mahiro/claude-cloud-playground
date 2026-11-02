@@ -25,6 +25,7 @@
   - `profile`: CPU プロファイル(100µs 間隔)をスクリプトごと、CP Toolkit は機能ごとに集計(ソースマップで `src/features/*` へ対応付け)
   - `memory`: GC を2回かけた後のヒープ(`JSHeapUsedSize`)と DOM カウンタ。サンプリングヒーププロファイラ(1KB 間隔)で、生き残ったメモリを確保したスクリプトごと(CP Toolkit は機能ごと)に集計
   - `trace`: DOM API を包んで、要素ごとに「誰が・何を・何回」したかを記録(`harness/page/dom-trace.js`)。負荷が大きいので時間の計測とは別の回
+- **実際の Tampermonkey**(`harness/tm-measure.mjs`、`run-tm.sh`): Tampermonkey 5.5.1 を入れた Chromium(new headless)に条件ごとのスクリプトを自動でインストールし、CPU プロファイルを Tampermonkey 自身と UserScript 本体に分けて集計。シムでは測れない、スクリプト1本ごとの注入の負荷を含む
 - **集計**: `harness/analyze.mjs` → `results/summary.json`。中央値・四分位範囲、Mann-Whitney U 検定、Cliff の δ。
 
 ## 再現
@@ -34,6 +35,10 @@
 node harness/measure.mjs --mode record  # ページを録画
 ./run-all.sh                           # 全計測(直列。約 2.5 時間)
 node harness/analyze.mjs
+TM_CRX=./tm-ext ./run-tm.sh           # 実際の Tampermonkey での計測(取得方法は run-tm.sh の先頭)
+node harness/export.mjs                # レポート用の表を results/report/ に書き出す
 ```
+
+レポート: `report/index.html`(Dashboard の Artifact に載せたページ)
 
 Chromium と Playwright が必要。

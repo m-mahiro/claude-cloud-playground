@@ -43,15 +43,15 @@
 <div class="rp">
   <header class="rp-head">
     <h1 id="top">CP Toolkit 統合の性能検証</h1>
-    <p class="lede">28機能を1本にまとめた結果、DOM への重複アクセスは大きく減りました。一方、UserScript が使う CPU 時間は、9ページの合計で旧スクリプト26本の <b data-draw="cpuOld" data-source="totals" data-field="cpu_ms" data-where="cond=B_all">—</b> ms から <b data-draw="cpuNew" data-source="totals" data-field="cpu_ms" data-where="cond=C_eq">—</b> ms に増えています。増えた分のほとんどは、どのページでも 28 機能ぶんのコード全体を読み込む固定費です。</p>
-    <p class="muted">比較は「旧スクリプト26本」と「CP Toolkit で同じ機能だけ ON にした状態」。CPU 速度は等倍、ページは録画した AtCoder の9ページ。Tampermonkey 自体の負荷(スクリプト本数に比例する分)は含みません。</p>
+    <p class="lede">実際の Tampermonkey で動かすと、9ページ合計の CPU 時間の増分(Tampermonkey 自身と UserScript)は、旧スクリプト26本の <b data-draw="tmOld" data-source="totals" data-field="tm_ms" data-where="cond=B_all">—</b> ms に対して CP Toolkit は <b data-draw="tmNew" data-source="totals" data-field="tm_ms" data-where="cond=C_eq">—</b> ms で、全体ではほぼ同じでした。スクリプトが多く動く問題文ページでは <b data-draw="tmTaskPct" data-source="tm_pages" data-field="pct" data-where="page=task">—</b>、解説一覧では <b data-draw="tmEdPct" data-source="tm_pages" data-field="pct" data-where="page=editorial">—</b> 変わり、ほとんど動かないページでは全機能のコードを読み込む固定費のぶん増えます。DOM への重複アクセスは大きく減り、メモリは全機能のコードを持つぶん常に多くなります。</p>
+    <p class="muted">比較は「旧スクリプト26本」と「CP Toolkit で同じ機能だけ ON にした状態」。ページは録画した AtCoder の9ページ、CPU 速度は等倍。増分は、Tampermonkey にスクリプトを1本も入れない状態との差です。</p>
   </header>
 
   <div class="tiles">
     <div class="tile">
-      <h3>UserScript の CPU 時間(9ページ合計)</h3>
-      <div class="big"><span data-draw="cpuNew2" data-source="totals" data-field="cpu_ms" data-where="cond=C_eq">—</span> ms</div>
-      <div class="from">旧26本 <span data-draw="cpuOld2" data-source="totals" data-field="cpu_ms" data-where="cond=B_all">—</span> ms から <span data-draw="cpuDelta" data-source="totals_delta" data-field="cpu_pct">—</span></div>
+      <h3>Tampermonkey 込みの CPU 時間の増分(9ページ合計)</h3>
+      <div class="big"><span data-draw="tmNew2" data-source="totals" data-field="tm_ms" data-where="cond=C_eq">—</span> ms</div>
+      <div class="from">旧26本 <span data-draw="tmOld2" data-source="totals" data-field="tm_ms" data-where="cond=B_all">—</span> ms から <span data-draw="tmDelta" data-source="totals_delta" data-field="tm_pct">—</span></div>
     </div>
     <div class="tile">
       <h3>複数のスクリプトや機能が触った要素</h3>
@@ -70,9 +70,44 @@
     </div>
   </div>
 
+  <section id="tampermonkey">
+    <h2>実際の Tampermonkey では、重いページで効き、軽いページで損をする</h2>
+    <p>Tampermonkey 5.5 を入れた Chromium で、各条件8回ずつ CPU プロファイルを取りました。棒の全体が増えた CPU 時間で、薄い部分が Tampermonkey 自身(スクリプトの注入や GM API の準備)、濃い部分が UserScript 本体です。スクリプトを1本も入れなくても Tampermonkey は1ページあたり <b data-draw="tmBaseMin" data-source="facts_tm" data-field="base_min">—</b>〜<b data-draw="tmBaseMax" data-source="facts_tm" data-field="base_max">—</b> ms 動くので、その分は引いてあります。旧スクリプトが最も多く動く問題文ページでは、本数が1本になる効果がはっきり出ます。</p>
+    <div class="card">
+      <div class="legend">
+        <span><i class="sw" data-sw="0"></i>旧 nsubaru 版 8本</span>
+        <span><i class="sw" data-sw="1"></i>CP Toolkit(旧8本と同じ機能)</span>
+        <span><i class="sw" data-sw="2"></i>旧スクリプト 26本</span>
+        <span><i class="sw" data-sw="3"></i>CP Toolkit(旧26本と同じ機能)</span>
+        <span><i class="sw light" data-sw="9"></i>薄い部分: Tampermonkey 自身</span>
+      </div>
+      <div class="chart" data-draw="tmChart" data-source="tm_overhead"></div>
+      <p class="muted">各条件8回の中央値から、スクリプトなしの中央値を引いた値。ミリ秒。旧スクリプトとの差の検定(Mann-Whitney U)は下の表。</p>
+    </div>
+    <div class="card">
+      <div class="tablebox">
+        <table data-source="tampermonkey" data-row-key="page,cond">
+          <thead>
+            <tr>
+              <th data-field="page_name">ページ</th>
+              <th data-field="cond_name">条件</th>
+              <th data-field="scripts">本数</th>
+              <th data-field="manager_ms">Tampermonkey 自身</th>
+              <th data-field="script_ms">UserScript 本体</th>
+              <th data-field="total_ms">合計</th>
+              <th data-field="p_vs_old">旧スクリプトとの差の p 値</th>
+            </tr>
+          </thead>
+          <tbody data-draw="tmTable"></tbody>
+        </table>
+      </div>
+      <p class="muted">ミリ秒、8回の中央値(スクリプトなしを引く前の値)。本数は動く本数ではなく、入れた本数。</p>
+    </div>
+  </section>
+
   <section id="cpu">
-    <h2>読み込み時の CPU 時間は、軽いページほど CP Toolkit が不利</h2>
-    <p>CPU プロファイル(100µs 間隔)のうち、UserScript のコードと、そこから呼ばれた DOM API の時間を、読み込みから3秒後まで足したもの。濃い部分が機能の実行、薄い部分がコードの読み込み(eval とコンパイル)です。CP Toolkit は機能がほとんど動かないページでも、読み込みだけで <b data-draw="loadMin" data-source="facts" data-field="load_min">—</b>〜<b data-draw="loadMax" data-source="facts" data-field="load_max">—</b> ms かかります。</p>
+    <h2>UserScript 本体だけを見ると、軽いページほど CP Toolkit が不利</h2>
+    <p>Tampermonkey の代わりの軽いシムで動かし、CPU プロファイル(100µs 間隔)のうち UserScript のコードと、そこから呼ばれた DOM API の時間を、読み込みから3秒後まで足したもの。各条件3回。濃い部分が機能の実行、薄い部分がコードの読み込み(eval とコンパイル)です。CP Toolkit は機能がほとんど動かないページでも、読み込みだけで <b data-draw="loadMin" data-source="facts" data-field="load_min">—</b>〜<b data-draw="loadMax" data-source="facts" data-field="load_max">—</b> ms かかります。</p>
     <div class="card">
       <div class="legend">
         <span><i class="sw" data-sw="0"></i>旧 nsubaru 版 8本</span>
@@ -222,7 +257,7 @@
     <ul>
       <li>旧スクリプトは、nsubaru 版8本の統合前の最終版(コミット 7c4fc38 の直前)と、SOURCES.md で「派生」「模倣」の元になった公開スクリプト18本。Chrome 拡張の2つ(Statement Lens、comfortable-atcoder)は含めていません。CP Toolkit は 1.0.26。</li>
       <li>ページは AtCoder の公開ページ9つを一度だけ録画し、計測ではそれだけを返しました。提出一覧・順位表・提出画面はログインが必要なため対象外で、提出まわりの機能(結果の平均、検索条件の保持など)は測れていません。</li>
-      <li>Tampermonkey の代わりに、全条件で同じシムを使いました。<code>@match</code>・<code>@run-at</code>・<code>@require</code> に従って起動します。実際の Tampermonkey にはスクリプト1本ごとの注入と GM API の準備の負荷があり、統合で本数が減る分の効果はここに含まれていません。</li>
+      <li>最初の節だけは実際の Tampermonkey 5.5.1 で測りました。ほかの節は、Tampermonkey の代わりに全条件で同じ軽いシムを使っています(<code>@match</code>・<code>@run-at</code>・<code>@require</code> に従って起動)。シムでは Tampermonkey 自身の負荷が入らないので、本数を減らす効果は最初の節にしか出ません。</li>
       <li>環境はクラウドの Linux 上の headless Chromium です。絶対値より、条件の間の差を見てください。</li>
       <li>DOM の計測は API を包んで数えたもので、時間の計測とは別の回です。<code>children</code> などの辿り方は数えていません。</li>
       <li>計測コードと手順: github.com/m-mahiro/claude-cloud-playground の perf-cptoolkit。</li>
@@ -244,14 +279,20 @@
     el.style.background = i === 9 ? 'var(--color-fg-muted)' : dash.colors[i];
   });
 
+  const factOf = (name, id, field, f) => dash.draw(name, (el) => {
+    const d = dash.data(id);
+    el.textContent = d.status === 'ok' && d.data.length ? f(d.data[0][field]) : '—';
+  });
+
   dash.calc('totals', {
     title: '条件ごとの9ページ合計',
-    description: 'CPU 時間と DOM アクセスの数を、条件ごとに9ページ分足したもの。',
-    inputs: ['cpu_profile', 'dom_access'],
-    fn: (cpu_profile, dom_access) => ['B_own', 'C_own', 'B_all', 'C_eq'].map((cond) => {
-      const sum = (rows, k) => rows.filter((r) => r.cond === cond).reduce((s, r) => s + r[k], 0);
+    description: 'Tampermonkey 込みの CPU 時間の増分(スクリプトなしとの差)、シムでの UserScript の CPU 時間、DOM アクセスの数を、条件ごとに9ページ分足したもの。',
+    inputs: ['cpu_profile', 'dom_access', 'tampermonkey'],
+    fn: (cpu_profile, dom_access, tampermonkey) => ['B_own', 'C_own', 'B_all', 'C_eq'].map((cond) => {
+      const sum = (rows, k, c = cond) => rows.filter((r) => r.cond === c).reduce((s, r) => s + r[k], 0);
       return {
         cond,
+        tm_ms: Math.round(sum(tampermonkey, 'total_ms') - sum(tampermonkey, 'total_ms', 'A')),
         cpu_ms: Math.round(sum(cpu_profile, 'total_ms')),
         elements: sum(dom_access, 'elements'),
         ops: sum(dom_access, 'ops'),
@@ -262,12 +303,12 @@
   });
   dash.calc('totals_delta', {
     title: '旧26本から CP Toolkit への増減',
-    description: '9ページ合計の、旧スクリプト26本に対する CP Toolkit(同じ機能)の増減の割合。',
+    description: '9ページ合計の、旧スクリプト26本に対する CP Toolkit(同じ機能)の増減の割合。Tampermonkey 込みの CPU 時間はスクリプトなしからの増分で比べる。',
     inputs: ['totals'],
     fn: (totals) => {
       const o = totals.find((r) => r.cond === 'B_all');
       const n = totals.find((r) => r.cond === 'C_eq');
-      return [{cpu_pct: n.cpu_ms / o.cpu_ms - 1, shared_pct: n.shared / o.shared - 1, ops_pct: n.ops / o.ops - 1}];
+      return [{tm_pct: n.tm_ms / o.tm_ms - 1, cpu_pct: n.cpu_ms / o.cpu_ms - 1, shared_pct: n.shared / o.shared - 1, ops_pct: n.ops / o.ops - 1}];
     },
   });
 
@@ -292,13 +333,46 @@
       return [{min_mb: Math.min(...c.map((r) => r.heap_overhead_mb)), max_mb: Math.max(...c.map((r) => r.heap_overhead_mb)), code_kb: code[Math.floor(code.length / 2)]}];
     },
   });
-  const factOf = (name, id, field, f) => dash.draw(name, (el) => {
-    const d = dash.data(id);
-    el.textContent = d.status === 'ok' && d.data.length ? f(d.data[0][field]) : '—';
-  });
   factOf('memMin', 'facts_mem', 'min_mb', d3.format('.1f'));
   factOf('memMax', 'facts_mem', 'max_mb', d3.format('.1f'));
   factOf('codeKb', 'facts_mem', 'code_kb', d3.format(',.0f'));
+  dash.calc('tm_pages', {
+    title: 'ページごとの増減(Tampermonkey 込み)',
+    description: 'スクリプトなしからの増分で比べた、旧スクリプト26本に対する CP Toolkit(同じ機能)の増減の割合。',
+    inputs: ['tampermonkey'],
+    fn: (tampermonkey) => [...new Set(tampermonkey.map((r) => r.page))].map((page) => {
+      const v = (c) => tampermonkey.find((r) => r.page === page && r.cond === c).total_ms;
+      return {page, pct: (v('C_eq') - v('A')) / (v('B_all') - v('A')) - 1};
+    }),
+  });
+  dash.calc('tm_overhead', {
+    title: 'Tampermonkey 込みの増分',
+    description: '各条件の Tampermonkey 自身と UserScript 本体の時間から、スクリプトなしの値を引いたもの。',
+    inputs: ['tampermonkey'],
+    fn: (tampermonkey) => tampermonkey.filter((r) => r.cond !== 'A').map((r) => {
+      const a = tampermonkey.find((x) => x.page === r.page && x.cond === 'A');
+      return {page: r.page, page_name: r.page_name, cond: r.cond, cond_name: r.cond_name, total: r.total_ms - a.total_ms, manager: r.manager_ms - a.manager_ms};
+    }),
+  });
+  dash.calc('facts_tm', {
+    title: 'スクリプトなしの Tampermonkey',
+    description: 'スクリプトを1本も入れない Tampermonkey が、1ページで使った CPU 時間の範囲。',
+    inputs: ['tampermonkey'],
+    fn: (tampermonkey) => {
+      const a = tampermonkey.filter((r) => r.cond === 'A').map((r) => r.manager_ms);
+      return [{base_min: Math.min(...a), base_max: Math.max(...a)}];
+    },
+  });
+  factOf('tmBaseMin', 'facts_tm', 'base_min', d3.format('.0f'));
+  factOf('tmBaseMax', 'facts_tm', 'base_max', d3.format('.0f'));
+  const pagePct = (name, page) => dash.draw(name, (el) => {
+    const d = dash.data('tm_pages');
+    const r = d.status === 'ok' ? d.data.find((x) => x.page === page) : null;
+    el.textContent = r ? pct(r.pct) : '—';
+    el.className = r ? (r.pct < 0 ? 'good' : 'bad') : '';
+  });
+  pagePct('tmTaskPct', 'task');
+  pagePct('tmEdPct', 'editorial');
   const fact = (name, field, f) => dash.draw(name, (el) => {
     const d = dash.data('facts');
     el.textContent = d.status === 'ok' && d.data.length ? f(d.data[0][field]) : '—';
@@ -317,10 +391,10 @@
     const r = row(id, cond);
     el.textContent = r ? f(r[field]) : '—';
   });
-  num('cpuOld', 'totals', 'B_all', 'cpu_ms', fmt0);
-  num('cpuNew', 'totals', 'C_eq', 'cpu_ms', fmt0);
-  num('cpuOld2', 'totals', 'B_all', 'cpu_ms', fmt0);
-  num('cpuNew2', 'totals', 'C_eq', 'cpu_ms', fmt0);
+  num('tmOld', 'totals', 'B_all', 'tm_ms', fmt0);
+  num('tmNew', 'totals', 'C_eq', 'tm_ms', fmt0);
+  num('tmOld2', 'totals', 'B_all', 'tm_ms', fmt0);
+  num('tmNew2', 'totals', 'C_eq', 'tm_ms', fmt0);
   num('sharedOld', 'totals', 'B_all', 'shared', fmt0);
   num('sharedNew', 'totals', 'C_eq', 'shared', fmt0);
   num('opsOld', 'totals', 'B_all', 'ops', fmt0);
@@ -334,7 +408,7 @@
     el.textContent = pct(v);
     el.className = (v < 0) === lowerIsBetter ? 'good' : 'bad';
   });
-  delta('cpuDelta', 'cpu_pct');
+  delta('tmDelta', 'tm_pct');
   delta('sharedDelta', 'shared_pct');
   delta('opsDelta', 'ops_pct');
 
@@ -356,7 +430,7 @@
   };
 
   // ---- ページごとの横棒(4条件を並べる) ----
-  function groupedBars(el, rows, {value, light, unit, f}) {
+  function groupedBars(el, rows, {value, light, unit, f, lightLabel = 'うち読み込み'}) {
     el.replaceChildren();
     const width = Math.max(280, el.clientWidth);
     const byPage = PAGES.map((p) => ({page: p, name: rows.find((r) => r.page === p)?.page_name ?? p, rows: CONDS.map((c) => rows.find((r) => r.page === p && r.cond === c)).filter(Boolean)}));
@@ -398,7 +472,7 @@
         }
         svg.append('rect').attr('x', labelW).attr('y', y - gap / 2).attr('width', width - labelW).attr('height', barH + gap)
           .attr('fill', 'transparent')
-          .on('mousemove', (ev) => showTip(el, tip, ev, [g.name, r.cond_name, light ? `合計 ${f(v)} ${unit}(うち読み込み ${f(light(r))})` : `${f(v)} ${unit}`]))
+          .on('mousemove', (ev) => showTip(el, tip, ev, [g.name, r.cond_name, light ? `合計 ${f(v)} ${unit}(${lightLabel} ${f(light(r))})` : `${f(v)} ${unit}`]))
           .on('mouseleave', () => { tip.hidden = true; });
       });
     });
@@ -409,6 +483,11 @@
     const d = dash.data('cpu_profile');
     if (d.status !== 'ok') { el.replaceChildren(); return; }
     groupedBars(el, d.data, {value: (r) => r.total_ms, light: (r) => r.load_ms, unit: 'ms', f: fmt1});
+  });
+  dash.draw('tmChart', (el) => {
+    const d = dash.data('tm_overhead');
+    if (d.status !== 'ok') { el.replaceChildren(); return; }
+    groupedBars(el, d.data, {value: (r) => r.total, light: (r) => Math.max(0, r.manager), unit: 'ms', f: fmt1, lightLabel: 'うち Tampermonkey 自身'});
   });
   dash.draw('sharedChart', (el) => {
     const d = dash.data('dom_access');
@@ -483,6 +562,14 @@
       list: [['page_name'], ['cond_name'], ['elements', fmt0], ['ops', fmt0], ['shared', fmt0], ['shared_write', fmt0], ['repeated', fmt0], ['forced', fmt0], ['queries', fmt0], ['qsa_nodes', fmt0], ['observers', fmt0]],
     });
   });
+  dash.draw('tmTable', (tb) => {
+    const d = dash.data('tampermonkey');
+    if (d.status !== 'ok') { tb.replaceChildren(); return; }
+    fill(tb, [...d.data].sort((a, b) => order(a) - order(b)), {
+      key: (r) => `${enc(r.page)},${enc(r.cond)}`,
+      list: [['page_name'], ['cond_name'], ['scripts', fmt0], ['manager_ms', fmt1], ['script_ms', fmt1], ['total_ms', fmt1], ['p_vs_old', (v) => v === undefined || v === null ? '' : d3.format('.2f')(v)]],
+    });
+  });
   dash.draw('loadTable', (tb) => {
     const d = dash.data('load_metrics');
     if (d.status !== 'ok') { tb.replaceChildren(); return; }
@@ -496,7 +583,7 @@
   dash.draw('idleTable', (tb) => {
     const d = dash.data('idle');
     if (d.status !== 'ok') { tb.replaceChildren(); return; }
-    fill(tb, d.data.sort((a, b) => order(a) - order(b)), {
+    fill(tb, [...d.data].sort((a, b) => order(a) - order(b)), {
       key: (r) => `${enc(r.page)},${enc(r.cond)}`,
       list: [['page_name'], ['cond_name'], ['task_ms_per_s', d3.format(',.2f')], ['script_ms_per_s', d3.format(',.2f')]],
     });

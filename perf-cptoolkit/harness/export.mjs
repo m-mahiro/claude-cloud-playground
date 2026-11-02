@@ -144,6 +144,29 @@ for (const page of Object.keys(PAGES)) for (const cond of Object.keys(CONDS)) {
 		task_ms: r1(median(rs.map((r) => r.metrics.TaskDuration * 1000))), scripts: rs[0].installed, runs: rs.length,
 	});
 }
+// 旧スクリプトとの差の検定(Mann-Whitney U、正規近似)
+const mwu = (a, b) => {
+	const all = [...a.map((v) => [v, 0]), ...b.map((v) => [v, 1])].sort((x, y) => x[0] - y[0]);
+	const rk = all.map((_, i) => i + 1);
+	for (let i = 0; i < all.length;) {
+		let j = i;
+		while (j + 1 < all.length && all[j + 1][0] === all[i][0]) j++;
+		for (let k = i; k <= j; k++) rk[k] = (i + j) / 2 + 1;
+		i = j + 1;
+	}
+	const n1 = a.length, n2 = b.length;
+	const u = all.reduce((acc, [, g], i) => acc + (g === 0 ? rk[i] : 0), 0) - n1 * (n1 + 1) / 2;
+	const z = (u - n1 * n2 / 2) / Math.sqrt(n1 * n2 * (n1 + n2 + 1) / 12);
+	const t = 1 / (1 + 0.2316419 * Math.abs(z));
+	const tail = 0.3989423 * Math.exp(-z * z / 2) * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+	return 2 * tail;
+};
+for (const r of tmRows) {
+	const old = {C_own: "B_own", C_eq: "B_all"}[r.cond];
+	if (!old) continue;
+	const tot = (c) => tm.filter((x) => x.page === r.page && x.cond === c).map((x) => (x.byBucket.tampermonkey || 0) + (x.byBucket.userscript || 0));
+	r.p_vs_old = r2(mwu(tot(old), tot(r.cond)));
+}
 write("tampermonkey", tmRows);
 
 console.log("wrote", OUT, {cpu: cpu.length, breakdown: breakdown.length, load: load.length, dom: dom.length, idle: idle.length, mem: mem.length, tm: tmRows.length});
