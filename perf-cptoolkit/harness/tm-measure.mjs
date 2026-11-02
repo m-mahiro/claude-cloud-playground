@@ -129,8 +129,9 @@ async function launch(cond) {
 }
 
 /** Tampermonkey の URL から、どのスクリプトか(または Tampermonkey 自身か)を決める */
-function classifier(extId) {
-	return (url) => {
+function classifier(extId, urlById = new Map()) {
+	return (url, scriptId) => {
+		url ||= urlById.get(scriptId) ?? "";
 		if (!url) return null;
 		if (url.startsWith(`chrome-extension://${extId}/userscript.html`)) {
 			const name = decodeURIComponent(new URL(url).searchParams.get("name") ?? "");
@@ -140,7 +141,7 @@ function classifier(extId) {
 		return "page";
 	};
 }
-const isToolkit = (url) => url.includes("userscript.html") && url.includes("name=CP-Toolkit");
+const isToolkit = (url) => (url ?? "").includes("userscript.html") && url.includes("name=CP-Toolkit");
 
 function aggregateCpu(profile, extId) {
 	const classify = classifier(extId);
@@ -177,19 +178,21 @@ function aggregateCpu(profile, extId) {
 	return {byBucket, toolkitStacks};
 }
 
-function aggregateHeap(profile, extId) {
-	const classify = classifier(extId);
+function aggregateHeap(profile, extId, urlById) {
+	// ヒーププロファイルでは eval されたスクリプトの URL が空になるので、scriptId から引く
+	const classify = classifier(extId, urlById);
+	const urlOf = (cf) => cf.url || urlById.get(cf.scriptId) || "";
 	const heapByBucket = {};
 	const heapToolkitStacks = {};
 	const walk = (node, chain) => {
 		const here = [...chain, node];
 		if (node.selfSize > 0) {
 			let bucket = null;
-			for (let i = here.length - 1; i >= 0 && !bucket; i--) bucket = classify(here[i].callFrame.url);
+			for (let i = here.length - 1; i >= 0 && !bucket; i--) bucket = classify(here[i].callFrame.url, here[i].callFrame.scriptId);
 			bucket ??= node.callFrame.functionName || "(native)";
 			heapByBucket[bucket] = (heapByBucket[bucket] || 0) + node.selfSize;
 			if (bucket === "us:CpToolkit") {
-				const key = here.filter((n) => isToolkit(n.callFrame.url)).reverse().slice(0, 25)
+				const key = here.filter((n) => isToolkit(urlOf(n.callFrame))).reverse().slice(0, 25)
 					.map((n) => `${n.callFrame.lineNumber + 1}:${n.callFrame.columnNumber + 1}`).join(" < ");
 				heapToolkitStacks[key] = (heapToolkitStacks[key] || 0) + node.selfSize;
 			}
@@ -210,6 +213,7 @@ async function scriptsThatRan(cdp, extId) {
 	await new Promise((r) => setTimeout(r, 300));
 	cdp.off("Debugger.scriptParsed", onParsed);
 	const classify = classifier(extId);
+	const urlById = new Map(parsed.map((e) => [e.scriptId, e.url]));
 	const ran = new Set();
 	let toolkitLineOffset = null;
 	for (const e of parsed) {
@@ -224,7 +228,7 @@ async function scriptsThatRan(cdp, extId) {
 		}
 	}
 	await cdp.send("Debugger.disable");
-	return {ran: [...ran].sort(), toolkitLineOffset};
+	return {ran: [...ran].sort(), toolkitLineOffset, urlById};
 }
 // ソースマップの行と Tampermonkey 上の行の対応を取る目印(ソースマップ側の行は 0 始まり)
 const TOOLKIT_SRC = readFileSync(new URL("../scripts/cptoolkit/CpToolkit.analysis.user.js", import.meta.url), "utf8").split("\n");
@@ -266,9 +270,8 @@ async function runOnce(env, cond, pageKey, iteration, mode, throttle) {
 		await cdp.send("HeapProfiler.collectGarbage");
 		row.afterGc = await getMetrics();
 		row.domCounters = await cdp.send("Memory.getDOMCounters");
-		const {profile} = await cdp.send("HeapProfiler.getSamplingProfile");
+		row.heapProfile = (await cdp.send("HeapProfiler.getSamplingProfile")).profile;
 		await cdp.send("HeapProfiler.stopSampling");
-		Object.assign(row, aggregateHeap(profile, env.extId));
 	}
 	if (mode === "idle") {
 		await page.waitForTimeout(Number(args.idle));
@@ -280,7 +283,12 @@ async function runOnce(env, cond, pageKey, iteration, mode, throttle) {
 		const nav = performance.getEntriesByType("navigation")[0];
 		return {longtasks: window.__lt, dcl: nav?.domContentLoadedEventEnd, load: nav?.loadEventEnd, nodes: document.getElementsByTagName("*").length, marker: document.documentElement.dataset.cpToolkit ?? null};
 	});
-	Object.assign(row, await scriptsThatRan(cdp, env.extId));
+	const {urlById, ...ranInfo} = await scriptsThatRan(cdp, env.extId);
+	Object.assign(row, ranInfo);
+	if (row.heapProfile) {
+		Object.assign(row, aggregateHeap(row.heapProfile, env.extId, urlById));
+		delete row.heapProfile;
+	}
 	await page.close();
 	return row;
 }

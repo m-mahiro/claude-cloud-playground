@@ -170,3 +170,170 @@ for (const r of tmRows) {
 write("tampermonkey", tmRows);
 
 console.log("wrote", OUT, {cpu: cpu.length, breakdown: breakdown.length, load: load.length, dom: dom.length, idle: idle.length, mem: mem.length, tm: tmRows.length});
+
+// ======== 実際の Tampermonkey での計測(results/tm-*.jsonl) ========
+// レポートは、シムでしか測れない DOM の重複アクセスを除き、こちらの値を使う。
+{
+	const {SourceMap} = await import("./sourcemap.mjs");
+	const {matchesUrl} = await import("./userscript.mjs");
+	const {loadConditions} = await import("./conditions.mjs");
+	const {PAGES: URLS} = await import("./pages.mjs");
+	const conds = loadConditions({analysisBuild: true});
+	const map = new SourceMap(new URL("../scripts/cptoolkit/CpToolkit.analysis.user.js.map", import.meta.url).pathname);
+	const TM_CONDS = ["A", "B_own", "C_own", "B_all", "C_eq"];
+	const tmRead = (f) => read(f);
+	const cpuRows = tmRead("tm-cpu-x1.jsonl"), memRows = tmRead("tm-memory-x1.jsonl");
+	const perf1 = tmRead("tm-perf-x1.jsonl"), perf4 = tmRead("tm-perf-x4.jsonl"), idleRows = tmRead("tm-idle-x1.jsonl");
+
+	// Tampermonkey 上の行から、ソースマップの行へ直して機能を決める
+	const ownerCache = new Map();
+	const owner = (stack, offset) => {
+		const key = `${offset}|${stack}`;
+		if (ownerCache.has(key)) return ownerCache.get(key);
+		let first = null, found = null;
+		for (const f of stack.split(" < ")) {
+			const m = /(\d+):(\d+)$/.exec(f);
+			if (!m) continue;
+			const hit = map.lookup(Number(m[1]) - offset, Number(m[2]));
+			if (!hit) continue;
+			const src = hit.source.replace(/^(\.\.\/)+/, "");
+			first ??= src;
+			const fm = /src\/features\/([^/]+)\//.exec(src);
+			if (fm) { found = fm[1]; break; }
+		}
+		if (!found) {
+			const lm = /src\/(app|adapters|application|ui|domain|catalog)\//.exec(first ?? "");
+			found = lm ? `(core:${lm[1]})` : (first ?? "").startsWith("shared/") ? "(core:shared)" : first ? "(lib)" : "(top-level)";
+		}
+		ownerCache.set(key, found);
+		return found;
+	};
+
+	// 動作確認: 各回で、その URL に当てはまるスクリプトが全部動いたか
+	const checks = [];
+	const all = [...cpuRows, ...memRows, ...perf1, ...perf4, ...idleRows];
+	for (const r of all) {
+		const expected = conds[r.cond].scripts.filter((s) => matchesUrl(s, URLS[r.page])).map((s) => s.id).sort();
+		const ran = r.ran ?? [];
+		const missing = expected.filter((id) => !ran.includes(id));
+		checks.push({mode: r.mode, throttle: r.throttle, page: r.page, cond: r.cond, expected: expected.length, ran: ran.length, missing: missing.join(",")});
+	}
+	const bad = checks.filter((c) => c.missing);
+	write("tm_checks", [{runs: checks.length, complete: checks.length - bad.length, incomplete: bad.length, failed: ["tm-cpu-x1.jsonl", "tm-memory-x1.jsonl", "tm-perf-x1.jsonl", "tm-perf-x4.jsonl", "tm-idle-x1.jsonl"].reduce((s2, f) => s2 + (existsSync(R + f) ? readFileSync(R + f, "utf8").split("\n").filter((l) => l.includes('"failed"')).length : 0), 0)}]);
+	if (bad.length) console.log("incomplete runs:", bad.slice(0, 10));
+
+	const by = (rows, page, cond) => rows.filter((r) => r.page === page && r.cond === cond);
+	const usSum = (o) => Object.entries(o ?? {}).filter(([k]) => k.startsWith("us:")).reduce((s2, [, v]) => s2 + v, 0);
+
+	// CPU
+	const tmCpu = [];
+	for (const page of Object.keys(PAGES)) for (const cond of TM_CONDS) {
+		const rs = by(cpuRows, page, cond);
+		if (!rs.length) continue;
+		const mgr = rs.map((r) => r.byBucket.tampermonkey || 0), us = rs.map((r) => usSum(r.byBucket));
+		tmCpu.push({...base(page, cond), manager_ms: r1(median(mgr)), script_ms: r1(median(us)), total_ms: r1(median(rs.map((_, i) => mgr[i] + us[i]))), scripts: rs[0].installed, runs: rs.length});
+	}
+	for (const r of tmCpu) {
+		const old = {C_own: "B_own", C_eq: "B_all"}[r.cond];
+		if (!old) continue;
+		const tot = (c) => by(cpuRows, r.page, c).map((x) => (x.byBucket.tampermonkey || 0) + usSum(x.byBucket));
+		r.p_vs_old = r2(mwu(tot(old), tot(r.cond)));
+	}
+	write("tm_cpu", tmCpu);
+
+	// CPU の内訳(問題文・解説一覧)
+	const tmBd = [];
+	for (const page of ["task", "editorial"]) for (const cond of ["B_all", "C_eq"]) {
+		const rs = by(cpuRows, page, cond);
+		const acc = {};
+		for (const r of rs) {
+			const one = {"Tampermonkey 自身": r.byBucket.tampermonkey || 0};
+			if (cond === "C_eq") {
+				for (const [stack, ms] of Object.entries(r.toolkitStacks ?? {})) {
+					const o = LABEL(stack ? owner(stack, (r.toolkitLineOffset ?? 0)) : "(top-level)");
+					one[o] = (one[o] || 0) + ms;
+				}
+			} else {
+				for (const [k, v] of Object.entries(r.byBucket)) if (k.startsWith("us:")) one[k.slice(3)] = v;
+			}
+			for (const [k, v] of Object.entries(one)) (acc[k] ??= []).push(v);
+		}
+		for (const [part, vs] of Object.entries(acc)) {
+			const m = median([...vs, ...new Array(rs.length - vs.length).fill(0)]);
+			if (m >= 0.1) tmBd.push({...base(page, cond), part, ms: r2(m)});
+		}
+	}
+	write("tm_cpu_breakdown", tmBd);
+
+	// メモリ
+	const tmMem = [];
+	for (const page of Object.keys(PAGES)) {
+		const a = median(by(memRows, page, "A").map((r) => r.afterGc.JSHeapUsedSize / 1048576));
+		for (const cond of TM_CONDS) {
+			const rs = by(memRows, page, cond);
+			if (!rs.length) continue;
+			const heap = median(rs.map((r) => r.afterGc.JSHeapUsedSize / 1048576));
+			tmMem.push({...base(page, cond), heap_mb: r2(heap), heap_overhead_mb: r2(heap - a), script_kb: Math.round(median(rs.map((r) => usSum(r.heapByBucket) / 1024))), manager_kb: Math.round(median(rs.map((r) => (r.heapByBucket.tampermonkey || 0) / 1024))), runs: rs.length});
+		}
+	}
+	write("tm_memory", tmMem);
+	const tmMemBd = [];
+	for (const cond of ["B_all", "C_eq"]) {
+		const rs = by(memRows, "task", cond);
+		const acc = {};
+		for (const r of rs) {
+			const one = {"Tampermonkey 自身": (r.heapByBucket.tampermonkey || 0) / 1024};
+			if (cond === "C_eq") {
+				for (const [stack, b] of Object.entries(r.heapToolkitStacks ?? {})) {
+					const o = LABEL(stack ? owner(stack, (r.toolkitLineOffset ?? 0)) : "(top-level)");
+					one[o] = (one[o] || 0) + b / 1024;
+				}
+			} else {
+				for (const [k, v] of Object.entries(r.heapByBucket)) if (k.startsWith("us:")) one[k.slice(3)] = v / 1024;
+			}
+			for (const [k, v] of Object.entries(one)) (acc[k] ??= []).push(v);
+		}
+		for (const [part, vs] of Object.entries(acc)) {
+			const m = median([...vs, ...new Array(rs.length - vs.length).fill(0)]);
+			if (m >= 1) tmMemBd.push({...base("task", cond), part, kb: r1(m)});
+		}
+	}
+	write("tm_memory_breakdown", tmMemBd);
+
+	// ページ全体の読み込みコスト
+	const tmLoad = [];
+	for (const [th, rows] of [[1, perf1], [4, perf4]]) for (const page of Object.keys(PAGES)) {
+		const a = by(rows, page, "A");
+		if (!a.length) continue;
+		const med = (rs, f) => median(rs.map(f));
+		const task = (r) => r.metrics.TaskDuration * 1000, script = (r) => r.metrics.ScriptDuration * 1000;
+		const ls = (r) => (r.metrics.LayoutDuration + r.metrics.RecalcStyleDuration) * 1000;
+		for (const cond of TM_CONDS) {
+			const rs = by(rows, page, cond);
+			if (!rs.length) continue;
+			const q = (p) => {
+				const x = rs.map(task).sort((m, n) => m - n);
+				const pos = (x.length - 1) * p;
+				return x[Math.floor(pos)] + (x[Math.ceil(pos)] - x[Math.floor(pos)]) * (pos - Math.floor(pos));
+			};
+			const row = {...base(page, cond), throttle: th, task_ms: r1(med(rs, task)), task_q1: r1(q(.25)), task_q3: r1(q(.75)),
+				task_overhead_ms: r1(med(rs, task) - med(a, task)), script_overhead_ms: r1(med(rs, script) - med(a, script)),
+				layout_style_overhead_ms: r1(med(rs, ls) - med(a, ls)), longtask_ms: r1(med(rs, (r) => r.page_.longtasks?.total ?? 0)), runs: rs.length};
+			const old = {C_own: "B_own", C_eq: "B_all"}[cond];
+			if (old) row.p_vs_old = r2(mwu(by(rows, page, old).map(task), rs.map(task)));
+			tmLoad.push(row);
+		}
+	}
+	write("tm_load", tmLoad);
+
+	// 放置時
+	const tmIdle = [];
+	for (const page of [...new Set(idleRows.map((r) => r.page))]) for (const cond of TM_CONDS) {
+		const rs = by(idleRows, page, cond);
+		if (!rs.length) continue;
+		const per = (k) => median(rs.map((r) => r.idle[k] * 1000 / (r.idleMs / 1000)));
+		tmIdle.push({...base(page, cond), task_ms_per_s: r2(per("TaskDuration")), script_ms_per_s: r2(per("ScriptDuration")), runs: rs.length});
+	}
+	write("tm_idle", tmIdle);
+	console.log("tm:", {cpu: tmCpu.length, bd: tmBd.length, mem: tmMem.length, memBd: tmMemBd.length, load: tmLoad.length, idle: tmIdle.length, checks: checks.length, incomplete: bad.length});
+}
