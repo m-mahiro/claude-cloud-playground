@@ -5,3 +5,4 @@ scripts/requires/
 fixtures/
 results/*.jsonl
 results/run-all.log
+results/report/
