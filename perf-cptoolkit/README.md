@@ -18,7 +18,7 @@
 ## 仕組み
 
 - **ページの固定**: 1 回だけ実際のサイトから取得して `fixtures/` に保存し、計測ではそれだけを返す(`harness/fixtures.mjs`)。広告・解析系は全条件で遮断。
-- **Tampermonkey の代わり**: `harness/page/gm-shim.js`。`GM_*` を実装し、`@match`/`@exclude`/`@run-at`/`@require` に従って起動する。全条件で同じものを使うので、Tampermonkey 自体の負荷(スクリプト本数に比例する分)は含まれない。
+- **Tampermonkey の代わり**: `harness/page/gm-shim.js`。`GM_*` を実装し、`@match`/`@exclude`/`@run-at`/`@require` に従って起動する。全条件で同じものを使う。`harness/measure.mjs` の計測(下の perf〜trace)はこのシムで動かすので、Tampermonkey 自体の負荷(スクリプト本数に比例する分)は含まれない。その分は「実際の Tampermonkey」の計測で測る。
 - **計測**(`harness/measure.mjs`)
   - `perf`: CDP `Performance.getMetrics`(TaskDuration・ScriptDuration・Layout・RecalcStyle ほか)、Long Task、UserScript の同期実行時間
   - `idle`: 読み込み後に放置した間の CPU 時間
