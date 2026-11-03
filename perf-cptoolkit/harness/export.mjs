@@ -245,9 +245,10 @@ console.log("wrote", OUT, {cpu: cpu.length, breakdown: breakdown.length, load: l
 	const tmBd = [];
 	for (const page of ["task", "editorial"]) for (const cond of ["B_all", "C_eq"]) {
 		const rs = by(cpuRows, page, cond);
+		const baseMgr = median(by(cpuRows, page, "A").map((r) => r.byBucket.tampermonkey || 0));
 		const acc = {};
 		for (const r of rs) {
-			const one = {"Tampermonkey 自身": r.byBucket.tampermonkey || 0};
+			const one = {"Tampermonkey 自身(増えた分)": (r.byBucket.tampermonkey || 0) - baseMgr};
 			if (cond === "C_eq") {
 				for (const [stack, ms] of Object.entries(r.toolkitStacks ?? {})) {
 					const o = LABEL(stack ? owner(stack, (r.toolkitLineOffset ?? 0)) : "(top-level)");
@@ -280,9 +281,10 @@ console.log("wrote", OUT, {cpu: cpu.length, breakdown: breakdown.length, load: l
 	const tmMemBd = [];
 	for (const cond of ["B_all", "C_eq"]) {
 		const rs = by(memRows, "task", cond);
+		const baseMgr = median(by(memRows, "task", "A").map((r) => (r.heapByBucket.tampermonkey || 0) / 1024));
 		const acc = {};
 		for (const r of rs) {
-			const one = {"Tampermonkey 自身": (r.heapByBucket.tampermonkey || 0) / 1024};
+			const one = {"Tampermonkey 自身(増えた分)": (r.heapByBucket.tampermonkey || 0) / 1024 - baseMgr};
 			if (cond === "C_eq") {
 				for (const [stack, b] of Object.entries(r.heapToolkitStacks ?? {})) {
 					const o = LABEL(stack ? owner(stack, (r.toolkitLineOffset ?? 0)) : "(top-level)");
